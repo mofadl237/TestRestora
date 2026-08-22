@@ -1,0 +1,3041 @@
+{
+  "NotFound": {
+    "title": "Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste.",
+    "backHome": "Torna alla Home"
+  },
+  "offers": {
+    "types": {
+      "percentage": "{value}% di sconto",
+      "fixed": "{value} di sconto",
+      "bogo": "Prendi {buy}, ottieni {get}",
+      "bundle": "Pacchetto convenienza",
+      "meal_deal": "Menu completo",
+      "family_meal": "Menu famiglia",
+      "kids_meal": "Menu bambini"
+    },
+    "endsAt": "Termina il {date}",
+    "view": "Vedi l'offerta",
+    "empty": "Nessuna offerta attiva al momento",
+    "includedProducts": "Prodotti inclusi",
+    "free": "GRATIS",
+    "originalPrice": "Prezzo originale",
+    "discount": "Sconto",
+    "offerPrice": "Prezzo offerta",
+    "addOfferToCart": "Aggiungi l'offerta al carrello",
+    "added": "Aggiunto!",
+    "addedToCart": "{name} aggiunto al carrello",
+    "youSave": "Risparmi",
+    "savingsPercent": "Risparmio"
+  },
+  "documents": {
+    "invoice": "Fattura",
+    "invoiceDescription": "Anteprima, stampa o copia questa fattura.",
+    "viewInvoice": "Vedi fattura",
+    "orderNumber": "Numero ordine",
+    "date": "Data",
+    "billTo": "Fatturato a",
+    "delivery": "Consegna",
+    "eta": "Tempo stimato",
+    "minutes": "min",
+    "payment": "Pagamento",
+    "items": "Articoli",
+    "qty": "Qtà",
+    "price": "Prezzo",
+    "total": "Totale",
+    "subtotal": "Subtotale",
+    "deliveryFee": "Contributo consegna",
+    "tax": "IVA",
+    "discount": "Sconto",
+    "grandTotal": "Totale generale",
+    "vatIncluded": "IVA inclusa dove applicabile",
+    "thankYou": "Grazie per il tuo ordine!",
+    "print": "Stampa",
+    "copySummary": "Copia riepilogo",
+    "copied": "Copiato!",
+    "copyFailed": "Impossibile copiare negli appunti.",
+    "close": "Chiudi",
+    "customer": "Cliente",
+    "phone": "Telefono",
+    "address": "Indirizzo",
+    "orderType": "Tipo di ordine",
+    "table": "Tavolo",
+    "kitchen": {
+      "title": "Ticket cucina",
+      "customerInfo": "Cliente"
+    },
+    "printable": {
+      "title": "Scheda ordine"
+    }
+  },
+  "common": {
+    "menu": "Menù",
+    "cart": "Carrello",
+    "checkout": "Checkout",
+    "orders": "Ordini",
+    "trackOrder": "Traccia ordine",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "home": "Home",
+    "brandName": "Ristorante",
+    "language": "Lingua",
+    "currentLanguage": "Attuale: Italiano",
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "it": "Italiano"
+    },
+    "openMenu": "Apri il menù",
+    "closeMenu": "Chiudi il menù",
+    "openCart": "Apri il carrello",
+    "backToTop": "Torna su",
+    "dismissNotification": "Ignora notifica",
+    "addedToCart": "Aggiunto al carrello",
+    "addedToCartError": "Impossibile aggiungere l'articolo. Riprova.",
+    "itemAdded": "{name} · {count, plural, one {# articolo aggiunto} other {# articoli aggiunti}}",
+    "homeAria": "Home",
+    "primaryNavigation": "Navigazione principale",
+    "closeDialog": "Chiudi finestra",
+    "decreaseQuantity": "Diminuisci quantità",
+    "increaseQuantity": "Aumenta quantità"
+  },
+  "theme": {
+    "toggleTheme": "Cambia tema",
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "system": "Sistema"
+  },
+  "footer": {
+    "description": "Cibo pregiato, preparato fresco e consegnato con cura.",
+    "visitUs": "Vieni a trovarci",
+    "addressLine1": "La posizione del ristorante",
+    "addressLine2": "comparirà qui",
+    "whatsapp": "WhatsApp",
+    "viewOnMap": "Indicazioni stradali",
+    "phoneFallback": "Numero di telefono non ancora impostato",
+    "emailFallback": "Email non ancora impostata",
+    "quickLinks": "Collegamenti rapidi",
+    "quickLinksAria": "Collegamenti rapidi nel piè di pagina",
+    "legal": "Informazioni legali",
+    "legalLinksAria": "Collegamenti legali nel piè di pagina",
+    "reservations": "Prenotazioni",
+    "privacyPolicy": "Informativa sulla privacy",
+    "termsOfService": "Termini di servizio",
+    "cookiePolicy": "Politica sui cookie",
+    "allergenInfo": "Informazioni sugli allergeni",
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "snapchat": "Snapchat",
+      "website": "Sito web"
+    },
+    "rights": "© {year} {name}. Tutti i diritti riservati.",
+    "designedBy": "Realizzato con <highlight>{email}</highlight>",
+    "newsletterTitle": "Resta aggiornato",
+    "newsletterDescription": "Iscriviti alla nostra newsletter per offerte esclusive, novità stagionali e inviti agli eventi.",
+    "newsletterPlaceholder": "Inserisci la tua email",
+    "newsletterSubscribe": "Iscriviti",
+    "newsletterSubscribing": "Iscrizione in corso...",
+    "newsletterSuccess": "Grazie per esserti iscritto!"
+  },
+  "mainSection": {
+    "bestSeller": {
+      "title": "I più venduti",
+      "subTitle": "Scopri i nostri piatti più popolari, quelli che i clienti amano di più"
+    },
+    "offers": {
+      "title": "Offerte a tempo limitato",
+      "subTitle": "Promozioni e pacchetti disponibili adesso"
+    }
+  },
+  "home": {
+    "promoBanner": {
+      "eyebrow": "Offerta a tempo limitato",
+      "copyCode": "Copia codice",
+      "copied": "Copiato!",
+      "shopNow": "Ordina ora"
+    },
+    "categories": {
+      "eyebrow": "Sfoglia per categoria",
+      "title": "Il nostro menù"
+    },
+    "story": {
+      "kicker": "La nostra storia",
+      "titleStart": "Creati con passione,",
+      "titleHighlight": "serviti con amore",
+      "description": "Dal primo giorno ridefiniamo i grandi sapori nel cuore della città — un piatto fatto a mano alla volta.",
+      "exploreMenu": "Scopri il menù",
+      "foundedYear": "2026",
+      "foundedLabel": "Fondato nel",
+      "brandLine": "La nostra cucina",
+      "imageAlt": "La nostra cucina — la nostra storia",
+      "paragraph1": "Tutto è iniziato con una semplice ricetta di famiglia, trasmessa di generazione in generazione e perfezionata nel corso degli anni. Abbiamo aperto i battenti con un solo forno e il sogno di condividere ottimo cibo con la nostra comunità.",
+      "paragraph2": "Oggi, ogni piatto che esce dalla nostra cucina porta con sé quella stessa dedizione — ingredienti freschi e selezionati con cura e ricette che rispettano la tradizione."
+    },
+    "cta": {
+      "kicker": "Pronto a gustare?",
+      "title": "Esplora il nostro menù completo",
+      "description": "Dai nostri piatti signature alle specialità stagionali — ogni portata è preparata con cura e orgoglio.",
+      "viewMenu": "Vedi il menù",
+      "bookTable": "Prenota un tavolo"
+    }
+  },
+  "hero": {
+    "badge": "Gusto premiato",
+    "shopNow": "Ordina ora",
+    "goToSlide": "Vai alla slide {number}",
+    "goToNamedSlide": "Vai alla slide {title}",
+    "slides": [
+      {
+        "subtitle": "Piccante e deliziosa",
+        "title": "Pepperoni Passion",
+        "description": "Un classico amato con un generoso strato di pepperoni pregiato e mozzarella."
+      },
+      {
+        "subtitle": "Fresca dall'orto",
+        "title": "Veggie Supreme",
+        "description": "Un mix delizioso di peperoni freschi, cipolle, olive e funghi."
+      },
+      {
+        "subtitle": "Un capolavoro di formaggio",
+        "title": "Margherita Magic",
+        "description": "Semplice ma elegante, con basilico fresco, mozzarella e una ricca salsa di pomodoro."
+      },
+      {
+        "subtitle": "Dolce e salato",
+        "title": "Hawaiian Heaven",
+        "description": "Un tocco tropicale con ananas succoso, prosciutto saporito e formaggio fuso."
+      }
+    ]
+  },
+  "cart": {
+    "page": {
+      "title": "Carrello",
+      "subtitle": "Articoli nel carrello"
+    },
+    "closed": {
+      "title": "Siamo attualmente chiusi",
+      "badge": "Chiuso",
+      "reopensAt": "Torniamo presto — riapriamo alle {time}",
+      "reopensLater": "Per ora siamo chiusi. Torna a trovarci presto."
+    },
+    "serverErrorClosed": "Il ristorante è attualmente chiuso. Riprova durante gli orari di apertura.",
+    "serverErrorClosedWithMessage": "{message}",
+    "summary": "Riepilogo ordine",
+    "subtotal": "Subtotale",
+    "delivery": "Consegna",
+    "free": "Gratis",
+    "tax": "IVA",
+    "discount": "Sconto",
+    "grandTotal": "Totale generale",
+    "vatIncluded": "IVA inclusa",
+    "yourOrder": "Il tuo ordine",
+    "itemsInCart": "{count, plural, one {# articolo} other {# articoli}} nel carrello",
+    "clearAll": "Svuota tutto",
+    "clearAllAria": "Svuota tutti gli articoli del carrello",
+    "editItem": "Modifica {name}",
+    "removeItem": "Rimuovi {name} dal carrello",
+    "decreaseItemQuantity": "Diminuisci la quantità di {name}",
+    "increaseItemQuantity": "Aumenta la quantità di {name}",
+    "qty": "Qtà",
+    "base": "Base",
+    "extras": "Extra",
+    "quantity": "Quantità",
+    "specialInstructions": "Istruzioni speciali",
+    "notePlaceholder": "Richieste particolari per questo articolo…",
+    "addToCart": "Aggiungi al carrello",
+    "added": "Aggiunto!",
+    "updateItem": "Aggiorna articolo",
+    "included": "Incluso",
+    "chooseSize": "Scegli la dimensione",
+    "emptyTitle": "Il tuo carrello è vuoto",
+    "emptyDescription": "Sembra che tu non abbia ancora aggiunto nulla. Sfoglia il nostro menù e scegli qualcosa di gustoso!",
+    "deliveryDetails": "Dettagli di consegna",
+    "deliveryDetailsDesc": "Dove dobbiamo consegnare il tuo ordine?",
+    "customerName": "Nome del cliente",
+    "customerNamePlaceholder": "Mario Rossi",
+    "phoneNumber": "Numero di telefono",
+    "phonePlaceholder": "+39 300 000 0000",
+    "deliveryAddress": "Indirizzo di consegna",
+    "addressPlaceholder": "Via, zona, città",
+    "apartmentBuilding": "Appartamento / Palazzo",
+    "apartmentPlaceholder": "Interno 4B, Piano 3 (facoltativo)",
+    "city": "Città",
+    "cityPlaceholder": "Milano, Roma...",
+    "notesForRestaurant": "Note per il ristorante",
+    "notesPlaceholder": "Allergie, livello di piccantezza, suonare il campanello... (facoltativo)",
+    "submitOrder": "Invia ordine",
+    "placingOrder": "Invio dell'ordine in corso…",
+    "submitAria": "Invia l'ordine per {price}",
+    "errorLoadProduct": "Impossibile caricare i dettagli del prodotto. Riprova.",
+    "errorFailedLoadProduct": "Errore nel caricamento del prodotto. Riprova.",
+    "errorNameRequired": "Inserisci il tuo nome.",
+    "errorPhoneRequired": "Inserisci il tuo numero di telefono.",
+    "errorPhoneInvalid": "Inserisci un numero di cellulare valido (es. 01012345678).",
+    "errorAddressRequired": "Inserisci il tuo indirizzo di consegna.",
+    "errorCityRequired": "Inserisci la tua città.",
+    "errorSomethingWrong": "Si è verificato un errore. Controlla la connessione e riprova.",
+    "serverErrorNameRequired": "Il nome del cliente è obbligatorio.",
+    "serverErrorPhoneRequired": "Il numero di telefono è obbligatorio.",
+    "serverErrorAddressRequired": "L'indirizzo di consegna è obbligatorio.",
+    "serverErrorCityRequired": "La città è obbligatoria.",
+    "serverErrorEmptyCart": "Il tuo carrello è vuoto.",
+    "serverErrorPlacingOrder": "Non è stato possibile inviare l'ordine in questo momento. Riprova tra poco.",
+    "serverErrorZoneInvalid": "Questa zona di consegna non è più disponibile. Scegline un'altra.",
+    "serverErrorZoneInactive": "Questa zona di consegna non è temporaneamente disponibile.",
+    "serverErrorZoneRequired": "Scegli una zona di consegna.",
+    "serverErrorMinOrder": "L'ordine minimo per questa zona è di {amount}.",
+    "deliveryZone": "Zona di consegna",
+    "deliveringTo": "Consegna a",
+    "deliveryFee": "Contributo consegna",
+    "estimatedTimeRange": "{min}-{max} min",
+    "minimumOrder": "Min. {amount}",
+    "minimumOrderUnmet": "Ordine minimo non raggiunto",
+    "freeDeliveryBadge": "Consegna gratuita",
+    "freeDeliveryNow": "Consegna gratuita",
+    "searchDeliveryArea": "Cerca zona di consegna",
+    "noZonesFound": "Nessuna zona trovata",
+    "noZonesFoundHint": "Prova con un altro nome o controlla un'altra zona.",
+    "closeSelector": "Chiudi",
+    "estimatedTime": "Tempo stimato",
+    "minimumOrderLabel": "Ordine minimo",
+    "freeDeliveryOver": "Consegna gratuita oltre {amount}",
+    "serverErrorTableInvalid": "Questo tavolo non è valido o non è attivo. Scansiona nuovamente il codice QR o chiedi aiuto a un membro dello staff.",
+    "dineInLabel": "Al tavolo",
+    "dineInDetails": "Dettagli consumazione al tavolo",
+    "dineInDetailsDesc": "Stai ordinando da un tavolo all'interno del ristorante.",
+    "tableLabel": "Tavolo {number}",
+    "leaveTable": "Lascia il tavolo",
+    "tableLeft": "Hai lasciato il tavolo.",
+    "promoCode": {
+      "title": "Codice promozionale",
+      "placeholder": "Inserisci il codice promozionale",
+      "apply": "Applica",
+      "applying": "Applicazione in corso…",
+      "remove": "Rimuovi",
+      "applied": "{code} applicato",
+      "discountLabel": "{type} DI SCONTO",
+      "discountValue": "−{amount}",
+      "invalid": "Codice promozionale non valido",
+      "expired": "Questa offerta è scaduta",
+      "notStarted": "Questa offerta non è ancora attiva",
+      "disabled": "Questa offerta non è al momento disponibile",
+      "exhausted": "Questa offerta non è più disponibile",
+      "alreadyUsed": "Hai già utilizzato questo codice promozionale",
+      "firstOrderOnly": "Questa offerta è valida solo sul tuo primo ordine",
+      "minimumOrderNotMet": "È richiesto un ordine minimo di {amount}",
+      "error": "Impossibile validare il codice promozionale. Riprova.",
+      "calculatedAtCheckout": "Calcolato al checkout"
+    }
+  },
+  "trackOrder": {
+    "title": "Traccia i tuoi ordini",
+    "description": "Inserisci qui sotto il tuo numero di telefono per controllare lo storico e lo stato in tempo reale dei tuoi pasti.",
+    "continueTracking": "Continua a tracciare il tuo ultimo ordine",
+    "continue": "Continua",
+    "placeholder": "Inserisci il tuo numero di telefono...",
+    "clearSearch": "Cancella il numero di telefono salvato",
+    "track": "Traccia",
+    "noOrdersFound": "Nessun ordine trovato",
+    "noOrdersDesc": "Non abbiamo trovato ordini associati a questo numero di telefono. Controlla il numero e riprova.",
+    "activeOrders": "Ordini attivi",
+    "completedOrders": "Ordini completati",
+    "errorEmptyPhone": "Inserisci un numero di telefono valido.",
+    "errorPhoneInvalid": "Inserisci un numero di cellulare valido (es. 01012345678).",
+    "errorSearch": "Si è verificato un errore durante la ricerca dei tuoi ordini.",
+    "order": "Ordine",
+    "completed": "Completato",
+    "date": "Data",
+    "address": "Indirizzo",
+    "items": "Articoli",
+    "itemCount": "{count, plural, one {# articolo} other {# articoli}}",
+    "total": "Totale",
+    "viewDetails": "Vedi dettagli",
+    "meta": {
+      "title": "Traccia ordine",
+      "description": "Traccia lo stato dei tuoi ordini recenti."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Chi siamo",
+      "description": "Scopri la storia, la filosofia e le persone appassionate dietro il nostro ristorante."
+    },
+    "hero": {
+      "kicker": "La nostra storia",
+      "titleStart": "Creati con passione,",
+      "titleHighlight": "serviti con amore",
+      "description": "Dal primo giorno ridefiniamo i grandi sapori nel cuore della città — un piatto fatto a mano alla volta.",
+      "exploreMenu": "Scopri il menù",
+      "reserveTable": "Prenota un tavolo"
+    },
+    "story": {
+      "kicker": "La nostra storia",
+      "titleStart": "Una ricetta di famiglia,",
+      "titleHighlight": "un sogno di una vita",
+      "paragraph1": "Tutto è iniziato con una semplice ricetta di famiglia, trasmessa di generazione in generazione e perfezionata nel corso degli anni. Abbiamo aperto i battenti con un solo forno e il sogno di condividere ottimo cibo con la nostra comunità.",
+      "paragraph2": "Oggi, ogni piatto che esce dalla nostra cucina porta con sé quella stessa dedizione — ingredienti freschi e selezionati con cura e ricette che rispettano la tradizione.",
+      "foundedYear": "2026",
+      "foundedLabel": "Fondato nel",
+      "brandLine": "La nostra cucina",
+      "imageAlt": "La nostra cucina — la nostra storia"
+    },
+    "stats": {
+      "kicker": "In numeri",
+      "title": "Il nostro ristorante in cifre",
+      "items": [
+        {
+          "value": "10+",
+          "label": "Anni di eccellenza",
+          "description": "Al servizio della nostra comunità dal primo giorno"
+        },
+        {
+          "value": "200K+",
+          "label": "Ospiti felici",
+          "description": "Famiglie e amici che si sono seduti ai nostri tavoli"
+        },
+        {
+          "value": "48h",
+          "label": "Lievitazione dell'impasto",
+          "description": "Lievitazione a freddo per un sapore più profondo"
+        },
+        {
+          "value": "100%",
+          "label": "Ingredienti freschi",
+          "description": "Approvvigionati ogni giorno da partner locali affidabili"
+        }
+      ]
+    },
+    "philosophy": {
+      "kicker": "La nostra filosofia",
+      "title": "I principi che ci guidano",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Prima l'autenticità",
+          "description": "Ogni ricetta affonda le radici nella tradizione culinaria. Rifiutiamo le scorciatoie — il nostro impasto lievita a freddo, le nostre salse cuocono lentamente a fuoco basso."
+        },
+        {
+          "number": "02",
+          "title": "Ingredienti stagionali",
+          "description": "Progettiamo il menù attorno ai prodotti al loro apice, così ogni stagione porta i suoi punti di forza."
+        },
+        {
+          "number": "03",
+          "title": "Approvvigionamento sostenibile",
+          "description": "Collaboriamo con fattorie locali e produttori artigianali che condividono il nostro impegno per la qualità, la sostenibilità e pratiche eque."
+        },
+        {
+          "number": "04",
+          "title": "Ospitalità calorosa",
+          "description": "Il cibo è più buono quando è condiviso. Mettiamo energia non solo nei piatti, ma anche nel creare un'atmosfera in cui ogni ospite si senta di famiglia."
+        }
+      ]
+    },
+    "chefs": {
+      "kicker": "Le persone dietro la pizza",
+      "title": "Conosci i nostri chef",
+      "people": [
+        {
+          "name": "Il tuo capo partita",
+          "role": "Fondatore & Capo cuoco",
+          "bio": "Il cuore della nostra cucina — anni di esperienza, formazione classica e ossessione per i dettagli."
+        },
+        {
+          "name": "Il tuo pasticciere",
+          "role": "Pasticceria & Dolci",
+          "bio": "I nostri dolci sono preparati con la stessa cura dei piatti principali — tecnica classica con un tocco moderno."
+        },
+        {
+          "name": "Il tuo artesano di cucina",
+          "role": "Maestro pizzaiolo",
+          "bio": "Ogni piatto è rifinito a mano — precisione, orgoglio e costanza in ogni portata."
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "kicker": "Perché sceglierci",
+      "title": "Cosa ci rende diversi",
+      "reasons": [
+        {
+          "icon": "🌿",
+          "title": "Dalla fattoria alla tavola",
+          "description": "Ogni ingrediente percorre la via più breve dalla fattoria al tuo piatto. Niente scorciatoie surgelate — mai."
+        },
+        {
+          "icon": "🔥",
+          "title": "Perfezione a legna",
+          "description": "Il nostro forno a legna a 450°C crea quella briciola croccante e quel sapore che nessun forno elettrico può replicare."
+        },
+        {
+          "icon": "🧑‍🍳",
+          "title": "Maestria artigianale",
+          "description": "I nostri pizzaioli si formano per anni. Ogni stesura, ogni lancio, ogni cottura è deliberata e precisa."
+        },
+        {
+          "icon": "🍅",
+          "title": "Ingredienti di qualità",
+          "description": "Ingredienti freschi e selezionati con cura sono il fondamento di ogni piatto che prepariamo."
+        },
+        {
+          "icon": "🫶",
+          "title": "Atmosfera familiare",
+          "description": "Dal momento in cui entri, non sei un cliente — sei un ospite. Questa distinzione per noi è importante."
+        },
+        {
+          "icon": "🏅",
+          "title": "Premiati per la qualità",
+          "description": "Riconosciuti per la qualità eccezionale dai nostri ospiti e dal settore — una costanza che non diamo mai per scontata."
+        }
+      ]
+    },
+    "gallery": {
+      "kicker": "La nostra galleria",
+      "title": "Uno spettacolo per gli occhi",
+      "imageAlts": [
+        "Pizza al pepperoni appena sfornata",
+        "Margherita con basilico fresco",
+        "Impasto cotto a legna",
+        "Special hawaiiana",
+        "Trancio classico"
+      ]
+    },
+    "testimonials": {
+      "kicker": "Storie degli ospiti",
+      "title": "Cosa dicono i nostri ospiti",
+      "items": [
+        {
+          "quote": "Il miglior pasto che abbia fatto da tanto tempo. Tutto sapeva di fresco, genuino e pieno di sapore.",
+          "name": "Elena M.",
+          "detail": "Food blogger"
+        },
+        {
+          "quote": "È il nostro rituale del venerdì sera in famiglia. Tre bambini, ognuno con il suo condimento preferito — ed escono tutti contenti.",
+          "name": "James & Sarah K.",
+          "detail": "Clienti abituali dal 2015"
+        },
+        {
+          "quote": "La Margherita da sola vale il viaggio. Ingredienti puri e genuini lavorati con maestria.",
+          "name": "Amira O.",
+          "detail": "Recensora di ristoranti"
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Pronto a gustare?",
+      "title": "Esplora il nostro menù completo",
+      "description": "Dai nostri piatti signature alle specialità stagionali — ogni portata è preparata con cura e orgoglio.",
+      "viewMenu": "Vedi il menù",
+      "bookTable": "Prenota un tavolo"
+    }
+  },
+  "menu": {
+    "title": "Menù",
+    "back": "Indietro",
+    "fromPrice": "A partire da",
+    "browseMenu": "Sfoglia il menù",
+    "sections": {
+      "featured": "In evidenza"
+    },
+    "search": {
+      "placeholder": "Cerca un piatto...",
+      "clear": "Cancella la ricerca"
+    },
+    "empty": {
+      "title": "Nessun risultato",
+      "description": "Prova una ricerca diversa oppure un filtro diverso."
+    }
+  },
+  "product": {
+    "notFoundTitle": "Prodotto non trovato",
+    "notFoundDescription": "Spiacenti, non abbiamo trovato il prodotto che stai cercando."
+  },
+  "order": {
+    "orderNumber": "Numero ordine",
+    "orderType": "Tipo di ordine",
+    "typeDelivery": "Consegna",
+    "typeDineIn": "Al tavolo",
+    "table": "Tavolo {number}",
+    "grandTotal": "Totale generale",
+    "orderedItems": "Articoli ordinati",
+    "qty": "Qtà",
+    "unit": "Unità",
+    "note": "Nota: {note}",
+    "priceSummary": "Riepilogo prezzi",
+    "deliveryZone": "Zona di consegna",
+    "eta": "Tempo stimato",
+    "etaMin": " min",
+    "subtotal": "Subtotale",
+    "deliveryFee": "Contributo consegna",
+    "tax": "IVA",
+    "discount": "Sconto",
+    "vatIncluded": "IVA inclusa dove applicabile",
+    "orderProgress": "Avanzamento ordine",
+    "orderCancelled": "Ordine annullato",
+    "cancelledDescription": "Questo ordine è stato annullato. Contattaci per assistenza.",
+    "complete": "Completato",
+    "currentStatus": "Stato attuale",
+    "currentStepAria": "passaggio attuale",
+    "notFoundTitle": "Ordine non trovato",
+    "notFoundDescription": "Non abbiamo trovato l'ordine che stai cercando. Potrebbe essere stato rimosso oppure il link non è corretto.",
+    "backToHome": "Torna alla Home",
+    "meta": {
+      "title": "Ordine {orderNumber}",
+      "description": "Traccia il tuo ordine {orderNumber}."
+    },
+    "statuses": {
+      "PENDING": "In attesa",
+      "CONFIRMED": "Confermato",
+      "PREPARING": "In preparazione",
+      "READY": "Pronto",
+      "OUT_FOR_DELIVERY": "In consegna",
+      "DELIVERED": "Consegnato",
+      "COMPLETED": "Completato",
+      "CANCELLED": "Annullato"
+    },
+    "customerInfo": {
+      "title": "Info cliente e ordine",
+      "deliveryTitle": "Info consegna e cliente",
+      "dineInTitle": "Info tavolo e cliente",
+      "customerName": "Nome del cliente",
+      "phoneNumber": "Numero di telefono",
+      "deliveryAddress": "Indirizzo di consegna",
+      "tableNumber": "Numero del tavolo",
+      "paymentMethod": "Metodo di pagamento",
+      "paymentStatus": "Stato del pagamento",
+      "orderNotes": "Note sull'ordine",
+      "notSpecified": "Non specificato",
+      "paymentMethods": {
+        "CASH": "Contanti alla consegna",
+        "CARD": "Carta di credito / debito",
+        "ONLINE": "Pagamento online",
+        "WALLET": "Portafoglio digitale"
+      },
+      "paymentStatuses": {
+        "PENDING": "In attesa",
+        "PAID": "Pagato",
+        "FAILED": "Non riuscito",
+        "REFUNDED": "Rimborsato",
+        "PARTIALLY_REFUNDED": "Parzialmente rimborsato"
+      }
+    },
+    "success": {
+      "title": "Grazie, {name}!",
+      "subtitle": "Il tuo ristorante ha ricevuto correttamente il tuo ordine.",
+      "dineInSubtitle": "Il tuo ristorante ha ricevuto correttamente il tuo ordine al tavolo.",
+      "nextSteps": {
+        "PENDING": "Il nostro team sta verificando il tuo ordine e lo confermerà a breve.",
+        "CONFIRMED": "Il tuo ordine è stato confermato ed è diretto in cucina.",
+        "PREPARING": "I nostri chef stanno preparando con cura il tuo pasto proprio adesso.",
+        "READY": "Il tuo ordine è pronto e sta per partire per la consegna.",
+        "OUT_FOR_DELIVERY": "Il tuo ordine è in arrivo — attendi con calma!",
+        "DELIVERED": "Il tuo ordine è stato consegnato. Buon appetito! 🍽️",
+        "COMPLETED": "Il tuo ordine è completo. Grazie per aver cenato con noi!",
+        "CANCELLED": "Il tuo ordine è stato annullato. Contattaci se non te lo aspettavi."
+      },
+      "dineInNextSteps": {
+        "READY": "Il tuo ordine è pronto e sarà servito al tuo tavolo a breve.",
+        "COMPLETED": "Il tuo ordine al tavolo è completo. Grazie per aver cenato con noi!"
+      }
+    }
+  },
+  "reservations": {
+    "meta": {
+      "title": "Prenotazioni",
+      "description": "Prenota il tuo tavolo. Scegli una data, seleziona un orario e prenota in pochi secondi."
+    },
+    "hero": {
+      "kicker": "Prenotazioni",
+      "titleStart": "Prenota",
+      "titleHighlight": "il tuo tavolo",
+      "description": "Scegli una data e un orario — terremo il tavolo per te. Riceverai una conferma quando il team avrà approvato la prenotazione."
+    },
+    "form": {
+      "date": "Data",
+      "pickSlot": "Orari disponibili",
+      "name": "Nome dell'ospite",
+      "namePlaceholder": "Nome e cognome",
+      "phone": "Telefono",
+      "phonePlaceholder": "+39 300 000 0000",
+      "email": "Email (facoltativa)",
+      "emailPlaceholder": "tu@esempio.com",
+      "partySize": "Numero di persone",
+      "notes": "Note (facoltative)",
+      "notesPlaceholder": "Allergie, preferenze di posto, occasione speciale…",
+      "submit": "Prenota il tavolo",
+      "noSlots": "Nessun orario disponibile in questa giornata. Prova un'altra data.",
+      "loadFailed": "Impossibile caricare la disponibilità. Riprova.",
+      "disclaimer": "Le prenotazioni vengono confermate dal nostro team. Riceverai una notifica una volta approvata."
+    },
+    "success": {
+      "title": "Richiesta ricevuta",
+      "description": "Abbiamo ricevuto la tua richiesta di prenotazione. Il nostro team la confermerà a breve — controlla il telefono per gli aggiornamenti.",
+      "another": "Prenota un altro tavolo"
+    },
+    "slotReason": {
+      "outsideHours": "Chiuso",
+      "closedHoliday": "Festività",
+      "closedTemporary": "Chiuso",
+      "past": "Passato",
+      "outsideWindow": "Troppo lontano",
+      "disabled": "Disattivato",
+      "full": "Completo"
+    },
+    "valid": {
+      "disabled": "Le prenotazioni sono al momento disattivate.",
+      "nameRequired": "Il nome dell'ospite è obbligatorio.",
+      "phoneRequired": "Il telefono è obbligatorio.",
+      "partySizeInvalid": "Il numero di persone deve essere almeno 1.",
+      "maxGuests": "Il numero di persone supera il massimo consentito.",
+      "dateRequired": "È richiesta una data per la prenotazione.",
+      "pastDate": "L'orario della prenotazione deve essere nel futuro.",
+      "outsideWindow": "La prenotazione è fuori dalla finestra di prenotazione consentita.",
+      "outsideHours": "L'orario della prenotazione è fuori dagli orari di apertura.",
+      "closedHoliday": "Il ristorante è chiuso per festività in quell'orario.",
+      "closedTemporary": "Il ristorante è temporaneamente chiuso in quell'orario.",
+      "capacityFull": "La capacità è al completo. Riduci il numero di persone di {shortfall}."
+    }
+  },
+  "tables": {
+    "greeting": "Stai ordinando dal Tavolo {number}.",
+    "invalid": "Questo codice QR del tavolo non è valido. Chiedi aiuto a un membro dello staff.",
+    "inactive": "Il Tavolo {number} non è attualmente attivo. Chiedi aiuto a un membro dello staff.",
+    "banner": "Ordinazione dal Tavolo {number}",
+    "dismiss": "Ignora"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contattaci",
+      "description": "Vieni a trovarci, chiamaci o inviaci un messaggio. Trova la nostra posizione, gli orari di apertura e i dettagli per le prenotazioni."
+    },
+    "hero": {
+      "badge": "Rispondiamo entro 24 ore",
+      "kicker": "Mettiti in contatto",
+      "titleStart": "Parliamo di",
+      "titleHighlight": "buon cibo",
+      "description": "Una prenotazione, un evento privato o una domanda sul nostro menù — siamo sempre felici di sentirti.",
+      "callNow": "Chiama ora",
+      "sendMessage": "Invia un messaggio"
+    },
+    "info": {
+      "kicker": "Contatti",
+      "title": "Contattaci direttamente",
+      "description": "Scegli il canale che preferisci — siamo qui tutti i giorni della settimana.",
+      "addressLabel": "Indirizzo",
+      "addressValue": "Aggiungi l'indirizzo del ristorante nelle Impostazioni attività.",
+      "phoneLabel": "Telefono",
+      "phoneValue": "Aggiungi un numero di contatto nelle Impostazioni attività.",
+      "whatsappLabel": "WhatsApp",
+      "whatsappValue": "Aggiungi un numero WhatsApp nelle Impostazioni attività.",
+      "emailLabel": "Email",
+      "emailValue": "Aggiungi un'email nelle Impostazioni attività."
+    },
+    "hours": {
+      "kicker": "Orari di apertura",
+      "title": "Quando siamo aperti",
+      "today": "Oggi",
+      "closed": "Chiuso",
+      "open24": "Aperto 24 ore",
+      "note": "La cucina chiude 30 minuti prima dell'orario di chiusura. Gli orari possono variare durante i giorni festivi.",
+      "days": [
+        {
+          "day": "Domenica",
+          "hours": "12:00 – 22:00"
+        },
+        {
+          "day": "Lunedì",
+          "hours": "11:00 – 23:00"
+        },
+        {
+          "day": "Martedì",
+          "hours": "11:00 – 23:00"
+        },
+        {
+          "day": "Mercoledì",
+          "hours": "11:00 – 23:00"
+        },
+        {
+          "day": "Giovedì",
+          "hours": "11:00 – 23:00"
+        },
+        {
+          "day": "Venerdì",
+          "hours": "11:00 – 24:00"
+        },
+        {
+          "day": "Sabato",
+          "hours": "11:00 – 24:00"
+        }
+      ]
+    },
+    "social": {
+      "title": "Segui la cucina",
+      "subtitle": "Specialità del giorno e dietro le quinte",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tiktok": "TikTok",
+      "snapchat": "Snapchat",
+      "website": "Sito web"
+    },
+    "form": {
+      "kicker": "Invia un messaggio",
+      "title": "Ci farebbe piacere sentirti",
+      "description": "Compila il modulo qui sotto e il nostro team ti risponderà a breve.",
+      "name": "Nome completo",
+      "namePlaceholder": "Nome e cognome",
+      "nameRequired": "Inserisci il tuo nome completo",
+      "nameMin": "Il nome deve contenere almeno 2 caratteri",
+      "email": "Indirizzo email",
+      "emailPlaceholder": "marco@esempio.com",
+      "emailRequired": "Inserisci il tuo indirizzo email",
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "phone": "Telefono",
+      "phoneOptional": "Telefono (facoltativo)",
+      "phonePlaceholder": "+39 300 014 8820",
+      "phoneInvalid": "Inserisci un numero di telefono valido",
+      "subject": "Oggetto",
+      "subjectPlaceholder": "Seleziona un oggetto…",
+      "subjectRequired": "Scegli un oggetto",
+      "subjects": [
+        {
+          "value": "reservation",
+          "label": "Prenotazione tavolo"
+        },
+        {
+          "value": "event",
+          "label": "Evento privato"
+        },
+        {
+          "value": "feedback",
+          "label": "Feedback"
+        },
+        {
+          "value": "other",
+          "label": "Altro"
+        }
+      ],
+      "message": "Messaggio",
+      "messagePlaceholder": "Dicci come possiamo aiutarti…",
+      "messageRequired": "Scrivi un messaggio",
+      "messageMin": "Il messaggio deve contenere almeno 10 caratteri",
+      "send": "Invia messaggio",
+      "sending": "Invio in corso…",
+      "successTitle": "Messaggio ricevuto!",
+      "successText": "Grazie per averci contattato. Il nostro team ti risponderà entro 24 ore.",
+      "sendAnother": "Invia un altro messaggio"
+    },
+    "faq": {
+      "kicker": "Domande frequenti",
+      "title": "Domande frequenti",
+      "description": "Tutto quello che devi sapere prima di venirci a trovare. Non trovi una risposta? Chiedecelo direttamente.",
+      "stillTitle": "Hai ancora domande?",
+      "stillText": "Il nostro team è a una chiamata o a un messaggio di distanza.",
+      "call": "Chiamaci",
+      "whatsapp": "WhatsApp",
+      "items": [
+        {
+          "q": "Serve una prenotazione per cena?",
+          "a": "La prenotazione è consigliata il venerdì e il sabato sera. Per pranzo e le cene infrasettimanali siete sempre i benvenuti anche senza prenotare."
+        },
+        {
+          "q": "Organizzate eventi privati?",
+          "a": "Assolutamente sì. Offriamo un servizio catering completo fino a 200 ospiti. Contattaci almeno due settimane in anticipo per organizzare il tuo evento."
+        },
+        {
+          "q": "Esiste un menù vegetariano o vegano?",
+          "a": "Sì — abbiamo una selezione dedicata di pizze vegetariane e possiamo adattare la maggior parte dei piatti in versione vegana. Basta chiedere al tuo cameriere."
+        },
+        {
+          "q": "Qual è la vostra politica di cancellazione?",
+          "a": "Per gruppi di otto o più persone, vi preghiamo di comunicarcelo 24 ore in anticipo. Per gruppi più piccoli, le cancellazioni in giornata non sono un problema."
+        },
+        {
+          "q": "Offrite basi senza glutine?",
+          "a": "Offriamo un impasto certificato senza glutine. Nota che la nostra cucina non è completamente priva di glutine, quindi segnala eventuali allergie."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Pronto a venirci a trovare?",
+      "title": "Prenota il tuo tavolo oggi",
+      "description": "Che sia una cena romantica a due o una festa con tutta la famiglia — ci assicureremo che sia indimenticabile.",
+      "callNow": "Chiamaci ora",
+      "viewMenu": "Vedi il menù"
+    }
+  },
+  "Auth": {
+    "title": "Bentornato",
+    "subtitle": "Accedi per riprendere da dove eri rimasto",
+    "email": "Email",
+    "emailPlaceholder": "m@esempio.com",
+    "password": "Password",
+    "signIn": "Accedi",
+    "continueWithGoogle": "Continua con Google",
+    "continueWithEmail": "Oppure continua con l'email",
+    "google": "Google",
+    "github": "GitHub",
+    "forgotPassword": "Dimenticata?",
+    "createAccount": "Crea un account",
+    "newHere": "Nuovo qui?",
+    "rememberMe": "Ricordami",
+    "terms": "Termini",
+    "privacy": "Informativa sulla privacy",
+    "orContinueWith": "oppure",
+    "byContinuing": "Continuando accetti i nostri",
+    "and": "e",
+    "noAccount": "Non hai un account?",
+    "marketingCopy": "Vivi l'eccellenza culinaria. Ogni dettaglio è curato a mano per il tuo piacere della tavola.",
+    "brandTagline": "Un'esperienza gastronomica di pregio.",
+    "reservedForYou": "Riservato per te",
+    "tableOrder": "N. 047 · ORDINE AL TAVOLO",
+    "signUpTitle": "Crea il tuo account",
+    "signUpSubtitle": "Unisciti a Pizza Roma e ricevi i tuoi piatti preferiti ancora più velocemente.",
+    "secureSignup": "Registrazione sicura",
+    "name": "Nome completo",
+    "namePlaceholder": "Marco Romano",
+    "passwordPlaceholder": "Almeno 8 caratteri",
+    "confirmPassword": "Conferma password",
+    "confirmPasswordPlaceholder": "Inserisci nuovamente la password",
+    "alreadyHaveAccount": "Hai già un account?",
+    "showPassword": "Mostra password",
+    "hidePassword": "Nascondi password",
+    "passwordStrength": {
+      "weak": "Debole",
+      "medium": "Media",
+      "strong": "Forte"
+    },
+    "LoginForm": {
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Inserisci un'email valida",
+      "passwordMin": "La password deve contenere almeno 6 caratteri",
+      "userNotFound": "Utente non trovato",
+      "invalidCredentials": "Email o password non validi",
+      "invalidPassword": "Password o email non validi",
+      "accountDisabled": "Questo account è stato disattivato. Contatta l'assistenza.",
+      "accountLocked": "Troppi tentativi non riusciti. Riprova tra {minutes} minuto/i.",
+      "loginSuccess": "Accesso effettuato con successo",
+      "serverError": "Errore del server",
+      "invalidData": "Dati non validi",
+      "useGoogleSignIn": "Questo account utilizza l'accesso con Google. Continua con Google."
+    },
+    "session": {
+      "expired": "La tua sessione è scaduta. Effettua nuovamente l'accesso.",
+      "accountDisabled": "Il tuo account è stato disattivato. Contatta l'assistenza.",
+      "accountLocked": "Il tuo account è temporaneamente bloccato. Riprova più tardi.",
+      "noMembership": "Non hai accesso a questo ristorante.",
+      "restaurantSuspended": "Questo ristorante è attualmente sospeso."
+    },
+    "SignUpForm": {
+      "nameRequired": "Il nome completo è obbligatorio",
+      "nameMin": "Il nome deve contenere almeno 2 caratteri",
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Inserisci un'email valida",
+      "passwordMin": "La password deve contenere almeno 8 caratteri",
+      "passwordUpper": "Aggiungi almeno una lettera maiuscola",
+      "passwordLower": "Aggiungi almeno una lettera minuscola",
+      "passwordNumber": "Aggiungi almeno un numero",
+      "confirmPasswordRequired": "Conferma la tua password",
+      "passwordMatch": "Le password non corrispondono",
+      "termsRequired": "Accetta i termini per continuare",
+      "emailExists": "Esiste già un account con questa email. Accedi invece di registrarti.",
+      "signUpSuccess": "Account creato con successo! Benvenuto in Pizza Roma.",
+      "signupFailed": "Registrazione non riuscita. Riprova.",
+      "serverError": "Si è verificato un errore. Riprova."
+    }
+  },
+  "dashboard": {
+    "title": "Cruscotto",
+    "brand": {
+      "title": "Restora",
+      "subtitle": "Centro di controllo"
+    },
+    "nav": {
+      "overview": "Panoramica",
+      "orders": "Ordini",
+      "products": "Prodotti",
+      "categories": "Categorie",
+      "offers": "Offerte",
+      "deliveryZones": "Zone di consegna",
+      "reservations": "Prenotazioni",
+      "homeSections": "Sezioni home",
+      "customers": "Clienti",
+      "staff": "Personale",
+      "roles": "Ruoli",
+      "security": "Sicurezza",
+      "activity": "Log attività",
+      "notifications": "Notifiche",
+      "documents": "Documenti",
+      "analytics": "Analisi",
+      "restaurant": "Ristorante",
+      "signOut": "Esci",
+      "backToSite": "Torna al sito",
+      "keyboardShortcuts": "Scorciatoie da tastiera"
+    },
+    "common": {
+      "save": "Salva",
+      "saving": "Salvataggio…",
+      "cancel": "Annulla",
+      "edit": "Modifica",
+      "delete": "Elimina",
+      "create": "Crea",
+      "search": "Cerca",
+      "all": "Tutti",
+      "active": "Attivo",
+      "inactive": "Inattivo",
+      "actions": "Azioni",
+      "noResults": "Nessun risultato trovato",
+      "close": "Chiudi",
+      "loading": "Caricamento…",
+      "confirm": "Conferma",
+      "name": "Nome",
+      "status": "Stato",
+      "price": "Prezzo",
+      "date": "Data",
+      "total": "Totale",
+      "items": "articoli",
+      "clear": "Cancella",
+      "previous": "Precedente",
+      "next": "Successivo",
+      "page": "Pagina",
+      "of": "di",
+      "saved": "Salvato",
+      "failed": "Si è verificato un errore",
+      "unauthorized": "Non sei autorizzato",
+      "orderNumber": "Numero ordine",
+      "customer": "Cliente",
+      "emptyState": "Ancora nessun contenuto",
+      "reset": "Reimposta",
+      "deleteConfirmDescription": "Questa azione non può essere annullata.",
+      "chart": "Grafico",
+      "primaryNavigation": "Navigazione principale"
+    },
+    "statuses": {
+      "PENDING": "In attesa",
+      "CONFIRMED": "Confermato",
+      "PREPARING": "In preparazione",
+      "READY": "Pronto",
+      "OUT_FOR_DELIVERY": "In consegna",
+      "DELIVERED": "Consegnato",
+      "CANCELLED": "Annullato"
+    },
+    "payment": {
+      "PENDING": "In attesa",
+      "PAID": "Pagato",
+      "FAILED": "Non riuscito",
+      "REFUNDED": "Rimborsato",
+      "PARTIALLY_REFUNDED": "Parzialmente rimborsato",
+      "UNPAID": "Non pagato",
+      "CASH": "Contanti",
+      "CARD": "Carta",
+      "ONLINE": "Online",
+      "paymentStatus": "Pagamento",
+      "paid": "Segna come pagato"
+    },
+    "overview": {
+      "title": "Panoramica",
+      "subtitle": "Il tuo ristorante a colpo d'occhio",
+      "todayRevenue": "Incasso di oggi",
+      "todayOrders": "Ordini di oggi",
+      "activeOrders": "Ordini attivi",
+      "avgOrderValue": "Valore medio ordine",
+      "weekRevenue": "Incasso della settimana",
+      "monthRevenue": "Incasso del mese",
+      "fromLastDay": "rispetto a ieri",
+      "fromLastWeek": "rispetto allo stesso periodo della scorsa settimana",
+      "fromLastMonth": "rispetto allo stesso periodo del mese scorso",
+      "pendingCount": "In attesa",
+      "productCount": "Prodotti",
+      "categoryCount": "Categorie",
+      "userCount": "Clienti",
+      "orderPipeline": "Flusso ordini",
+      "recentOrders": "Ordini recenti",
+      "topProducts": "Prodotti top",
+      "revenueByPayment": "Incasso per pagamento",
+      "viewOrders": "Vedi ordini",
+      "viewReservations": "Vedi prenotazioni",
+      "viewAnalytics": "Vedi analisi",
+      "live": "In diretta",
+      "noRecentOrders": "Nessun ordine recente",
+      "noTopProducts": "Ancora nessuna vendita",
+      "emptyPipeline": "Nessun ordine attivo",
+      "topCategories": "Categorie top",
+      "delivery": {
+        "title": "Prestazioni consegne",
+        "deliveryOrders": "Ordini con consegna",
+        "pickupOrders": "Ordini da asporto",
+        "share": "quota",
+        "feeRevenue": "Contributi consegna",
+        "avgFee": "Contributo medio",
+        "avgEta": "Tempo medio stimato",
+        "split": "Asporto vs consegna",
+        "topZones": "Zone di consegna top",
+        "empty": "Ancora nessuna attività di consegna"
+      },
+      "reservations": {
+        "title": "Prenotazioni",
+        "total": "Totale",
+        "avgParty": "Media coperti",
+        "noShowRate": "Tasso di assenza",
+        "completedRate": "Tasso di completamento",
+        "empty": "Ancora nessuna prenotazione"
+      }
+    },
+    "restaurant": {
+      "title": "Centro di controllo ristorante",
+      "subtitle": "Gestisci orari, chiusure, branding e localizzazione in un unico posto",
+      "saved": "Salvato",
+      "failed": "Impossibile salvare le modifiche",
+      "reset": "Reimposta",
+      "errors": {
+        "businessHours": {
+          "count": "Sono richiesti esattamente 7 giorni.",
+          "day": "Valore del giorno non valido.",
+          "duplicate": "Voci di giorno duplicate.",
+          "status": "Stato non valido.",
+          "shifts": "Turni non validi.",
+          "noShifts": "Un giorno di apertura richiede almeno un turno.",
+          "invalidShift": "Ogni turno richiede orari di apertura e chiusura validi.",
+          "overlap": "I turni non devono sovrapporsi."
+        },
+        "temporaryClosure": {
+          "status": "Stato di chiusura non valido.",
+          "date": "Data non valida.",
+          "pastDate": "La data di riapertura deve essere nel futuro."
+        },
+        "holidays": {
+          "list": "Elenco festività non valido.",
+          "date": "Data della festività non valida o mancante.",
+          "duplicate": "Due festività condividono la stessa data.",
+          "reason": "Aggiungi un motivo in almeno una lingua.",
+          "noShifts": "Una festività di apertura richiede almeno un turno.",
+          "invalidShift": "Ogni turno richiede orari di apertura e chiusura validi."
+        },
+        "reservations": {
+          "invalid": "Controlla i valori delle prenotazioni."
+        },
+        "country": {
+          "invalid": "Paese non valido."
+        },
+        "unauthorized": "Effettua l'accesso per continuare.",
+        "forbidden": "Non hai i permessi per eseguire questa azione.",
+        "account-disabled": "Questo account è stato disattivato. Contatta l'assistenza.",
+        "account-locked": "Il tuo account è temporaneamente bloccato. Riprova più tardi.",
+        "no-membership": "Non hai accesso a questo ristorante.",
+        "restaurant-suspended": "Questo ristorante è attualmente sospeso."
+      },
+      "status": {
+        "checking": "Verifica dello stato…",
+        "open": "Aperto ora",
+        "closed": "Attualmente chiuso",
+        "accepting": "Ordini accettati",
+        "reopens": "Riapre",
+        "reopensLater": "Riapre più tardi",
+        "refresh": "Aggiorna"
+      },
+      "general": {
+        "title": "Generale e prezzi di consegna",
+        "description": "Identità principale e impostazioni di consegna usate in tutto il sito.",
+        "restaurantName": "Nome del ristorante",
+        "shortDescription": "Breve descrizione",
+        "descriptionHint": "Mostrata nella home e nei risultati di ricerca.",
+        "currency": "Valuta",
+        "timezone": "Fuso orario",
+        "derived": "Valuta e fuso orario",
+        "countryHint": "Impostato nella sezione Paese qui sotto.",
+        "deliveryZonesLink": "Gestisci zone di consegna",
+        "pricing": "Prezzi di consegna",
+        "deliveryFee": "Contributo consegna",
+        "freeDeliveryThreshold": "Consegna gratuita oltre",
+        "freeDeliveryHint": "Gli ordini pari o superiori a questo importo vengono consegnati gratis.",
+        "minOrder": "Ordine minimo",
+        "deliveryTime": "Tempo di consegna stimato",
+        "deliveryTimeHint": "In minuti."
+      },
+      "country": {
+        "title": "Paese e valuta",
+        "description": "Seleziona il paese in cui opera il tuo ristorante. Valuta, fuso orario e lingua predefinita derivano da esso.",
+        "country": "Paese",
+        "countryHint": "Cambiare il paese aggiorna valuta, fuso orario e lingua predefinita ovunque.",
+        "derived": "Derivato da questo paese",
+        "currency": "Valuta",
+        "timezone": "Fuso orario",
+        "locale": "Lingua predefinita",
+        "phoneCode": "Prefisso telefonico",
+        "noCountries": "Nessun paese disponibile. Contatta l'amministratore della piattaforma."
+      },
+      "hours": {
+        "title": "Orari di apertura",
+        "description": "Imposta gli orari di apertura per ogni giorno. \"24 ore\" contrassegna un giorno come sempre aperto.",
+        "day": "Giorno",
+        "status": {
+          "24": "24 ore",
+          "open": "Aperto",
+          "closed": "Chiuso"
+        },
+        "statusHint": {
+          "24": "Aperto tutto il giorno",
+          "closed": "Chiuso tutto il giorno"
+        },
+        "days": {
+          "0": "Lunedì",
+          "1": "Martedì",
+          "2": "Mercoledì",
+          "3": "Giovedì",
+          "4": "Venerdì",
+          "5": "Sabato",
+          "6": "Domenica"
+        },
+        "openAt": "apre alle",
+        "closeAt": "chiude alle",
+        "addShift": "Aggiungi turno",
+        "removeShift": "Rimuovi turno"
+      },
+      "closure": {
+        "title": "Chiusura temporanea",
+        "description": "Sospendi gli ordini per manutenzione, ferie, emergenze o orari di preghiera.",
+        "status": "Chiuso per ora",
+        "statusHint": "Attiva per smettere subito di accettare ordini.",
+        "closedUntil": "Data di riapertura",
+        "closedUntilHint": "Facoltativa. Lascia vuoto per restare chiuso finché non riapri tu.",
+        "reason": "Motivo",
+        "reasonNone": "Nessun motivo",
+        "reasons": {
+          "maintenance": "Manutenzione",
+          "vacation": "Ferie",
+          "emergency": "Emergenza",
+          "prayer": "Orario di preghiera",
+          "other": "Altro"
+        },
+        "message": "Messaggio ai clienti",
+        "messageHint": "Mostrato ai clienti nella pagina carrello durante la chiusura."
+      },
+      "holidays": {
+        "title": "Festività e giornate speciali",
+        "description": "Chiusure per tutta la giornata o con orari personalizzati durante le festività.",
+        "emptyTitle": "Nessuna festività",
+        "emptyDescription": "Aggiungi festività e giornate speciali per sostituire l'orario settimanale.",
+        "add": "Aggiungi festività",
+        "remove": "Rimuovi festività",
+        "date": "Data",
+        "reason": "Motivo",
+        "reasonPlaceholder": "Es. Ferragosto, Capodanno…",
+        "closedAllDay": "Chiuso tutto il giorno",
+        "openAt": "apre alle",
+        "closeAt": "chiude alle",
+        "addShift": "Aggiungi turno",
+        "removeShift": "Rimuovi turno"
+      },
+      "reservations": {
+        "title": "Prenotazioni",
+        "description": "Politiche per le future prenotazioni dei tavoli.",
+        "enabled": "Abilita prenotazioni",
+        "capacity": "Tavoli / capienza",
+        "capacityHint": "Numero di tavoli disponibili.",
+        "maxGuests": "Ospiti massimi per prenotazione",
+        "intervalMinutes": "Intervallo di prenotazione",
+        "intervalHint": "Ogni N minuti si apre una nuova fascia oraria.",
+        "windowDays": "Finestra di prenotazione",
+        "windowHint": "Quanti giorni in anticipo possono prenotare i clienti."
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Identità visiva usata nel sito pubblico.",
+        "primaryColor": "Colore primario",
+        "primaryColorHint": "Mantienilo coerente con i colori del tema del sito.",
+        "logo": "URL del logo",
+        "coverImage": "URL dell'immagine di copertina",
+        "urlHint": "Incolla l'URL di un'immagine."
+      },
+      "contact": {
+        "title": "Dettagli di contatto",
+        "description": "Come possono raggiungerti i clienti — usati dal piè di pagina e dalla pagina contatti.",
+        "phone": "Telefono",
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "address": "Indirizzo",
+        "googleMaps": "Link Google Maps",
+        "urlHint": "Incolla un link."
+      },
+      "social": {
+        "title": "Social media",
+        "description": "I tuoi profili pubblici.",
+        "website": "Sito web",
+        "urlHint": "Incolla un link."
+      },
+      "localization": {
+        "title": "Localizzazione",
+        "description": "In quali lingue è disponibile il sito, e quella predefinita.",
+        "supportedLanguages": "Lingue abilitate",
+        "defaultLanguage": "Lingua predefinita",
+        "defaultLanguageHint": "Usata per gli ospiti che non hanno scelto una lingua."
+      },
+      "future": {
+        "title": "Moduli previsti",
+        "description": "In arrivo nelle prossime versioni — queste integrazioni sono sulla roadmap.",
+        "soon": "Presto",
+        "modules": {
+          "payments": "Pagamenti online",
+          "taxes": "Motore fiscale",
+          "notifications": "Notifiche ordini",
+          "security": "Team e sicurezza"
+        }
+      }
+    },
+    "orders": {
+      "title": "Ordini",
+      "subtitle": "Gestisci gli ordini in arrivo e il loro stato",
+      "filters": {
+        "allStatuses": "Tutti gli stati",
+        "allPayments": "Tutti i pagamenti",
+        "searchPlaceholder": "Cerca per numero, nome o telefono",
+        "from": "Dal",
+        "to": "Al"
+      },
+      "order": "Ordine",
+      "time": "Ora",
+      "itemsCount": "{count} articoli",
+      "payment": "Pagamento",
+      "noOrders": "Nessun ordine corrisponde ai filtri",
+      "statusUpdated": "Stato aggiornato",
+      "statusChangeTitle": "Modificare lo stato dell'ordine?",
+      "statusChangeBody": "Impostare {orderNumber} su {status}?",
+      "details": "Dettagli ordine",
+      "customerInfo": "Cliente",
+      "address": "Indirizzo di consegna",
+      "notes": "Note",
+      "delivery": "Consegna",
+      "item": "Articolo",
+      "qty": "Qtà",
+      "subtotal": "Subtotale",
+      "grandTotal": "Totale",
+      "variant": "Variante",
+      "markPaid": "Segna come pagato",
+      "markUnpaid": "Segna come non pagato",
+      "paymentMethod": "Metodo di pagamento",
+      "unknownPayment": "Non impostato",
+      "print": "Stampa",
+      "timeline": "Cronologia degli stati",
+      "currentStatus": "Attuale",
+      "itemNotes": "Note articolo",
+      "live": "In diretta",
+      "kitchenNotes": "Note cucina",
+      "kitchenNotesPlaceholder": "Aggiungi istruzioni di preparazione…",
+      "saveKitchenNotes": "Salva note",
+      "kitchenNotesSaved": "Note salvate",
+      "noKitchenNotes": "Nessuna nota cucina",
+      "deliveryStatus": "Stato consegna",
+      "estimatedTime": "Tempo stimato",
+      "etaRange": "{min}–{max} min",
+      "etaMinutes": "{value} min",
+      "deliveryZone": "Zona",
+      "deliveryFeeLine": "Contributo consegna",
+      "printTicket": "Stampa ticket",
+      "invoice": "Fattura",
+      "advanceTo": "Avanza a {status}",
+      "cancelOrder": "Annulla ordine",
+      "cancelConfirm": "Annullare questo ordine?",
+      "timelineEmpty": "Ancora nessun evento di stato",
+      "kitchenTicketTitle": "Ticket cucina",
+      "invoiceTitle": "Fattura"
+    },
+    "products": {
+      "title": "Prodotti",
+      "subtitle": "Crea e gestisci il tuo menù",
+      "newProduct": "Nuovo prodotto",
+      "addProduct": "Aggiungi prodotto",
+      "editProduct": "Modifica prodotto",
+      "image": "Immagine",
+      "basePrice": "Prezzo base",
+      "category": "Categoria",
+      "variants": "Varianti",
+      "optionGroups": "Opzioni",
+      "featured": "In evidenza",
+      "available": "Disponibile",
+      "unavailable": "Non disponibile",
+      "notFeatured": "Non in evidenza",
+      "selectCategory": "Seleziona categoria",
+      "noCategories": "Prima crea una categoria",
+      "imagePlaceholder": "URL immagine",
+      "description": "Descrizione",
+      "deleteConfirm": "Eliminare questo prodotto? I prodotti referenziati dagli ordini non possono essere eliminati.",
+      "inUse": "Questo prodotto è usato da ordini passati e non può essere eliminato.",
+      "empty": "Ancora nessun prodotto",
+      "addVariant": "Aggiungi dimensione",
+      "addOptionGroup": "Aggiungi gruppo di opzioni",
+      "addOption": "Aggiungi opzione",
+      "required": "Obbligatorio",
+      "multipleSelection": "Selezione multipla",
+      "minSelection": "Selezione minima",
+      "maxSelection": "Selezione massima",
+      "nameOfVariant": "Nome variante",
+      "nameOfOptionGroup": "Nome gruppo opzioni",
+      "nameOfOption": "Nome opzione",
+      "toggleAvailable": "Attiva/disattiva disponibilità",
+      "toggleFeatured": "Attiva/disattiva evidenza",
+      "duplicate": "Duplica",
+      "tabs": {
+        "details": "Dettagli",
+        "options": "Opzioni",
+        "homeSections": "Sezioni home",
+        "preview": "Anteprima"
+      },
+      "from": "A partire da",
+      "untitled": "Senza titolo",
+      "homeSectionsHint": "Scegli le sezioni della home in cui deve apparire questo prodotto.",
+      "searchPlaceholder": "Cerca prodotti…",
+      "allCategories": "Tutte le categorie",
+      "availabilityFilter": "Disponibilità",
+      "statusAll": "Tutti gli stati",
+      "featuredFilter": "In evidenza",
+      "featuredAll": "Tutti",
+      "sortBy": "Ordina per",
+      "sortOrder": "Ordine manuale",
+      "sortNewest": "Più recenti",
+      "selectAll": "Seleziona tutto",
+      "selected": "{count} selezionati",
+      "bulkAvailable": "Imposta disponibili",
+      "bulkUnavailable": "Imposta non disponibili",
+      "bulkFeatured": "Segna in evidenza",
+      "bulkNotFeatured": "Rimuovi da in evidenza",
+      "sectionShortcuts": "Scorciatoie sezioni",
+      "sectionShortcutsHint": "Contrassegna rapidamente questo prodotto come best seller, consiglio dello chef e altro.",
+      "badgeBestSeller": "Best seller",
+      "badgeChefRecommendation": "Consiglio chef",
+      "badgeKidsMeal": "Bambini",
+      "badgeFamilyMeal": "Famiglia",
+      "badgeComboMeal": "Combo",
+      "badges": "Etichette",
+      "bulkAddBestSellers": "Aggiungi ai più venduti",
+      "bulkRemoveBestSellers": "Rimuovi dai più venduti",
+      "bulkAddChefRecommendations": "Aggiungi ai consigli dello chef",
+      "bulkRemoveChefRecommendations": "Rimuovi dai consigli dello chef",
+      "bulkAddKidsMeals": "Aggiungi ai menù bambini",
+      "bulkRemoveKidsMeals": "Rimuovi dai menù bambini",
+      "bulkAddFamilyMeals": "Aggiungi ai menù famiglia",
+      "bulkRemoveFamilyMeals": "Rimuovi dai menù famiglia",
+      "bulkAddComboMeals": "Aggiungi ai menù combo",
+      "bulkRemoveComboMeals": "Rimuovi dai menù combo"
+    },
+    "categories": {
+      "title": "Categorie",
+      "subtitle": "Organizza il tuo menù",
+      "newCategory": "Nuova categoria",
+      "displayOrder": "Ordine",
+      "productCount": "Prodotti",
+      "moveUp": "Sposta su",
+      "moveDown": "Sposta giù",
+      "deleteConfirm": "Eliminare questa categoria? Sposta prima i suoi prodotti.",
+      "inUse": "Questa categoria contiene ancora prodotti.",
+      "empty": "Ancora nessuna categoria",
+      "image": "Immagine",
+      "imagePlaceholder": "URL immagine",
+      "visible": "Visibile",
+      "hidden": "Nascosta",
+      "visibility": "Visibilità",
+      "toggleVisibility": "Attiva/disattiva visibilità",
+      "preview": "Anteprima",
+      "previewTitle": "Anteprima categoria",
+      "noImage": "Nessuna immagine",
+      "scheduling": "Programmazione",
+      "schedulingSoon": "Presto",
+      "schedulingHint": "Programma la disponibilità della categoria per una versione futura."
+    },
+    "offers": {
+      "kicker": "Promozioni",
+      "title": "Offerte",
+      "subtitle": "Sconti, pacchetti e menu completi",
+      "newOffer": "Nuova offerta",
+      "formDescription": "Configura un'offerta — tipo, valore, ambito e programmazione.",
+      "image": "Immagine",
+      "imagePlaceholder": "URL immagine",
+      "type": "Tipo",
+      "discountType": "Base dello sconto",
+      "discountTypes": {
+        "percentage": "Percentuale",
+        "fixed_amount": "Importo fisso"
+      },
+      "types": {
+        "percentage": "Sconto percentuale",
+        "fixed": "Sconto fisso",
+        "bogo": "Prendi X ottieni Y",
+        "bundle": "Pacchetto convenienza",
+        "meal_deal": "Menu completo",
+        "family_meal": "Menu famiglia",
+        "kids_meal": "Menu bambini"
+      },
+      "percentageValue": "Percentuale (%)",
+      "fixedValue": "Importo",
+      "buyQty": "Quantità da acquistare",
+      "getQty": "Quantità in omaggio",
+      "rewardDiscountPct": "Sconto in omaggio (%)",
+      "bundlePrice": "Prezzo del pacchetto",
+      "triggerProducts": "Acquista questi prodotti",
+      "rewardProducts": "Ottieni questi prodotti",
+      "includedProducts": "Prodotti inclusi",
+      "noProducts": "Nessun prodotto disponibile",
+      "searchProducts": "Cerca prodotti…",
+      "description": "Descrizione",
+      "startsAt": "Inizia il",
+      "endsAt": "Termina il",
+      "priority": "Priorità",
+      "displayOrder": "Ordine",
+      "active": "Attiva",
+      "visible": "Pubblica",
+      "toggleActive": "Attiva/disattiva offerta",
+      "toggleVisibility": "Attiva/disattiva visibilità pubblica",
+      "deleteConfirm": "Eliminare questa offerta? Gli ordini passati conservano la loro istantanea.",
+      "deleteFailed": "Impossibile eliminare l'offerta. Riprova.",
+      "empty": "Ancora nessuna offerta",
+      "preview": "Anteprima offerta",
+      "usage": "{count, plural, =0{Mai utilizzata} one{Utilizzata da # ordine} other{Utilizzata da # ordini}} · {discount} risparmiati",
+      "statusBadge": {
+        "visible": "Pubblica",
+        "hidden": "Nascosta"
+      },
+      "status": {
+        "live": "Attiva",
+        "scheduled": "Programmata",
+        "expired": "Scaduta",
+        "disabled": "Disattivata"
+      },
+      "validation": {
+        "type_required": "Il tipo di offerta è obbligatorio.",
+        "type_unknown": "Tipo di offerta sconosciuto.",
+        "value_negative": "Il valore non può essere negativo.",
+        "percentage_over_100": "La percentuale non può superare 100.",
+        "discount_type_required": "La base dello sconto è obbligatoria.",
+        "discount_type_unknown": "Base dello sconto sconosciuta.",
+        "ends_before_starts": "La data di fine deve essere successiva alla data di inizio.",
+        "bogo_invalid_quantities": "Le quantità da acquistare e in omaggio devono essere almeno 1.",
+        "bogo_missing_trigger": "Seleziona almeno un prodotto trigger.",
+        "bogo_missing_reward": "Seleziona almeno un prodotto in omaggio.",
+        "bundle_missing_products": "Seleziona almeno due prodotti inclusi.",
+        "bundle_invalid_price": "Il prezzo del pacchetto non può essere negativo.",
+        "value_required": "Il valore è obbligatorio."
+      }
+    },
+    "deliveryZones": {
+      "title": "Zone di consegna",
+      "subtitle": "Definisci aree di consegna, contributi e tempi stimati",
+      "newZone": "Nuova zona",
+      "formDescription": "Imposta il contributo di consegna, il tempo stimato e l'ordine minimo per questa area.",
+      "deliveryPrice": "Contributo consegna",
+      "minOrder": "Ordine minimo",
+      "etaMin": "Tempo stimato da (min)",
+      "etaMax": "Tempo stimato a (min)",
+      "etaRange": "{min}-{max} min",
+      "etaInvalid": "Il tempo stimato massimo deve essere maggiore o uguale a quello minimo.",
+      "displayOrder": "Ordine",
+      "ordersCount": "Ordini",
+      "moveUp": "Sposta su",
+      "moveDown": "Sposta giù",
+      "deleteConfirm": "Eliminare questa zona di consegna?",
+      "deleteDescription": "Gli ordini passati conservano la loro istantanea; la zona semplicemente smetterà di comparire al checkout.",
+      "empty": "Ancora nessuna zona di consegna",
+      "emptyDescription": "Aggiungi la tua prima zona affinché i clienti possano scegliere un'area di consegna al checkout."
+    },
+    "reservations": {
+      "title": "Prenotazioni",
+      "subtitle": "Prenotazioni tavoli, cronologia degli stati e capienza",
+      "kicker": "Prenotazioni",
+      "newReservation": "Nuova prenotazione",
+      "formDescription": "Prenota un tavolo per un ospite. La validazione avviene sulle impostazioni del ristorante, sugli orari di apertura e sulla capienza in tempo reale.",
+      "editReservation": "Modifica prenotazione",
+      "customerName": "Nome dell'ospite",
+      "customerPhone": "Telefono",
+      "customerEmail": "Email",
+      "partySize": "Numero di persone",
+      "date": "Data e ora",
+      "durationMinutes": "Durata (min)",
+      "tableNumber": "Tavolo",
+      "notes": "Note",
+      "status": "Stato",
+      "timeline": "Cronologia",
+      "guest": "Ospite",
+      "capacity": "Capienza",
+      "ofCapacity": "{used} / {capacity}",
+      "guests": "{count} ospiti",
+      "durationShort": "{minutes} min",
+      "tableShort": "Tavolo {table}",
+      "empty": "Ancora nessuna prenotazione",
+      "emptyDescription": "Le nuove richieste di prenotazione compariranno qui.",
+      "deleteConfirm": "Eliminare definitivamente questa prenotazione?",
+      "deleteDescription": "È preferibile annullare per conservare la cronologia. Elimina solo per rimuovere spam o righe di prova.",
+      "cancelReservation": "Annulla prenotazione",
+      "cancelDescription": "La prenotazione verrà contrassegnata come annullata e aggiunta alla cronologia.",
+      "cancelNotePlaceholder": "Nota facoltativa per la cronologia",
+      "statusChangeTitle": "Cambia stato",
+      "statusChangeBody": "Spostare {name} su {status}?",
+      "viewDetails": "Vedi",
+      "currentStatus": "Attuale",
+      "timelineEmpty": "Ancora nessun evento nella cronologia",
+      "timelineNote": "Nota",
+      "viewToggle": "Cambia vista",
+      "viewList": "Elenco",
+      "viewCalendar": "Calendario",
+      "calendarEmpty": "Nessuna fascia oraria in questa giornata",
+      "calendarEmptyDescription": "Il ristorante è chiuso, le prenotazioni sono disattivate oppure la giornata è fuori dalla finestra di prenotazione.",
+      "calendarHint": "Seleziona una fascia oraria per creare una prenotazione. Le fasce più scure sono più vicine al completo.",
+      "heatmap": {
+        "empty": "Vuoto",
+        "bookingUp": "In aumento",
+        "filling": "Si riempie",
+        "full": "Completo"
+      },
+      "slotReason": {
+        "outsideHours": "Chiuso",
+        "closedHoliday": "Festività",
+        "closedTemporary": "Chiuso",
+        "past": "Passato",
+        "outsideWindow": "Troppo lontano",
+        "disabled": "Disattivato",
+        "full": "Completo"
+      },
+      "filters": {
+        "allStatuses": "Tutti gli stati",
+        "from": "Dal",
+        "to": "Al",
+        "searchPlaceholder": "Cerca ospite, telefono o tavolo"
+      },
+      "statusLabels": {
+        "PENDING": "In attesa",
+        "CONFIRMED": "Confermata",
+        "SEATED": "Accomodata",
+        "COMPLETED": "Completata",
+        "CANCELLED": "Annullata",
+        "NO_SHOW": "Assente"
+      },
+      "actions": {
+        "confirm": "Conferma",
+        "seat": "Accomoda",
+        "complete": "Completa",
+        "markNoShow": "Segna assente",
+        "cancel": "Annulla",
+        "edit": "Modifica",
+        "delete": "Elimina"
+      },
+      "valid": {
+        "disabled": "Le prenotazioni sono disattivate nelle impostazioni del ristorante.",
+        "nameRequired": "Il nome dell'ospite è obbligatorio.",
+        "phoneRequired": "Il telefono è obbligatorio.",
+        "partySizeInvalid": "Il numero di persone deve essere almeno 1.",
+        "maxGuests": "Il numero di persone supera il massimo consentito.",
+        "dateRequired": "È richiesta una data per la prenotazione.",
+        "pastDate": "L'orario della prenotazione deve essere nel futuro.",
+        "outsideWindow": "La prenotazione è fuori dalla finestra di prenotazione consentita.",
+        "outsideHours": "L'orario della prenotazione è fuori dagli orari di apertura.",
+        "closedHoliday": "Il ristorante è chiuso per festività in quell'orario.",
+        "closedTemporary": "Il ristorante è temporaneamente chiuso in quell'orario.",
+        "capacityFull": "La capacità è al completo. Riduci il numero di persone di {shortfall}."
+      }
+    },
+    "homeSections": {
+      "title": "Sezioni home",
+      "subtitle": "Controlla cosa appare nella home page",
+      "newSection": "Nuova sezione",
+      "key": "Chiave",
+      "visible": "Visibile in home",
+      "assignProducts": "Assegna prodotti",
+      "assign": "Assegna",
+      "selected": "{count} selezionati",
+      "saveSelection": "Salva selezione",
+      "noSections": "Ancora nessuna sezione",
+      "deleteConfirm": "Eliminare questa sezione?",
+      "preview": "Anteprima",
+      "updatedAt": "Aggiornata"
+    },
+    "customers": {
+      "kicker": "Clienti",
+      "title": "Clienti",
+      "subtitle": "Utenti registrati e ospiti — cerca profili, storico ordini e note",
+      "registered": "Registrati",
+      "guests": "Ospiti",
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefono",
+      "city": "Città",
+      "joined": "Iscritto il",
+      "ordersCount": "Ordini",
+      "totalSpend": "Spesa totale",
+      "lastOrder": "Ultimo ordine",
+      "noRegistered": "Ancora nessun cliente registrato",
+      "noGuests": "Ancora nessun cliente ospite",
+      "noResults": "Nessun cliente corrisponde alla ricerca",
+      "noAccess": "Nessun accesso ai clienti",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare i profili dei clienti.",
+      "searchPlaceholder": "Cerca nome, telefono o email…",
+      "guest": "Ospite",
+      "orderHistory": "Storico ordini",
+      "view": "Vedi",
+      "counts": {
+        "registered": "Registrati",
+        "guests": "Ospiti",
+        "orders": "Ordini totali",
+        "spend": "Spesa complessiva"
+      },
+      "reservations": "Prenotazioni",
+      "noOrders": "Ancora nessun ordine",
+      "noReservations": "Ancora nessuna prenotazione",
+      "partySize": "{count} ospiti",
+      "table": "Tavolo",
+      "favorites": "Prodotti preferiti",
+      "noFavorites": "Ancora nessun prodotto preferito",
+      "quantity": "{count}×",
+      "notes": "Note",
+      "noNotes": "Ancora nessuna nota",
+      "addNote": "Aggiungi nota",
+      "notePlaceholder": "Scrivi una nota interna su questo cliente…",
+      "noteAdded": "Nota aggiunta",
+      "noteRemoved": "Nota rimossa",
+      "deleteNote": "Elimina nota",
+      "confirmDeleteNote": "Eliminare questa nota?",
+      "confirmDeleteNoteDescription": "La nota verrà rimossa dal profilo di questo cliente. Questa azione non può essere annullata.",
+      "detail": {
+        "noMeta": "Nessun dettaglio di contatto archiviato"
+      },
+      "valid": {
+        "error": "Si è verificato un errore. Riprova.",
+        "customers": {
+          "bodyRequired": "Prima scrivi una nota.",
+          "bodyTooLong": "La nota deve contenere al massimo 500 caratteri.",
+          "noteNotFound": "Questa nota non esiste più."
+        }
+      }
+    },
+    "analytics": {
+      "title": "Analisi",
+      "subtitle": "Tendenze di incasso e prestazioni",
+      "period": {
+        "7": "Ultimi 7 giorni",
+        "30": "Ultimi 30 giorni"
+      },
+      "revenue": "Incasso",
+      "orders": "Ordini",
+      "avgOrder": "Ordine medio",
+      "revenueSeries": "Incasso giornaliero",
+      "hourlySales": "Vendite orarie",
+      "topProducts": "Prodotti top",
+      "topPayments": "Incasso per pagamento",
+      "avgOrderSeries": "Trend valore medio ordine",
+      "paymentMethod": "Metodo di pagamento",
+      "share": "Quota",
+      "completionRate": "Tasso di completamento",
+      "newCustomers": "Nuovi clienti",
+      "returningCustomers": "Clienti abituali",
+      "activeCustomers": "Clienti attivi",
+      "cancelled": "Ordini annullati",
+      "vsPrev": "rispetto ai {days} giorni precedenti",
+      "weekday": "Incasso per giorno della settimana",
+      "topCategories": "Categorie top",
+      "byMonth": "Incasso mensile",
+      "paymentMix": "Composizione dei pagamenti",
+      "units": "unità",
+      "minutes": "min",
+      "delivery": {
+        "title": "Consegne",
+        "deliveryOrders": "Ordini con consegna",
+        "pickupOrders": "Ordini da asporto",
+        "share": "quota consegne",
+        "feeRevenue": "Contributi consegna",
+        "avgFee": "Contributo medio di consegna",
+        "avgEta": "Tempo medio stimato",
+        "pickupVsDelivery": "Consegna / asporto",
+        "topZones": "Zone di consegna top",
+        "empty": "Nessun ordine con consegna in questo periodo"
+      },
+      "reservations": {
+        "title": "Prenotazioni",
+        "total": "Prenotazioni",
+        "avgParty": "Media coperti",
+        "noShowRate": "Tasso di assenza",
+        "completedRate": "Completate",
+        "byStatus": "Prenotazioni per stato",
+        "byHour": "Prenotazioni per ora",
+        "byWeekday": "Prenotazioni per giorno",
+        "empty": "Nessuna prenotazione in questo periodo"
+      },
+      "offers": {
+        "title": "Offerte",
+        "orders": "Ordini con offerte",
+        "totalDiscount": "Sconto erogato",
+        "penetration": "Penetrazione offerte",
+        "topOffers": "Offerte top",
+        "empty": "Nessuna offerta utilizzata in questo periodo"
+      }
+    },
+    "staff": {
+      "kicker": "Team",
+      "title": "Personale",
+      "subtitle": "Gestisci il tuo team — inviti, ruoli, accessi e sessioni attive",
+      "invite": "Invita personale",
+      "add": "Aggiungi dipendente",
+      "you": "Tu",
+      "noAccess": "Nessun accesso al personale",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare o gestire i membri del team.",
+      "searchPlaceholder": "Cerca nome, email o telefono…",
+      "filterStatus": "Filtra per stato",
+      "filterRole": "Filtra per ruolo",
+      "allStatuses": "Tutti gli stati",
+      "allRoles": "Tutti i ruoli",
+      "changeRole": "Cambia ruolo",
+      "ownerHint": "Proprietario",
+      "counts": {
+        "active": "Attivi",
+        "invited": "In attesa",
+        "suspended": "Sospesi",
+        "total": "Totale"
+      },
+      "statusLabels": {
+        "ACTIVE": "Attivo",
+        "INVITED": "In attesa",
+        "SUSPENDED": "Sospeso",
+        "REMOVED": "Rimosso"
+      },
+      "empty": "Ancora nessun membro dello staff",
+      "emptyDescription": "Invita il primo membro del team per iniziare.",
+      "noResults": "Nessuno staff corrisponde ai filtri",
+      "sessionsCount": "{count} sessione/i attiva/e",
+      "overridesBadge": "Permessi personalizzati",
+      "pendingInvites": "Inviti in attesa",
+      "inviteExpires": "Scade il {date}",
+      "copy": "Copia",
+      "copied": "Copiato",
+      "inviteRole": "Ruolo: {role}",
+      "inviteDialog": {
+        "title": "Figura professionale",
+        "subtitle": "Riceveranno un codice invito univoco per unirsi al team del ristorante.",
+        "email": "Indirizzo email",
+        "emailPlaceholder": "nome@esempio.com",
+        "role": "Ruolo",
+        "titlePlaceholder": "es. Responsabile turno cucina",
+        "send": "Invia invito"
+      },
+      "addDialog": {
+        "title": "Figura professionale",
+        "subtitle": "Crea un account di accesso per un nuovo membro del team.",
+        "name": "Nome completo",
+        "namePlaceholder": "es. Omar El-Sayed",
+        "email": "Indirizzo email",
+        "emailPlaceholder": "nome@esempio.com",
+        "password": "Password",
+        "passwordPlaceholder": "Almeno 8 caratteri",
+        "passwordHint": "Minimo 8 caratteri con una maiuscola, una minuscola e un numero.",
+        "confirmPassword": "Conferma password",
+        "confirmPlaceholder": "Inserisci nuovamente la password",
+        "role": "Ruolo",
+        "titlePlaceholder": "es. Responsabile turno cucina",
+        "create": "Crea account",
+        "createdTitle": "Account creato",
+        "createdDescription": "{name} può ora accedere con {email} e la sua password."
+      },
+      "inviteCodeDescription": "Condividi questo codice con {email}. Gli servirà per unirsi al tuo team. Scade il {date}.",
+      "editDialog": {
+        "title": "Modifica {name}",
+        "subtitle": "Aggiorna ruolo e figura professionale."
+      },
+      "permissions": {
+        "title": "Permessi per {name}",
+        "subtitle": "Affina gli accessi oltre al ruolo. Le modifiche si applicano immediatamente.",
+        "save": "Salva permessi",
+        "changedHint": "{count} modifica/he in sospeso",
+        "overridden": "Personalizzato",
+        "modules": {
+          "dashboard": "Cruscotto",
+          "orders": "Ordini",
+          "products": "Prodotti",
+          "categories": "Categorie",
+          "customers": "Clienti",
+          "reservations": "Prenotazioni",
+          "offers": "Offerte",
+          "homeSections": "Sezioni home",
+          "deliveryZones": "Zone di consegna",
+          "analytics": "Analisi",
+          "members": "Personale",
+          "roles": "Ruoli",
+          "security": "Sicurezza",
+          "logs": "Log attività",
+          "documents": "Documenti",
+          "settings": "Impostazioni"
+        }
+      },
+      "actions": {
+        "suspend": "Sospendi",
+        "restore": "Ripristina",
+        "forceLogout": "Disconnessione forzata",
+        "remove": "Rimuovi",
+        "revoke": "Revoca invito",
+        "editPermissions": "Modifica permessi"
+      },
+      "confirm": {
+        "suspendTitle": "Sospendere {name}?",
+        "suspendDescription": "Il suo accesso verrà revocato immediatamente e sarà disconnesso da ogni dispositivo.",
+        "restoreTitle": "Ripristinare {name}?",
+        "restoreDescription": "Il suo account verrà riattivato con l'accesso precedente.",
+        "forceLogoutTitle": "Forzare la disconnessione di {name}?",
+        "forceLogoutDescription": "Sarà disconnesso da ogni dispositivo, ma mantiene il suo accesso.",
+        "removeTitle": "Rimuovere {name}?",
+        "removeDescription": "La sua appartenenza verrà revocata, tutte le sessioni disconnesse e sarà rimosso dall'elenco.",
+        "revokeTitle": "Revocare l'invito per {email}?",
+        "revokeDescription": "Il codice invito smetterà di funzionare e qualsiasi membro in attesa verrà rimosso."
+      },
+      "valid": {
+        "error": "Si è verificato un errore. Riprova.",
+        "members": {
+          "nameRequired": "Inserisci il nome completo del membro",
+          "nameTooShort": "Il nome deve contenere almeno 2 caratteri",
+          "emailRequired": "Inserisci un indirizzo email",
+          "emailInvalid": "Inserisci un indirizzo email valido",
+          "emailTaken": "Questa email è già registrata",
+          "passwordRequired": "Inserisci una password",
+          "passwordTooShort": "La password deve contenere almeno 8 caratteri",
+          "passwordUpper": "La password deve includere una lettera maiuscola",
+          "passwordLower": "La password deve includere una lettera minuscola",
+          "passwordNumber": "La password deve includere un numero",
+          "passwordMismatch": "Le password non corrispondono",
+          "titleTooLong": "La figura professionale è troppo lunga",
+          "roleRequired": "Scegli un ruolo",
+          "roleNotFound": "Questo ruolo non esiste più",
+          "ownerRoleRestricted": "Il ruolo proprietario non può essere assegnato",
+          "notFound": "Membro dello staff non trovato",
+          "alreadyMember": "Questo utente fa già parte del tuo team",
+          "alreadyInvited": "Un invito è già in attesa per questa email",
+          "maxMembers": "Hai raggiunto il limite di membri del tuo piano",
+          "cannotModifyOwner": "Il proprietario non può essere gestito da qui",
+          "cannotModifySelf": "Non puoi gestire il tuo account da qui",
+          "inviteNotFound": "Invito non trovato o già utilizzato"
+        },
+        "roles": {
+          "keyRequired": "La chiave del ruolo è obbligatoria",
+          "keyInvalid": "Usa solo lettere minuscole, numeri, trattini bassi o trattini",
+          "keyTaken": "Esiste già un ruolo con questa chiave",
+          "nameEnRequired": "Il nome inglese è obbligatorio",
+          "nameArRequired": "Il nome arabo è obbligatorio",
+          "nameTooLong": "Il nome deve contenere meno di 50 caratteri",
+          "notFound": "Ruolo non trovato",
+          "systemLocked": "I ruoli di sistema non possono essere modificati",
+          "inUse": "Questo ruolo è ancora assegnato a membri del team",
+          "invalidPermissions": "Uno o più permessi non sono validi"
+        }
+      }
+    },
+    "roles": {
+      "kicker": "Controllo accessi",
+      "title": "Ruoli",
+      "subtitle": "Crea ruoli personalizzati e controlla esattamente quali capacità riceve ciascun membro del team.",
+      "noAccess": "Accesso limitato",
+      "noAccessDescription": "Non hai i permessi per visualizzare i ruoli.",
+      "createRole": "Nuovo ruolo",
+      "counts": {
+        "total": "Ruoli totali",
+        "system": "Predefiniti",
+        "members": "Membri",
+        "permissions": "Permessi concessi"
+      },
+      "system": "Predefinito",
+      "custom": "Personalizzato",
+      "builtIn": "Di sistema",
+      "membersCount": "{count, plural, one {# membro} other {# membri}}",
+      "permissionsCount": "{count, plural, one {# permesso} other {# permessi}}",
+      "pendingInvites": "{count, plural, one {# invito in attesa} other {# inviti in attesa}}",
+      "actions": {
+        "delete": "Elimina ruolo"
+      },
+      "empty": "Ancora nessun ruolo",
+      "emptyDescription": "Crea il tuo primo ruolo personalizzato per iniziare a gestire i permessi.",
+      "confirm": {
+        "deleteTitle": "Eliminare {name}?",
+        "deleteDescription": "Questa azione rimuove definitivamente il ruolo. I membri attualmente assegnati devono prima essere spostati su un altro ruolo."
+      },
+      "dialog": {
+        "createTitle": "Nuovo ruolo",
+        "createSubtitle": "Definisci un set di permessi riutilizzabile da assegnare allo staff.",
+        "editTitle": "Modifica {name}",
+        "editSubtitle": "Aggiorna il nome del ruolo o il suo set di permessi.",
+        "key": "Chiave del ruolo",
+        "keyPlaceholder": "es. shift_manager",
+        "keyHint": "Lettere minuscole, numeri, trattini bassi o trattini. Non modificabile in seguito.",
+        "nameEn": "Nome inglese",
+        "nameEnPlaceholder": "es. Responsabile turno",
+        "nameAr": "Nome arabo",
+        "nameArPlaceholder": "مثال: مدير المناوبة",
+        "permissionsHeading": "Permessi · {count} selezionati",
+        "searchPermissions": "Cerca permessi",
+        "selectAll": "Seleziona tutto",
+        "clearAll": "Cancella",
+        "noPermissionResults": "Nessun permesso corrisponde alla ricerca",
+        "create": "Crea ruolo"
+      }
+    },
+    "security": {
+      "kicker": "Sicurezza",
+      "title": "Centro sicurezza",
+      "subtitle": "Dispositivi attivi, sessioni dello staff ed eventi di sicurezza per il tuo ristorante.",
+      "noAccess": "Nessun accesso alla sicurezza",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare il Centro sicurezza.",
+      "counts": {
+        "activeSessions": "Sessioni attive",
+        "onlineMembers": "Membri online",
+        "failedLogins24h": "Accessi non riusciti · 24h",
+        "critical24h": "Critici · 24h"
+      },
+      "sessionsTitle": "Sessioni attive",
+      "sessionsSubtitle": "Ogni dispositivo attualmente connesso agli account dello staff",
+      "filterAll": "Tutte le sessioni",
+      "filterActive": "Attive",
+      "filterRevoked": "Revocate",
+      "current": "Corrente",
+      "lastSeen": "Ultima attività",
+      "ip": "IP",
+      "revoke": "Revoca",
+      "revokeAll": "Disconnetti tutti",
+      "revoked": "Revocata",
+      "logoutReasons": {
+        "security-center-revoke": "Revocata dal Centro sicurezza",
+        "security-center-force-logout": "Disconnessa dal Centro sicurezza",
+        "member-force-logout": "Disconnessa dalla gestione dello staff",
+        "member-suspended": "Account sospeso",
+        "member-removed": "Membro rimosso",
+        "revoked-all": "Disconnesso da tutti i dispositivi",
+        "forced": "Disconnessione forzata",
+        "revoked": "Sessione revocata"
+      },
+      "emptySessions": "Ancora nessuna sessione",
+      "emptySessionsDescription": "I dispositivi connessi agli account dello staff compariranno qui.",
+      "noSessionResults": "Nessuna sessione corrisponde ai filtri",
+      "actions": {
+        "revoke": "Revoca sessione",
+        "revokeAll": "Disconnetti tutti i dispositivi"
+      },
+      "confirm": {
+        "revokeTitle": "Revocare questa sessione?",
+        "revokeDescription": "Questo dispositivo verrà disconnesso immediatamente. L'utente mantiene il proprio accesso.",
+        "revokeAllTitle": "Disconnettere tutti i dispositivi?",
+        "revokeAllDescription": "{name} verrà disconnesso da ogni dispositivo ma mantiene il proprio accesso."
+      },
+      "eventsTitle": "Eventi di sicurezza",
+      "eventsSubtitle": "Accessi e attività di sicurezza di tutto lo staff",
+      "searchEvents": "Cerca eventi…",
+      "filterSeverity": "Gravità",
+      "allSeverities": "Tutte le gravità",
+      "severities": {
+        "INFO": "Info",
+        "WARNING": "Avviso",
+        "CRITICAL": "Critico"
+      },
+      "emptyEvents": "Nessun evento di sicurezza",
+      "emptyEventsDescription": "Accessi e attività di sicurezza compariranno qui.",
+      "noEventResults": "Nessun evento corrisponde ai filtri",
+      "types": {
+        "SIGNUP": "Account creato",
+        "LOGIN_SUCCESS": "Accesso effettuato",
+        "LOGIN_FAILED": "Accesso non riuscito",
+        "LOGOUT": "Disconnessione",
+        "SESSION_EXPIRED": "Sessione scaduta",
+        "SESSION_REVOKED": "Sessione revocata",
+        "FORCE_LOGOUT": "Disconnessione forzata",
+        "PASSWORD_CHANGED": "Password modificata",
+        "EMAIL_CHANGED": "Email modificata",
+        "GOOGLE_LINKED": "Account Google collegato",
+        "ACCOUNT_LOCKED": "Account bloccato",
+        "ACCOUNT_UNLOCKED": "Account sbloccato",
+        "RESTAURANT_SWITCHED": "Ristorante cambiato",
+        "RESTAURANT_SUSPENDED": "Ristorante sospeso",
+        "ROLE_CHANGED": "Ruolo modificato",
+        "PERMISSIONS_UPDATED": "Permessi aggiornati",
+        "MEMBERSHIP_CHANGED": "Appartenenza modificata",
+        "SECURITY_SETTINGS_UPDATED": "Impostazioni di sicurezza aggiornate",
+        "IMPERSONATION_STARTED": "Impersonificazione avviata",
+        "IMPERSONATION_ENDED": "Impersonificazione terminata"
+      },
+      "valid": {
+        "error": "Si è verificato un errore. Riprova.",
+        "security": {
+          "sessionNotFound": "Questa sessione non esiste più",
+          "memberNotFound": "Membro dello staff non trovato",
+          "cannotModifyOwner": "Il proprietario non può essere gestito da qui",
+          "cannotModifySelf": "Non puoi gestire la tua sessione da qui"
+        }
+      }
+    },
+    "activity": {
+      "kicker": "Attività",
+      "title": "Centro attività",
+      "subtitle": "Chi ha fatto cosa e quando — la storia completa delle modifiche nel tuo ristorante.",
+      "noAccess": "Nessun accesso ai log attività",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare il Centro attività.",
+      "counts": {
+        "total": "Eventi totali",
+        "last24h": "Eventi · 24h",
+        "uniqueActors": "Autori unici",
+        "activeModules": "Moduli"
+      },
+      "filtersTitle": "Filtri",
+      "filtersSubtitle": "Restringi la cronologia per modulo, azione, autore o data",
+      "searchPlaceholder": "Cerca azione, autore, obiettivo…",
+      "filterModule": "Modulo",
+      "allModules": "Tutti i moduli",
+      "filterAction": "Azione",
+      "allActions": "Tutte le azioni",
+      "filterActor": "Autore",
+      "allActors": "Tutti gli autori",
+      "dateFrom": "Dal",
+      "dateTo": "Al",
+      "timelineTitle": "Cronologia attività",
+      "timelineSubtitle": "Più recenti prima",
+      "entries": "voci",
+      "viewDetails": "Vedi dettagli",
+      "systemActor": "Sistema",
+      "emptyTitle": "Ancora nessuna attività",
+      "emptyDescription": "Le modifiche apportate dal tuo team compariranno qui come cronologia.",
+      "noResults": "Nessuna attività corrisponde ai filtri",
+      "detailsSubtitle": "Record completo di questo evento",
+      "details": {
+        "actor": "Autore",
+        "date": "Quando",
+        "target": "Obiettivo",
+        "ip": "Indirizzo IP",
+        "userAgent": "User agent",
+        "metadata": "Metadati"
+      },
+      "modules": {
+        "dashboard": "Cruscotto",
+        "orders": "Ordini",
+        "products": "Prodotti",
+        "categories": "Categorie",
+        "offers": "Offerte",
+        "deliveryZones": "Zone di consegna",
+        "reservations": "Prenotazioni",
+        "customers": "Clienti",
+        "staff": "Personale",
+        "roles": "Ruoli",
+        "security": "Sicurezza",
+        "settings": "Impostazioni",
+        "homeSections": "Sezioni home",
+        "documents": "Documenti",
+        "notifications": "Notifiche",
+        "system": "Sistema"
+      },
+      "targetTypes": {
+        "order": "Ordine",
+        "product": "Prodotto",
+        "category": "Categoria",
+        "offer": "Offerta",
+        "deliveryZone": "Zona di consegna",
+        "reservation": "Prenotazione",
+        "customer": "Cliente",
+        "member": "Membro dello staff",
+        "invitation": "Invito",
+        "setting": "Impostazione",
+        "session": "Sessione",
+        "role": "Ruolo",
+        "homeSection": "Sezione home"
+      },
+      "actions": {
+        "order": {
+          "status_changed": "Stato ordine modificato",
+          "kitchen_notes_updated": "Note cucina aggiornate"
+        },
+        "product": {
+          "created": "Prodotto creato",
+          "updated": "Prodotto aggiornato",
+          "deleted": "Prodotto eliminato",
+          "home_section_bulk_toggled": "Sezioni home aggiornate in blocco"
+        },
+        "category": {
+          "created": "Categoria creata",
+          "updated": "Categoria aggiornata",
+          "visibility_changed": "Visibilità categoria modificata",
+          "deleted": "Categoria eliminata"
+        },
+        "offer": {
+          "created": "Offerta creata",
+          "updated": "Offerta aggiornata",
+          "visibility_changed": "Visibilità offerta modificata",
+          "public_visibility_changed": "Visibilità pubblica dell'offerta modificata",
+          "deleted": "Offerta eliminata"
+        },
+        "deliveryZone": {
+          "created": "Zona di consegna creata",
+          "updated": "Zona di consegna aggiornata",
+          "deleted": "Zona di consegna eliminata"
+        },
+        "reservation": {
+          "created": "Prenotazione creata",
+          "updated": "Prenotazione aggiornata",
+          "status_changed": "Stato prenotazione modificato",
+          "deleted": "Prenotazione eliminata"
+        },
+        "customers": {
+          "note_added": "Nota cliente aggiunta",
+          "note_removed": "Nota cliente rimossa"
+        },
+        "staff": {
+          "created": "Membro dello staff creato",
+          "invited": "Membro dello staff invitato",
+          "invite_revoked": "Invito revocato",
+          "suspended": "Membro dello staff sospeso",
+          "restored": "Membro dello staff ripristinato",
+          "removed": "Membro dello staff rimosso",
+          "force_logged_out": "Disconnessione forzata del membro dello staff",
+          "role_updated": "Ruolo dello staff aggiornato",
+          "updated": "Membro dello staff aggiornato",
+          "permissions_updated": "Permessi dello staff aggiornati"
+        },
+        "roles": {
+          "created": "Ruolo creato",
+          "updated": "Ruolo aggiornato",
+          "deleted": "Ruolo eliminato"
+        },
+        "security": {
+          "session_revoked": "Sessione revocata",
+          "force_logged_out": "Disconnessione forzata del membro"
+        },
+        "session": {
+          "revoked": "Sessione revocata dall'amministratore"
+        },
+        "user": {
+          "sessions_revoked": "Tutte le sessioni revocate",
+          "status_changed": "Stato utente modificato",
+          "unlocked": "Utente sbloccato",
+          "password_reset": "Password utente reimpostata",
+          "force_logged_out": "Disconnessione forzata dell'utente"
+        },
+        "settings": {
+          "updated": "Impostazioni aggiornate"
+        },
+        "homeSection": {
+          "created": "Sezione home creata",
+          "updated": "Sezione home aggiornata",
+          "deleted": "Sezione home eliminata"
+        },
+        "restaurant": {
+          "owner_assigned": "Proprietario assegnato",
+          "ownership_transferred": "Proprietà trasferita",
+          "created": "Ristorante creato",
+          "updated": "Ristorante aggiornato",
+          "archived": "Ristorante archiviato",
+          "restored": "Ristorante ripristinato"
+        },
+        "membership": {
+          "role_changed": "Ruolo di appartenenza modificato",
+          "removed": "Appartenenza rimossa"
+        },
+        "subscription": {
+          "status_changed": "Stato abbonamento modificato",
+          "plan_changed": "Piano abbonamento modificato",
+          "trial_extended": "Prova estesa",
+          "plan_status_changed": "Stato piano abbonamento modificato"
+        },
+        "feature_flag": {
+          "toggled": "Feature flag attivata/disattivata",
+          "assigned": "Feature flag assegnata",
+          "cleared": "Feature flag cancellata"
+        },
+        "country": {
+          "status_changed": "Stato paese modificato"
+        },
+        "platform": {
+          "settings_updated": "Impostazioni piattaforma aggiornate"
+        },
+        "permissions": {
+          "template_updated": "Modello di permessi aggiornato"
+        },
+        "documents": {
+          "export": "Ordini esportati (CSV)",
+          "send": "Documento inviato su WhatsApp"
+        },
+        "notification": {
+          "read": "Notifica contrassegnata come letta",
+          "unread": "Notifica contrassegnata come non letta",
+          "read_all": "Tutte le notifiche contrassegnate come lette",
+          "archived": "Notifica archiviata",
+          "unarchived": "Notifica de-archiviata"
+        }
+      }
+    },
+    "notifications": {
+      "kicker": "Notifiche",
+      "title": "Centro notifiche",
+      "subtitle": "Resta aggiornato su nuovi ordini, prenotazioni e attività del team nel tuo ristorante.",
+      "noAccess": "Nessun accesso alle notifiche",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare il Centro notifiche.",
+      "unread": "Non lette",
+      "none": "Nessuna",
+      "total": "Totale",
+      "new": "Nuove",
+      "markAllRead": "Segna tutte come lette",
+      "viewAll": "Vedi tutte le notifiche",
+      "filtersTitle": "Filtri",
+      "filtersSubtitle": "Restringi l'elenco per tipo o stato di lettura",
+      "filterType": "Tipo",
+      "allTypes": "Tutti i tipi",
+      "unreadOnly": "Solo non lette",
+      "showArchived": "Mostra archiviate",
+      "listTitle": "Notifiche",
+      "listSubtitle": "Più recenti prima",
+      "markRead": "Segna come letta",
+      "markUnread": "Segna come non letta",
+      "archive": "Archivia",
+      "unarchive": "De-archivia",
+      "emptyTitle": "Sei tutto aggiornato",
+      "emptyDescription": "Nuovi ordini, prenotazioni ed eventi del team compariranno qui.",
+      "noResults": "Nessuna notifica corrisponde ai filtri",
+      "noResultsDescription": "Prova a cambiare il tipo o lo stato di lettura.",
+      "unknownType": "Nuova notifica",
+      "severity": {
+        "info": "Info",
+        "warning": "Avviso",
+        "critical": "Critico"
+      },
+      "types": {
+        "order": {
+          "created": {
+            "label": "Nuovi ordini",
+            "title": "Nuovo ordine",
+            "body": "L'ordine {orderNumber} è stato inserito"
+          },
+          "status_changed": {
+            "label": "Aggiornamenti ordini",
+            "title": "Stato ordine modificato",
+            "body": "L'ordine {orderNumber} è ora {status}"
+          }
+        },
+        "reservation": {
+          "created": {
+            "label": "Nuove prenotazioni",
+            "title": "Nuova prenotazione",
+            "body": "{customerName} — {partySize} persone"
+          },
+          "status_changed": {
+            "label": "Aggiornamenti prenotazioni",
+            "title": "Prenotazione aggiornata",
+            "body": "{customerName} — {status}"
+          }
+        },
+        "staff": {
+          "invited": {
+            "label": "Inviti allo staff",
+            "title": "Nuovo invito allo staff",
+            "body": "{email} invitato come {role}"
+          },
+          "created": {
+            "label": "Nuovi membri dello staff",
+            "title": "Nuovo membro dello staff",
+            "body": "{email} aggiunto come {role}"
+          }
+        }
+      }
+    },
+    "documents": {
+      "kicker": "Documenti",
+      "title": "Centro documenti",
+      "subtitle": "Genera fatture, ticket cucina e schede ordine per qualsiasi ordine — anteprima, stampa, download in PDF, esportazione in CSV o invio al cliente su WhatsApp.",
+      "noAccess": "Nessun accesso ai documenti",
+      "noAccessDescription": "Il tuo ruolo non include il permesso di visualizzare il Centro documenti.",
+      "counts": {
+        "total": "Ordini totali",
+        "inProgress": "In corso",
+        "paid": "Pagati",
+        "awaitingPayment": "In attesa di pagamento"
+      },
+      "filtersTitle": "Filtri",
+      "filtersSubtitle": "Trova ordini per tipo di documento, stato, pagamento o data",
+      "searchPlaceholder": "Cerca ordine, cliente, telefono…",
+      "filterKind": "Tipo di documento",
+      "allKinds": "Tutti i documenti",
+      "filterStatus": "Stato ordine",
+      "allStatuses": "Tutti gli stati",
+      "filterPayment": "Pagamento",
+      "allPayments": "Tutti i pagamenti",
+      "dateFrom": "Dal",
+      "dateTo": "Al",
+      "listTitle": "Ordini",
+      "listSubtitle": "Seleziona le righe da esportare, oppure aprine una per generare i suoi documenti",
+      "selected": "{count} selezionati",
+      "exportAll": "Esporta tutti",
+      "exportSelected": "Esporta selezionati",
+      "exporting": "Esportazione…",
+      "exported": "{count} ordini esportati",
+      "exportFailed": "Impossibile esportare gli ordini.",
+      "noResults": "Nessun ordine corrisponde ai filtri",
+      "emptyTitle": "Ancora nessun ordine",
+      "emptyDescription": "Gli ordini effettuati tramite il tuo sito web compariranno qui, pronti per la stampa o l'esportazione.",
+      "columns": {
+        "order": "Ordine",
+        "customer": "Cliente",
+        "status": "Stato",
+        "payment": "Pagamento",
+        "total": "Totale",
+        "date": "Data"
+      },
+      "openOrder": "Apri negli ordini",
+      "preview": "Anteprima",
+      "types": {
+        "invoice": "Fattura",
+        "kitchen": "Ticket cucina",
+        "printable": "Scheda ordine"
+      },
+      "dialog": {
+        "title": "Documenti · {orderNumber}",
+        "subtitle": "Anteprima, stampa, download o invio",
+        "invoiceTab": "Fattura",
+        "kitchenTab": "Ticket cucina",
+        "printableTab": "Scheda ordine",
+        "download": "Scarica PDF",
+        "downloading": "Preparazione PDF…",
+        "downloaded": "PDF scaricato",
+        "downloadFailed": "Impossibile generare il PDF.",
+        "print": "Stampa",
+        "whatsapp": "Invia su WhatsApp",
+        "sending": "Invio…",
+        "sent": "Inviato",
+        "linkOpened": "Apertura di WhatsApp…",
+        "sendFailed": "Impossibile inviare il documento.",
+        "whatsappNotConfigured": "Aggiungi un numero WhatsApp nelle Impostazioni attività prima di inviare.",
+        "noPhone": "Questo ordine non ha un numero di telefono del cliente.",
+        "whatsappNote": "Apre una chat WhatsApp preparata con il cliente.",
+        "loading": "Caricamento documento…",
+        "loadFailed": "Impossibile caricare i documenti di questo ordine."
+      },
+      "whatsapp": {
+        "heading": "{restaurant} · {type}",
+        "order": "Ordine: {orderNumber}",
+        "date": "Data: {date}",
+        "customer": "Cliente: {customer}",
+        "phone": "Telefono: {phone}",
+        "line": "{qty}× {name}",
+        "subtotal": "Subtotale: {amount}",
+        "delivery": "Consegna: {amount}",
+        "total": "Totale: {amount}",
+        "thankYou": "Grazie per il tuo ordine!"
+      }
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "subtitle": "Configurazione del negozio",
+      "sections": {
+        "general": "Generale",
+        "delivery": "Consegna",
+        "payments": "Pagamenti",
+        "notifications": "Notifiche"
+      },
+      "restaurantName": "Nome del ristorante",
+      "restaurantNameHint": "Mostrato in tutta l'app",
+      "phone": "Telefono dell'assistenza",
+      "phoneHint": "Mostrato nella pagina contatti",
+      "currency": "Valuta",
+      "currencyHint": "Usata per la visualizzazione degli importi",
+      "address": "Indirizzo",
+      "addressHint": "Mostrato nella pagina contatti",
+      "email": "Email dell'assistenza",
+      "emailHint": "Dove arrivano le notifiche degli ordini",
+      "deliveryFee": "Contributo consegna",
+      "deliveryFeeHint": "Addebitato per ogni consegna",
+      "freeDeliveryThreshold": "Consegna gratuita oltre",
+      "freeDeliveryThresholdHint": "Gli ordini sopra questo totale hanno la consegna gratuita",
+      "minOrder": "Ordine minimo",
+      "minOrderHint": "Importo più piccolo consentito",
+      "deliveryTime": "Tempo di consegna stimato",
+      "deliveryTimeHint": "In minuti",
+      "saved": "Impostazioni salvate",
+      "reset": "Ripristina valori predefiniti"
+    },
+    "confirm": {
+      "title": "Sei sicuro?",
+      "cancel": "Annulla",
+      "confirm": "Conferma"
+    },
+    "signInPrompt": {
+      "title": "Accesso al cruscotto",
+      "subtitle": "Effettua l'accesso per continuare",
+      "button": "Vai al login"
+    },
+    "commandPalette": {
+      "title": "Palette comandi",
+      "searchPlaceholder": "Cerca o esegui un comando…",
+      "clear": "Cancella",
+      "empty": "Nessun risultato per \"{query}\"",
+      "navigate": "Naviga",
+      "select": "Seleziona",
+      "pin": "Fissa",
+      "favorite": "Aggiungi ai preferiti",
+      "unfavorite": "Rimuovi dai preferiti",
+      "quickActions": "Azioni rapide",
+      "close": "Chiudi",
+      "then": "poi",
+      "helpTitle": "Scorciatoie da tastiera",
+      "helpSubtitle": "Tutto ciò che puoi fare senza lasciare la tastiera",
+      "helpSearch": "Cerca scorciatoie…",
+      "helpPrefix": "Navigazione Restora: premi R e poi una lettera per saltare tra le pagine — es. R poi O apre Ordini.",
+      "groups": {
+        "navigation": "Navigazione",
+        "products": "Prodotti",
+        "orders": "Ordini",
+        "customers": "Clienti",
+        "delivery": "Consegna",
+        "offers": "Offerte",
+        "reservations": "Prenotazioni",
+        "analytics": "Analisi",
+        "staff": "Personale",
+        "notifications": "Notifiche",
+        "settings": "Impostazioni",
+        "general": "Generale"
+      },
+      "commands": {
+        "overview": "Panoramica",
+        "products": "Prodotti",
+        "categories": "Categorie",
+        "homeSections": "Sezioni home",
+        "addProduct": "Aggiungi prodotto",
+        "addCategory": "Aggiungi categoria",
+        "offers": "Offerte",
+        "createOffer": "Crea offerta",
+        "orders": "Ordini",
+        "customers": "Clienti",
+        "customerKeywords": "cliente, clienti, clientela, ospite, membro",
+        "deliveryZones": "Zone di consegna",
+        "reservations": "Prenotazioni",
+        "analytics": "Apri analisi",
+        "staff": "Personale",
+        "inviteStaff": "Invita personale",
+        "addStaff": "Aggiungi dipendente",
+        "staffKeywords": "membro, membri, team, elenco",
+        "inviteStaffKeywords": "membro, membri, team, dipendente",
+        "addStaffKeywords": "membro, membri, team, dipendente, assumere",
+        "roles": "Ruoli",
+        "createRole": "Crea ruolo",
+        "security": "Centro sicurezza",
+        "securityKeywords": "dispositivo, dispositivi, sessione, sessioni, disconnessione forzata, esci, eventi, scudo",
+        "activity": "Log attività",
+        "activityKeywords": "log, loghi, storia, cronologia, attività, audit, eventi, modifiche",
+        "documents": "Centro documenti",
+        "documentsKeywords": "fattura, fatture, ticket cucina, pdf, csv, stampa, esporta, ricevuta, conto, ordini, documenti",
+        "notifications": "Notifiche",
+        "notificationsKeywords": "avvisi, avviso, campanella, inbox, non lette, notifica, notifiche, annuncio",
+        "restaurantSettings": "Impostazioni ristorante",
+        "search": "Cerca",
+        "searchHint": "Apri la palette comandi",
+        "quickCreate": "Creazione rapida",
+        "quickCreateHint": "Vai a qualsiasi azione di creazione",
+        "keyboardShortcuts": "Scorciatoie da tastiera",
+        "keyboardShortcutsHint": "Visualizza tutte le scorciatoie",
+        "backToSite": "Torna al sito"
+      },
+      "sections": {
+        "favorites": "Preferiti",
+        "recent": "Recenti"
+      },
+      "firstTimeTip": {
+        "title": "Suggerimento",
+        "body": "La prossima volta prova a usare:",
+        "dismiss": "Ignora"
+      }
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Centro di comando piattaforma",
+      "description": "Console super amministratore per la piattaforma Restora"
+    },
+    "brand": {
+      "title": "Restora",
+      "subtitle": "Centro di comando"
+    },
+    "common": {
+      "navLabel": "Navigazione Centro di comando",
+      "openMenu": "Apri menù di navigazione",
+      "close": "Chiudi",
+      "loading": "Caricamento…",
+      "noResults": "Nessun risultato",
+      "actions": "Azioni",
+      "search": "Cerca",
+      "all": "Tutti",
+      "viewAll": "Vedi tutto",
+      "save": "Salva",
+      "saving": "Salvataggio…",
+      "saved": "Salvato",
+      "failed": "Si è verificato un errore",
+      "confirm": "Conferma",
+      "cancel": "Annulla",
+      "delete": "Elimina",
+      "edit": "Modifica",
+      "back": "Indietro",
+      "filters": "Filtri",
+      "reset": "Reimposta",
+      "perPage": "per pagina",
+      "selected": "selezionati",
+      "select": "Seleziona",
+      "none": "Nessuno",
+      "view": "Vedi",
+      "error": "Si è verificato un errore"
+    },
+    "nav": {
+      "overview": "Panoramica",
+      "search": "Cerca",
+      "restaurants": "Ristoranti",
+      "users": "Utenti",
+      "owners": "Proprietari",
+      "subscriptions": "Abbonamenti",
+      "analytics": "Analisi",
+      "notifications": "Notifiche",
+      "security": "Sicurezza",
+      "audit": "Audit",
+      "countries": "Paesi",
+      "permissions": "Permessi",
+      "featureFlags": "Feature flag",
+      "settings": "Impostazioni piattaforma",
+      "systemHealth": "Stato del sistema",
+      "backToSite": "Torna al sito",
+      "signOut": "Esci"
+    },
+    "impersonation": {
+      "title": "Modalità impersonificazione",
+      "actingAs": "Operi come {name}",
+      "actingAsAt": "Operi come {name} presso {restaurant}",
+      "by": "da {name}",
+      "exit": "Esci dall'impersonificazione",
+      "exiting": "Uscita in corso…",
+      "inProgress": "Una sessione di impersonificazione è già attiva",
+      "startFailed": "Impossibile avviare l'impersonificazione"
+    },
+    "overview": {
+      "kicker": "Centro di comando",
+      "title": "Panoramica piattaforma",
+      "subtitle": "Numeri in tempo reale dell'intera piattaforma — ristoranti, utenti, ordini e incassi.",
+      "globalSearch": "Ricerca globale",
+      "quick": {
+        "title": "Azioni rapide",
+        "hint": "Scorciatoie",
+        "newRestaurant": "Nuovo ristorante",
+        "manageUsers": "Gestisci utenti",
+        "owners": "Proprietari",
+        "subscriptions": "Abbonamenti"
+      },
+      "stats": {
+        "restaurants": "Ristoranti",
+        "users": "Utenti",
+        "orders": "Ordini",
+        "revenue": "Incasso",
+        "activeSubscriptions": "Piani attivi",
+        "impersonations": "Impersonificazioni",
+        "security": "Eventi critici",
+        "tickets": "Ticket aperti",
+        "active": "attivi",
+        "owners": "proprietari",
+        "today": "oggi"
+      },
+      "charts": {
+        "ordersTitle": "Ordini — ultimi 14 giorni",
+        "revenueTitle": "Incassi incassati — ultimi 14 giorni"
+      },
+      "health": {
+        "title": "Stato del sistema",
+        "database": "Database",
+        "memory": "Memoria",
+        "cpu": "CPU",
+        "storage": "Archiviazione",
+        "build": "Build",
+        "deployment": "Deployment",
+        "email": "Email",
+        "sms": "SMS"
+      },
+      "recentRestaurants": {
+        "title": "Ristoranti recenti"
+      },
+      "recentSecurity": {
+        "title": "Eventi di sicurezza recenti"
+      }
+    },
+    "search": {
+      "kicker": "Ricerca globale",
+      "title": "Cerca nella piattaforma",
+      "placeholder": "Cerca ristoranti, utenti, ordini, paesi…",
+      "searchButton": "Cerca",
+      "empty": "Digita almeno un carattere per cercare.",
+      "noResults": "Nessuna corrispondenza per",
+      "restaurants": "Ristoranti",
+      "users": "Utenti",
+      "orders": "Ordini",
+      "countries": "Paesi",
+      "view": "Vedi",
+      "orderRestaurant": "ristorante",
+      "results": "risultati",
+      "subtitle": "Trova qualsiasi cosa nella piattaforma all'istante."
+    },
+    "badge": {
+      "ACTIVE": "Attivo",
+      "INACTIVE": "Inattivo",
+      "SUSPENDED": "Sospeso",
+      "DISABLED": "Disattivato",
+      "CLOSED": "Chiuso",
+      "ARCHIVED": "Archiviato",
+      "TRIAL": "Prova",
+      "PAST_DUE": "Scaduto",
+      "CANCELED": "Annullato",
+      "EXPIRED": "Terminato",
+      "PENDING": "In attesa",
+      "CONFIRMED": "Confermato",
+      "PREPARING": "In preparazione",
+      "READY": "Pronto",
+      "OUT_FOR_DELIVERY": "In consegna",
+      "DELIVERED": "Consegnato",
+      "COMPLETED": "Completato",
+      "CANCELLED": "Annullato",
+      "REMOVED": "Rimosso",
+      "INFO": "Info",
+      "WARNING": "Avviso",
+      "CRITICAL": "Critico"
+    },
+    "health": {
+      "rule": {
+        "subscription": "Abbonamento attivo",
+        "products": "Ha prodotti nel menù",
+        "categories": "Ha categorie",
+        "deliveryZones": "Ha zone di consegna",
+        "businessHours": "Ha orari di apertura configurati",
+        "branding": "Ha impostazioni di branding",
+        "recentOrders": "Ha ricevuto ordini",
+        "owner": "Ha un proprietario assegnato",
+        "availability": "Accetta ordini"
+      }
+    },
+    "restaurants": {
+      "kicker": "Ristoranti",
+      "title": "Tutti i ristoranti",
+      "subtitle": "Cerca, filtra e gestisci ogni ristorante della piattaforma.",
+      "create": "Nuovo ristorante",
+      "searchPlaceholder": "Cerca ristoranti…",
+      "filterStatus": "Stato",
+      "filterCountry": "Paese",
+      "favoritesOnly": "Preferiti",
+      "favorite": "Aggiungi ai preferiti",
+      "unfavorite": "Rimuovi dai preferiti",
+      "suspend": "Sospendi",
+      "close": "Chiudi",
+      "archive": "Archivia",
+      "restore": "Ripristina",
+      "health": "Salute",
+      "products": "Prodotti",
+      "orders": "Ordini",
+      "members": "Membri",
+      "deliveryZones": "Zone di consegna",
+      "homeSections": "Sezioni home",
+      "categories": "Categorie",
+      "since": "Dal",
+      "workspaceKicker": "Spazio di lavoro",
+      "emptyDescription": "Nessun ristorante corrisponde ai filtri.",
+      "form": {
+        "name": "Nome",
+        "slug": "Slug",
+        "slugPlaceholder": "generato automaticamente",
+        "email": "Email",
+        "phone": "Telefono",
+        "country": "Paese",
+        "timezone": "Fuso orario",
+        "owner": "Proprietario",
+        "description": "Descrizione"
+      },
+      "createDialog": {
+        "title": "Crea ristorante",
+        "subtitle": "Configura un nuovo ristorante sulla piattaforma."
+      },
+      "ws": {
+        "healthTitle": "Punteggio di salute",
+        "healthScore": "Salute",
+        "recommendations": "Consigli",
+        "ordersToday": "Ordini di oggi",
+        "revenueToday": "Incasso di oggi",
+        "orders7d": "Ordini 7g",
+        "revenue7d": "Incasso 7g",
+        "openOrders": "Aperti",
+        "customers": "Clienti",
+        "products": "Prodotti",
+        "staff": "Personale",
+        "recentOrders": "Ordini recenti",
+        "order": "Ordine",
+        "customer": "Cliente",
+        "status": "Stato",
+        "total": "Totale",
+        "topProducts": "Prodotti top",
+        "recentActivity": "Attività recente",
+        "subscription": "Abbonamento",
+        "plan": "Piano",
+        "subStatus": "Stato",
+        "periodEnd": "Fine periodo",
+        "changePlan": "Cambia piano",
+        "extendTrial": "Estendi prova (+14 giorni)",
+        "owners": "Proprietari",
+        "noOwners": "Nessun proprietario assegnato",
+        "totals": "Conteggi",
+        "platform": "Collegamenti rapidi",
+        "backToList": "Torna all'elenco ristoranti"
+      },
+      "confirm": {
+        "suspendTitle": "Sospendere il ristorante?",
+        "suspendDescription": "Il ristorante smetterà immediatamente di essere visibile ai clienti.",
+        "closeTitle": "Chiudere il ristorante?",
+        "closeDescription": "Il ristorante verrà chiuso definitivamente.",
+        "archiveTitle": "Archiviare il ristorante?",
+        "archiveDescription": "Il ristorante verrà eliminato logicamente dalla piattaforma.",
+        "reason": "Motivo (facoltativo)",
+        "reasonPlaceholder": "Perché stai eseguendo questa azione?"
+      }
+    },
+    "users": {
+      "kicker": "Utenti",
+      "title": "Tutti gli utenti",
+      "subtitle": "Cerca e gestisci ogni utente della piattaforma.",
+      "searchPlaceholder": "Cerca utenti…",
+      "filterStatus": "Stato",
+      "filterRole": "Ruolo",
+      "user": "Utente",
+      "status": "Stato",
+      "role": {
+        "owner": "Proprietario",
+        "platformAdmin": "Amministratore piattaforma",
+        "user": "Utente"
+      },
+      "owns": "Proprietario di",
+      "phone": "Telefono",
+      "joined": "Iscritto il",
+      "failedLogins": "Accessi non riusciti",
+      "sessionVersion": "Versione sessione",
+      "restaurant": "Ristorante",
+      "membershipStatus": "Appartenenza",
+      "noMemberships": "Nessuna appartenenza",
+      "detailKicker": "Dettaglio utente",
+      "account": "Account",
+      "impersonate": "Impersonifica",
+      "impersonateConfirmTitle": "Impersonificare questo utente?",
+      "impersonateConfirmDescription": "Verrai reindirizzato al cruscotto come questo utente.",
+      "grantAdmin": "Concedi admin",
+      "revokeAdmin": "Revoca admin",
+      "resetPassword": "Reimposta password",
+      "passwordHint": "Minimo 8 caratteri.",
+      "newPassword": "Nuova password",
+      "forceLogout": "Disconnessione forzata",
+      "activate": "Attiva",
+      "unlock": "Sblocca account",
+      "suspend": "Sospendi utente",
+      "roleLabel": "Ruolo",
+      "memberships": "Appartenenze"
+    },
+    "owners": {
+      "kicker": "Proprietari",
+      "title": "Proprietari di ristoranti",
+      "subtitle": "Ogni utente che possiede almeno un ristorante sulla piattaforma.",
+      "searchPlaceholder": "Cerca proprietari…",
+      "owner": "Proprietario",
+      "restaurants": "Ristoranti",
+      "assign": "Assegna proprietario",
+      "status": "Stato",
+      "assignDialog": {
+        "title": "Assegna ruolo proprietario",
+        "subtitle": "Concedi il ruolo di proprietario a un utente su uno specifico ristorante.",
+        "restaurant": "Ristorante",
+        "user": "Utente"
+      }
+    },
+    "subscriptions": {
+      "kicker": "Abbonamenti",
+      "title": "Abbonamenti e piani",
+      "subtitle": "Gestisci ogni abbonamento, piano e feature flag della piattaforma.",
+      "tab": {
+        "subscriptions": "Abbonamenti",
+        "plans": "Piani"
+      },
+      "searchPlaceholder": "Cerca per nome del ristorante…",
+      "filterStatus": "Stato",
+      "restaurant": "Ristorante",
+      "plan": "Piano",
+      "status": "Stato",
+      "periodEnd": "Fine periodo",
+      "cancelAtPeriodEnd": "si annulla alla fine del periodo",
+      "actions": "Azioni",
+      "changePlan": "Cambia",
+      "extendTrial": "Estendi +14g",
+      "cancel": "Annulla",
+      "activate": "Attiva",
+      "confirm": {
+        "cancelTitle": "Annullare l'abbonamento?",
+        "activateTitle": "Riattivare l'abbonamento?"
+      },
+      "newPlan": "Nuovo piano",
+      "subscribers": "abbonati",
+      "editPlan": "Modifica",
+      "month": "mese",
+      "planActive": "Attivo",
+      "planKey": "Chiave del piano",
+      "planName": "Nome del piano",
+      "priceMonthly": "Prezzo mensile",
+      "priceYearly": "Prezzo annuale",
+      "currency": "Valuta",
+      "sortOrder": "Ordine di ordinamento",
+      "features": "Funzionalità",
+      "newPlanDialog": {
+        "title": "Crea piano",
+        "subtitle": "Definisci un nuovo piano abbonamento."
+      },
+      "editPlanDialog": {
+        "title": "Modifica piano"
+      }
+    },
+    "featureFlags": {
+      "kicker": "Feature flag",
+      "title": "Feature flag",
+      "subtitle": "Attiva/disattiva funzionalità globali e gestisci le eccezioni per singolo ristorante.",
+      "active": "Attiva",
+      "inactive": "Inattiva",
+      "overrides": "eccezioni"
+    },
+    "countries": {
+      "kicker": "Paesi",
+      "title": "Paesi",
+      "subtitle": "Gestisci i paesi disponibili sulla piattaforma.",
+      "new": "Nuovo paese",
+      "edit": "Modifica",
+      "code": "Codice",
+      "name": "Nome",
+      "currencyCode": "Codice valuta",
+      "currencySymbol": "Simbolo",
+      "timezone": "Fuso orario predefinito",
+      "locale": "Lingua predefinita",
+      "phoneCode": "Prefisso telefonico",
+      "sortOrder": "Ordine di ordinamento",
+      "currency": "Valuta",
+      "restaurants": "Ristoranti",
+      "newDialog": {
+        "title": "Crea paese",
+        "subtitle": "Aggiungi un nuovo paese alla piattaforma."
+      },
+      "editDialog": {
+        "title": "Modifica paese"
+      }
+    },
+    "settings": {
+      "kicker": "Impostazioni",
+      "title": "Impostazioni piattaforma",
+      "subtitle": "Valori predefiniti globali e configurazione dei fornitori.",
+      "general": "Generale",
+      "providers": "Fornitori",
+      "providersHint": "Configura lo stato delle integrazioni di terze parti per i fornitori email e SMS.",
+      "defaultCurrency": "Valuta",
+      "defaultCountry": "Paese predefinito",
+      "defaultLocale": "Lingua predefinita",
+      "trialDays": "Giorni di prova",
+      "supportEmail": "Email dell'assistenza",
+      "supportedLocales": "Lingue supportate",
+      "providerEmail": "Fornitore email",
+      "providerSms": "Fornitore SMS",
+      "saved": "Impostazioni salvate."
+    },
+    "permissions": {
+      "kicker": "Permessi",
+      "title": "Permessi e ruoli",
+      "subtitle": "Modifica i modelli di ruolo e gestisci il catalogo dei permessi.",
+      "templates": "Modelli di ruolo",
+      "catalog": "Catalogo permessi",
+      "system": "Sistema",
+      "permissions": "permessi",
+      "restaurants": "ristoranti",
+      "members": "membri",
+      "edit": "Modifica",
+      "save": "Salva"
+    },
+    "security": {
+      "kicker": "Centro sicurezza",
+      "title": "Sicurezza e sessioni",
+      "subtitle": "Monitora sessioni attive, eventi di sicurezza e attività critiche.",
+      "tab": {
+        "summary": "Riepilogo",
+        "events": "Eventi",
+        "sessions": "Sessioni"
+      },
+      "stats": {
+        "activeSessions": "Sessioni attive",
+        "sessions24h": "Sessioni 24h",
+        "lockedAccounts": "Account bloccati",
+        "suspendedAccounts": "Sospesi",
+        "failedLogins24h": "Accessi non riusciti 24h",
+        "critical24h": "Critici 24h",
+        "impersonations": "Impersonificazioni attive"
+      },
+      "event": "Evento",
+      "actor": "Autore",
+      "severity": "Gravità",
+      "ip": "IP",
+      "eventsPlaceholder": "Cerca eventi…",
+      "filterSeverity": "Gravità",
+      "sessionUser": "Utente",
+      "device": "Dispositivo",
+      "lastSeen": "Ultima attività",
+      "current": "corrente",
+      "revoke": "Revoca",
+      "revokeTitle": "Revocare la sessione?",
+      "revokeDescription": "L'utente verrà disconnesso da questo dispositivo immediatamente."
+    },
+    "audit": {
+      "kicker": "Log di audit",
+      "title": "Log di audit",
+      "subtitle": "Ogni azione verificabile sulla piattaforma, filtrabile ed esportabile.",
+      "searchPlaceholder": "Cerca nel log di audit…",
+      "filterAction": "Azione",
+      "export": "Esporta CSV",
+      "timestamp": "Data e ora",
+      "action": "Azione",
+      "actor": "Autore",
+      "target": "Obiettivo",
+      "ip": "IP"
+    },
+    "notifications": {
+      "kicker": "Notifiche",
+      "title": "Centro notifiche",
+      "subtitle": "Notifiche di sistema, sicurezza e fatturazione a livello di piattaforma.",
+      "filterCategory": "Categoria",
+      "showArchived": "Mostra archiviate",
+      "markRead": "Segna come letta",
+      "markUnread": "Segna come non letta",
+      "archive": "Archivia",
+      "unarchive": "De-archivia"
+    },
+    "systemHealth": {
+      "kicker": "Stato del sistema",
+      "title": "Stato del sistema",
+      "subtitle": "Sonde modulari su ogni sottosistema della piattaforma.",
+      "refresh": "Aggiorna",
+      "overall": "Stato complessivo",
+      "healthy": "salubre",
+      "info": "Info",
+      "node": "Versione Node",
+      "environment": "Ambiente",
+      "generatedAt": "Generato",
+      "check": {
+        "database": "Database",
+        "memory": "Memoria heap",
+        "cpu": "CPU",
+        "storage": "Archiviazione",
+        "build": "Versione build",
+        "deployment": "Deployment",
+        "email": "Fornitore email",
+        "sms": "Fornitore SMS"
+      }
+    },
+    "analytics": {
+      "kicker": "Analisi",
+      "title": "Analisi della piattaforma",
+      "subtitle": "Tendenze aggregate su ordini, incassi, ristoranti e utenti.",
+      "days": "giorni",
+      "totalOrders": "Ordini totali",
+      "totalRevenue": "Incasso totale",
+      "newRestaurants": "Nuovi ristoranti",
+      "newUsers": "Nuovi utenti",
+      "ordersTrend": "Trend ordini",
+      "revenueTrend": "Trend incassi",
+      "newRestaurantsTrend": "Trend nuovi ristoranti",
+      "ordersByStatus": "Ordini per stato",
+      "subscriptionsByPlan": "Abbonamenti per piano",
+      "topRestaurants": "Ristoranti top"
+    }
+  }
+}

@@ -1,0 +1,3041 @@
+{
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to Home"
+  },
+  "offers": {
+    "types": {
+      "percentage": "{value}% off",
+      "fixed": "{value} off",
+      "bogo": "Buy {buy} get {get}",
+      "bundle": "Bundle deal",
+      "meal_deal": "Meal deal",
+      "family_meal": "Family meal",
+      "kids_meal": "Kids meal"
+    },
+    "endsAt": "Ends {date}",
+    "view": "View offer",
+    "empty": "No active offers right now",
+    "includedProducts": "Included Products",
+    "free": "FREE",
+    "originalPrice": "Original Price",
+    "discount": "Discount",
+    "offerPrice": "Offer Price",
+    "addOfferToCart": "Add Offer to Cart",
+    "added": "Added!",
+    "addedToCart": "{name} added to your cart",
+    "youSave": "You save",
+    "savingsPercent": "Savings"
+  },
+  "documents": {
+    "invoice": "Invoice",
+    "invoiceDescription": "Preview, print or copy this invoice.",
+    "viewInvoice": "View Invoice",
+    "orderNumber": "Order Number",
+    "date": "Date",
+    "billTo": "Billed To",
+    "delivery": "Delivery",
+    "eta": "ETA",
+    "minutes": "min",
+    "payment": "Payment",
+    "items": "Items",
+    "qty": "Qty",
+    "price": "Price",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery Fee",
+    "tax": "Tax",
+    "discount": "Discount",
+    "grandTotal": "Grand Total",
+    "vatIncluded": "VAT included where applicable",
+    "thankYou": "Thank you for your order!",
+    "print": "Print",
+    "copySummary": "Copy Summary",
+    "copied": "Copied!",
+    "copyFailed": "Couldn't copy to clipboard.",
+    "close": "Close",
+    "customer": "Customer",
+    "phone": "Phone",
+    "address": "Address",
+    "orderType": "Order Type",
+    "table": "Table",
+    "kitchen": {
+      "title": "Kitchen Ticket",
+      "customerInfo": "Customer"
+    },
+    "printable": {
+      "title": "Order Sheet"
+    }
+  },
+  "common": {
+    "menu": "Menu",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "orders": "Orders",
+    "trackOrder": "Track Order",
+    "about": "About",
+    "contact": "Contact",
+    "home": "Home",
+    "brandName": "Restaurant",
+    "language": "Language",
+    "currentLanguage": "Current: English",
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "it": "Italiano"
+    },
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openCart": "Open cart",
+    "backToTop": "Back to top",
+    "dismissNotification": "Dismiss notification",
+    "addedToCart": "Added to your cart",
+    "addedToCartError": "Couldn't add item. Please try again.",
+    "itemAdded": "{name} · {count, plural, one {# item added} other {# items added}}",
+    "homeAria": "Home",
+    "primaryNavigation": "Primary navigation",
+    "closeDialog": "Close dialog",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity"
+  },
+  "theme": {
+    "toggleTheme": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "footer": {
+    "description": "Premium food, made fresh and delivered with care.",
+    "visitUs": "Visit Us",
+    "addressLine1": "Restaurant location",
+    "addressLine2": "will appear here",
+    "whatsapp": "WhatsApp",
+    "viewOnMap": "Get Directions",
+    "phoneFallback": "Phone number not set yet",
+    "emailFallback": "Email not set yet",
+    "quickLinks": "Quick Links",
+    "quickLinksAria": "Footer quick links",
+    "legal": "Legal",
+    "legalLinksAria": "Footer legal links",
+    "reservations": "Reservations",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "allergenInfo": "Allergen Info",
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "snapchat": "Snapchat",
+      "website": "Website"
+    },
+    "rights": "© {year} {name}. All rights reserved.",
+    "designedBy": "Designed with <highlight>{email}</highlight>",
+    "newsletterTitle": "Stay Updated",
+    "newsletterDescription": "Subscribe to our newsletter for exclusive offers, seasonal updates, and event invitations.",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterSubscribe": "Subscribe",
+    "newsletterSubscribing": "Joining...",
+    "newsletterSuccess": "Thank you for subscribing!"
+  },
+  "mainSection": {
+    "bestSeller": {
+      "title": "Best Seller",
+      "subTitle": "Discover our most popular dishes that our customers love"
+    },
+    "offers": {
+      "title": "Limited-Time Offers",
+      "subTitle": "Deals and bundles available right now"
+    }
+  },
+  "home": {
+    "promoBanner": {
+      "eyebrow": "Limited Time Offer",
+      "copyCode": "Copy Code",
+      "copied": "Copied!",
+      "shopNow": "Shop Now"
+    },
+    "categories": {
+      "eyebrow": "Browse by category",
+      "title": "Our Menu"
+    },
+    "story": {
+      "kicker": "Our Story",
+      "titleStart": "Crafted with Passion,",
+      "titleHighlight": "Served with Love",
+      "description": "Since day one, we have been redefining great flavors in the heart of the city — one handcrafted dish at a time.",
+      "exploreMenu": "Explore Menu",
+      "foundedYear": "2026",
+      "foundedLabel": "Founded",
+      "brandLine": "Our Kitchen",
+      "imageAlt": "Our kitchen — our story",
+      "paragraph1": "It all started with a simple family recipe, passed down through generations and perfected over the years. We opened our doors with a single oven and a dream to share great food with our community.",
+      "paragraph2": "Today, every dish that leaves our kitchen carries that same devotion — fresh, carefully sourced ingredients and recipes that respect tradition."
+    },
+    "cta": {
+      "kicker": "Ready to taste?",
+      "title": "Explore Our Full Menu",
+      "description": "From our signature dishes to seasonal specials — every plate is made with care and pride.",
+      "viewMenu": "View Menu",
+      "bookTable": "Book a Table"
+    }
+  },
+  "hero": {
+    "badge": "Award-Winning Taste",
+    "shopNow": "Shop Now",
+    "goToSlide": "Go to slide {number}",
+    "goToNamedSlide": "Go to {title} slide",
+    "slides": [
+      {
+        "subtitle": "Spicy & Delicious",
+        "title": "Pepperoni Passion",
+        "description": "A classic favorite with a generous layer of premium pepperoni and mozzarella."
+      },
+      {
+        "subtitle": "Fresh from the Garden",
+        "title": "Veggie Supreme",
+        "description": "A delightful mix of fresh bell peppers, onions, olives, and mushrooms."
+      },
+      {
+        "subtitle": "A Cheesy Masterpiece",
+        "title": "Margherita Magic",
+        "description": "Simple yet elegant, with fresh basil, mozzarella, and a rich tomato sauce."
+      },
+      {
+        "subtitle": "Sweet & Savory",
+        "title": "Hawaiian Heaven",
+        "description": "A tropical twist featuring juicy pineapple, savory ham, and melted cheese."
+      }
+    ]
+  },
+  "cart": {
+    "page": {
+      "title": "Cart",
+      "subtitle": "Cart Items"
+    },
+    "closed": {
+      "title": "We're currently closed",
+      "badge": "Closed",
+      "reopensAt": "We'll be back soon — reopens {time}",
+      "reopensLater": "We're closed for now. Please check back soon."
+    },
+    "serverErrorClosed": "The restaurant is currently closed. Please try again during opening hours.",
+    "serverErrorClosedWithMessage": "{message}",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "free": "Free",
+    "tax": "Tax",
+    "discount": "Discount",
+    "grandTotal": "Grand Total",
+    "vatIncluded": "VAT included",
+    "yourOrder": "Your Order",
+    "itemsInCart": "{count, plural, one {# item} other {# items}} in cart",
+    "clearAll": "Clear all",
+    "clearAllAria": "Clear all cart items",
+    "editItem": "Edit {name}",
+    "removeItem": "Remove {name} from cart",
+    "decreaseItemQuantity": "Decrease quantity of {name}",
+    "increaseItemQuantity": "Increase quantity of {name}",
+    "qty": "Qty",
+    "base": "Base",
+    "extras": "Extras",
+    "quantity": "Quantity",
+    "specialInstructions": "Special Instructions",
+    "notePlaceholder": "Any special requests for this item…",
+    "addToCart": "Add to Cart",
+    "added": "Added!",
+    "updateItem": "Update Item",
+    "included": "Included",
+    "chooseSize": "Choose Size",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Looks like you haven't added anything yet. Browse our menu and pick something delicious!",
+    "deliveryDetails": "Delivery Details",
+    "deliveryDetailsDesc": "Where should we deliver your order?",
+    "customerName": "Customer Name",
+    "customerNamePlaceholder": "Ahmed Hassan",
+    "phoneNumber": "Phone Number",
+    "phonePlaceholder": "+20 100 000 0000",
+    "deliveryAddress": "Delivery Address",
+    "addressPlaceholder": "Street name, area, city",
+    "apartmentBuilding": "Apartment / Building",
+    "apartmentPlaceholder": "Apt 4B, Floor 3 (optional)",
+    "city": "City",
+    "cityPlaceholder": "Cairo, Alexandria...",
+    "notesForRestaurant": "Notes for restaurant",
+    "notesPlaceholder": "Allergies, spice level, ring the bell... (optional)",
+    "submitOrder": "Submit Order",
+    "placingOrder": "Placing your order…",
+    "submitAria": "Submit order for {price}",
+    "errorLoadProduct": "Couldn't load product details. Please try again.",
+    "errorFailedLoadProduct": "Failed to load product. Please try again.",
+    "errorNameRequired": "Please enter your name.",
+    "errorPhoneRequired": "Please enter your phone number.",
+    "errorPhoneInvalid": "Please enter a valid Egyptian mobile number (e.g. 01012345678).",
+    "errorAddressRequired": "Please enter your delivery address.",
+    "errorCityRequired": "Please enter your city.",
+    "errorSomethingWrong": "Something went wrong. Please check your connection and try again.",
+    "serverErrorNameRequired": "Customer name is required.",
+    "serverErrorPhoneRequired": "Phone number is required.",
+    "serverErrorAddressRequired": "Delivery address is required.",
+    "serverErrorCityRequired": "City is required.",
+    "serverErrorEmptyCart": "Your cart is empty.",
+    "serverErrorPlacingOrder": "We couldn't place your order right now. Please try again in a moment.",
+    "serverErrorZoneInvalid": "This delivery area is no longer available. Please pick another.",
+    "serverErrorZoneInactive": "This delivery area is temporarily unavailable.",
+    "serverErrorZoneRequired": "Please choose a delivery zone.",
+    "serverErrorMinOrder": "The minimum order for this area is {amount}.",
+    "deliveryZone": "Delivery Zone",
+    "deliveringTo": "Delivering to",
+    "deliveryFee": "Delivery fee",
+    "estimatedTimeRange": "{min}-{max} min",
+    "minimumOrder": "Min. {amount}",
+    "minimumOrderUnmet": "Minimum order not met",
+    "freeDeliveryBadge": "Free delivery",
+    "freeDeliveryNow": "Free delivery",
+    "searchDeliveryArea": "Search delivery area",
+    "noZonesFound": "No zones found",
+    "noZonesFoundHint": "Try a different name or check another area.",
+    "closeSelector": "Close",
+    "estimatedTime": "Estimated time",
+    "minimumOrderLabel": "Minimum order",
+    "freeDeliveryOver": "Free delivery over {amount}",
+    "serverErrorTableInvalid": "This table is invalid or inactive. Please scan the QR code again or ask a staff member for help.",
+    "dineInLabel": "Dine-in",
+    "dineInDetails": "Dine-in Details",
+    "dineInDetailsDesc": "You're ordering from a table inside the restaurant.",
+    "tableLabel": "Table {number}",
+    "leaveTable": "Leave table",
+    "tableLeft": "You have left the table.",
+    "promoCode": {
+      "title": "Promo Code",
+      "placeholder": "Enter promo code",
+      "apply": "Apply",
+      "applying": "Applying…",
+      "remove": "Remove",
+      "applied": "{code} applied",
+      "discountLabel": "{type} OFF",
+      "discountValue": "−{amount}",
+      "invalid": "Invalid promo code",
+      "expired": "This offer has expired",
+      "notStarted": "This offer is not active yet",
+      "disabled": "This offer is currently unavailable",
+      "exhausted": "This offer is no longer available",
+      "alreadyUsed": "You have already used this promo code",
+      "firstOrderOnly": "This offer is only available on your first order",
+      "minimumOrderNotMet": "Minimum order of {amount} required",
+      "error": "Couldn't validate promo code. Please try again.",
+      "calculatedAtCheckout": "Calculated at checkout"
+    }
+  },
+  "trackOrder": {
+    "title": "Track Your Orders",
+    "description": "Enter your phone number below to check the history and real-time status of your meals.",
+    "continueTracking": "Continue Tracking Your Last Order",
+    "continue": "Continue",
+    "placeholder": "Enter your phone number...",
+    "clearSearch": "Clear saved phone number",
+    "track": "Track",
+    "noOrdersFound": "No Orders Found",
+    "noOrdersDesc": "We couldn't find any orders associated with this phone number. Please check the number and try again.",
+    "activeOrders": "Active Orders",
+    "completedOrders": "Completed Orders",
+    "errorEmptyPhone": "Please enter a valid phone number.",
+    "errorPhoneInvalid": "Please enter a valid Egyptian mobile number (e.g. 01012345678).",
+    "errorSearch": "An error occurred while searching for your orders.",
+    "order": "Order",
+    "completed": "Completed",
+    "date": "Date",
+    "address": "Address",
+    "items": "Items",
+    "itemCount": "{count, plural, one {# item} other {# items}}",
+    "total": "Total",
+    "viewDetails": "View Details",
+    "meta": {
+      "title": "Track Order",
+      "description": "Track the status of your recent orders."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Us",
+      "description": "Discover the story, philosophy, and passionate people behind our restaurant."
+    },
+    "hero": {
+      "kicker": "Our Story",
+      "titleStart": "Crafted with Passion,",
+      "titleHighlight": "Served with Love",
+      "description": "Since day one, we have been redefining great flavors in the heart of the city — one handcrafted dish at a time.",
+      "exploreMenu": "Explore Menu",
+      "reserveTable": "Reserve a Table"
+    },
+    "story": {
+      "kicker": "Our Story",
+      "titleStart": "A Family Recipe,",
+      "titleHighlight": "A Lifelong Dream",
+      "paragraph1": "It all started with a simple family recipe, passed down through generations and perfected over the years. We opened our doors with a single oven and a dream to share great food with our community.",
+      "paragraph2": "Today, every dish that leaves our kitchen carries that same devotion — fresh, carefully sourced ingredients and recipes that respect tradition.",
+      "foundedYear": "2026",
+      "foundedLabel": "Founded",
+      "brandLine": "Our Kitchen",
+      "imageAlt": "Our kitchen — our story"
+    },
+    "stats": {
+      "kicker": "By the Numbers",
+      "title": "Our Restaurant in Figures",
+      "items": [
+        {
+          "value": "10+",
+          "label": "Years of Excellence",
+          "description": "Serving our community since day one"
+        },
+        {
+          "value": "200K+",
+          "label": "Happy Guests",
+          "description": "Families and friends who sat at our tables"
+        },
+        {
+          "value": "48h",
+          "label": "Dough Fermentation",
+          "description": "Cold-fermented for depth of flavour"
+        },
+        {
+          "value": "100%",
+          "label": "Fresh Ingredients",
+          "description": "Sourced daily from trusted local partners"
+        }
+      ]
+    },
+    "philosophy": {
+      "kicker": "Our Philosophy",
+      "title": "The Principles that Guide Us",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Authenticity First",
+          "description": "Every recipe is rooted in culinary tradition. We refuse shortcuts — our dough is cold-fermented, our sauces cook low and slow."
+        },
+        {
+          "number": "02",
+          "title": "Seasonal Ingredients",
+          "description": "We design our menu around what's at its peak, so every season brings its own highlights."
+        },
+        {
+          "number": "03",
+          "title": "Sustainable Sourcing",
+          "description": "We partner with local farms and artisan producers who share our commitment to quality, sustainability, and fair practices."
+        },
+        {
+          "number": "04",
+          "title": "Warm Hospitality",
+          "description": "Food is best shared. We pour our energy not just into the dishes, but into creating an atmosphere where every guest feels like family."
+        }
+      ]
+    },
+    "chefs": {
+      "kicker": "The People Behind the Pizza",
+      "title": "Meet Our Chefs",
+      "people": [
+        {
+          "name": "Your Head Chef",
+          "role": "Founder & Head Chef",
+          "bio": "The heart of our kitchen — years of craft, trained in the classics and obsessed with the details."
+        },
+        {
+          "name": "Your Pastry Chef",
+          "role": "Pastry & Desserts",
+          "bio": "Our desserts are crafted with the same care as the mains — classic technique with a modern touch."
+        },
+        {
+          "name": "Your Kitchen Artisan",
+          "role": "Pizza Artisan",
+          "bio": "Every dish is finished by hand — precision, pride, and consistency on every plate."
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "kicker": "Why Choose Us",
+      "title": "What Makes Us Different",
+      "reasons": [
+        {
+          "icon": "🌿",
+          "title": "Farm to Table",
+          "description": "Every ingredient travels the shortest route from farm to your plate. No frozen shortcuts — ever."
+        },
+        {
+          "icon": "🔥",
+          "title": "Wood-Fired Perfection",
+          "description": "Our 450°C wood-fired oven creates the char, lift, and flavour that no electric oven can replicate."
+        },
+        {
+          "icon": "🧑‍🍳",
+          "title": "Masterful Craft",
+          "description": "Our pizzaiolos train for years. Every stretch, every toss, every bake is deliberate and precise."
+        },
+        {
+          "icon": "🍅",
+          "title": "Quality Ingredients",
+          "description": "Fresh, carefully selected ingredients form the foundation of every dish we make."
+        },
+        {
+          "icon": "🫶",
+          "title": "Family Atmosphere",
+          "description": "From the moment you walk in, you're not a customer — you're a guest. That distinction matters to us."
+        },
+        {
+          "icon": "🏅",
+          "title": "Award Winning",
+          "description": "Recognised for outstanding quality by our guests and by the industry — consistency we never take for granted."
+        }
+      ]
+    },
+    "gallery": {
+      "kicker": "Our Gallery",
+      "title": "A Feast for the Eyes",
+      "imageAlts": [
+        "Pepperoni pizza fresh from the oven",
+        "Margherita with fresh basil",
+        "Wood-fired crust",
+        "Hawaiian special",
+        "Classic slice"
+      ]
+    },
+    "testimonials": {
+      "kicker": "Guest Stories",
+      "title": "What Our Guests Say",
+      "items": [
+        {
+          "quote": "The best meal I've had in a long time. Everything tasted fresh, honest and full of flavour.",
+          "name": "Elena M.",
+          "detail": "Food Blogger"
+        },
+        {
+          "quote": "This is our family's Friday night ritual. Three kids, each with their favourite topping — and they all leave happy.",
+          "name": "James & Sarah K.",
+          "detail": "Regulars since 2015"
+        },
+        {
+          "quote": "The Margherita alone is worth the trip. Pure, honest ingredients done with mastery.",
+          "name": "Amira O.",
+          "detail": "Restaurant Reviewer"
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Ready to taste?",
+      "title": "Explore Our Full Menu",
+      "description": "From our signature dishes to seasonal specials — every plate is made with care and pride.",
+      "viewMenu": "View Menu",
+      "bookTable": "Book a Table"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "back": "Back",
+    "fromPrice": "From",
+    "browseMenu": "Browse Menu",
+    "sections": {
+      "featured": "Featured"
+    },
+    "search": {
+      "placeholder": "Search food...",
+      "clear": "Clear search"
+    },
+    "empty": {
+      "title": "Nothing found",
+      "description": "Try a different search or filter."
+    }
+  },
+  "product": {
+    "notFoundTitle": "Product Not Found",
+    "notFoundDescription": "Sorry, we could not find the product you are looking for."
+  },
+  "order": {
+    "orderNumber": "Order Number",
+    "orderType": "Order Type",
+    "typeDelivery": "Delivery",
+    "typeDineIn": "Dine-in",
+    "table": "Table {number}",
+    "grandTotal": "Grand Total",
+    "orderedItems": "Ordered Items",
+    "qty": "Qty",
+    "unit": "Unit",
+    "note": "Note: {note}",
+    "priceSummary": "Price Summary",
+    "deliveryZone": "Delivery Zone",
+    "eta": "ETA",
+    "etaMin": " min",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery Fee",
+    "tax": "Tax",
+    "discount": "Discount",
+    "vatIncluded": "VAT included where applicable",
+    "orderProgress": "Order Progress",
+    "orderCancelled": "Order Cancelled",
+    "cancelledDescription": "This order was cancelled. Please contact us for support.",
+    "complete": "Complete",
+    "currentStatus": "Current status",
+    "currentStepAria": "current step",
+    "notFoundTitle": "Order Not Found",
+    "notFoundDescription": "We couldn't find the order you're looking for. It may have been removed or the link is incorrect.",
+    "backToHome": "Back to Home",
+    "meta": {
+      "title": "Order {orderNumber}",
+      "description": "Track your order {orderNumber}."
+    },
+    "statuses": {
+      "PENDING": "Pending",
+      "CONFIRMED": "Confirmed",
+      "PREPARING": "Preparing",
+      "READY": "Ready",
+      "OUT_FOR_DELIVERY": "Out for Delivery",
+      "DELIVERED": "Delivered",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled"
+    },
+    "customerInfo": {
+      "title": "Customer & Order Info",
+      "deliveryTitle": "Delivery & Customer Info",
+      "dineInTitle": "Dine-in & Customer Info",
+      "customerName": "Customer Name",
+      "phoneNumber": "Phone Number",
+      "deliveryAddress": "Delivery Address",
+      "tableNumber": "Table Number",
+      "paymentMethod": "Payment Method",
+      "paymentStatus": "Payment Status",
+      "orderNotes": "Order Notes",
+      "notSpecified": "Not specified",
+      "paymentMethods": {
+        "CASH": "Cash on Delivery",
+        "CARD": "Credit / Debit Card",
+        "ONLINE": "Online Payment",
+        "WALLET": "Digital Wallet"
+      },
+      "paymentStatuses": {
+        "PENDING": "Pending",
+        "PAID": "Paid",
+        "FAILED": "Failed",
+        "REFUNDED": "Refunded",
+        "PARTIALLY_REFUNDED": "Partially Refunded"
+      }
+    },
+    "success": {
+      "title": "Thank you, {name}!",
+      "subtitle": "Your restaurant has received your order successfully.",
+      "dineInSubtitle": "Your restaurant has received your dine-in order successfully.",
+      "nextSteps": {
+        "PENDING": "Our team is reviewing your order and will confirm it shortly.",
+        "CONFIRMED": "Your order has been confirmed and is heading to the kitchen.",
+        "PREPARING": "Our chefs are carefully preparing your meal right now.",
+        "READY": "Your order is ready and about to leave for delivery.",
+        "OUT_FOR_DELIVERY": "Your order is on its way — sit tight!",
+        "DELIVERED": "Your order has been delivered. Enjoy your meal! 🍽️",
+        "COMPLETED": "Your order is complete. Thank you for dining with us!",
+        "CANCELLED": "Your order was cancelled. Please contact us if this was unexpected."
+      },
+      "dineInNextSteps": {
+        "READY": "Your order is ready and will be served at your table shortly.",
+        "COMPLETED": "Your dine-in order is complete. Thank you for dining with us!"
+      }
+    }
+  },
+  "reservations": {
+    "meta": {
+      "title": "Reservations",
+      "description": "Book your table. Pick a date, choose a slot and reserve in seconds."
+    },
+    "hero": {
+      "kicker": "Reservations",
+      "titleStart": "Reserve",
+      "titleHighlight": "your table",
+      "description": "Choose a date and a time slot — we'll hold your table. You'll receive a confirmation once our team approves the booking."
+    },
+    "form": {
+      "date": "Date",
+      "pickSlot": "Available time slots",
+      "name": "Guest name",
+      "namePlaceholder": "Your full name",
+      "phone": "Phone",
+      "phonePlaceholder": "+20 100 000 0000",
+      "email": "Email (optional)",
+      "emailPlaceholder": "you@example.com",
+      "partySize": "Party size",
+      "notes": "Notes (optional)",
+      "notesPlaceholder": "Allergies, seating preferences, occasion…",
+      "submit": "Book table",
+      "noSlots": "No available slots on this day. Try another date.",
+      "loadFailed": "Couldn't load availability. Please try again.",
+      "disclaimer": "Reservations are confirmed by our team. You'll be notified once approved."
+    },
+    "success": {
+      "title": "Request received",
+      "description": "We've received your reservation request. Our team will confirm it shortly — check your phone for updates.",
+      "another": "Book another table"
+    },
+    "slotReason": {
+      "outsideHours": "Closed",
+      "closedHoliday": "Holiday",
+      "closedTemporary": "Closed",
+      "past": "Past",
+      "outsideWindow": "Too far",
+      "disabled": "Off",
+      "full": "Full"
+    },
+    "valid": {
+      "disabled": "Reservations are disabled right now.",
+      "nameRequired": "Guest name is required.",
+      "phoneRequired": "Phone is required.",
+      "partySizeInvalid": "Party size must be at least 1.",
+      "maxGuests": "Party size exceeds the maximum allowed guests.",
+      "dateRequired": "A reservation date is required.",
+      "pastDate": "The reservation time must be in the future.",
+      "outsideWindow": "The reservation is outside the allowed booking window.",
+      "outsideHours": "The reservation time is outside business hours.",
+      "closedHoliday": "The restaurant is closed on a holiday at that time.",
+      "closedTemporary": "The restaurant is temporarily closed at that time.",
+      "capacityFull": "Capacity is full. Reduce the party size by {shortfall}."
+    }
+  },
+  "tables": {
+    "greeting": "You're ordering from Table {number}.",
+    "invalid": "This table QR code is invalid. Please ask a staff member for help.",
+    "inactive": "Table {number} is currently inactive. Please ask a staff member for help.",
+    "banner": "Ordering from Table {number}",
+    "dismiss": "Dismiss"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Us",
+      "description": "Visit us, call us, or send a message. Find our location, opening hours, and reservation details."
+    },
+    "hero": {
+      "badge": "We reply within 24 hours",
+      "kicker": "Get in Touch",
+      "titleStart": "Let's Talk",
+      "titleHighlight": "Good Food",
+      "description": "A table reservation, a private event, or a question about our menu — we're always happy to hear from you.",
+      "callNow": "Call Now",
+      "sendMessage": "Send a Message"
+    },
+    "info": {
+      "kicker": "Contact",
+      "title": "Reach Us Directly",
+      "description": "Choose whichever way suits you — we're here every day of the week.",
+      "addressLabel": "Address",
+      "addressValue": "Add your restaurant address in Business Settings.",
+      "phoneLabel": "Phone",
+      "phoneValue": "Add a contact number in Business Settings.",
+      "whatsappLabel": "WhatsApp",
+      "whatsappValue": "Add a WhatsApp number in Business Settings.",
+      "emailLabel": "Email",
+      "emailValue": "Add an email in Business Settings."
+    },
+    "hours": {
+      "kicker": "Opening Hours",
+      "title": "When We're Open",
+      "today": "Today",
+      "closed": "Closed",
+      "open24": "Open 24 hours",
+      "note": "The kitchen closes 30 minutes before closing time. Hours may vary on public holidays.",
+      "days": [
+        {
+          "day": "Sunday",
+          "hours": "12:00 PM – 10:00 PM"
+        },
+        {
+          "day": "Monday",
+          "hours": "11:00 AM – 11:00 PM"
+        },
+        {
+          "day": "Tuesday",
+          "hours": "11:00 AM – 11:00 PM"
+        },
+        {
+          "day": "Wednesday",
+          "hours": "11:00 AM – 11:00 PM"
+        },
+        {
+          "day": "Thursday",
+          "hours": "11:00 AM – 11:00 PM"
+        },
+        {
+          "day": "Friday",
+          "hours": "11:00 AM – 12:00 AM"
+        },
+        {
+          "day": "Saturday",
+          "hours": "11:00 AM – 12:00 AM"
+        }
+      ]
+    },
+    "social": {
+      "title": "Follow the kitchen",
+      "subtitle": "Daily specials and behind-the-scenes",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tiktok": "TikTok",
+      "snapchat": "Snapchat",
+      "website": "Website"
+    },
+    "form": {
+      "kicker": "Send a Message",
+      "title": "We'd Love to Hear from You",
+      "description": "Fill in the form below and our team will get back to you shortly.",
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "nameRequired": "Please enter your full name",
+      "nameMin": "Name must be at least 2 characters",
+      "email": "Email Address",
+      "emailPlaceholder": "marco@example.com",
+      "emailRequired": "Please enter your email address",
+      "emailInvalid": "Please enter a valid email address",
+      "phone": "Phone",
+      "phoneOptional": "Phone (optional)",
+      "phonePlaceholder": "+1 555 014 8820",
+      "phoneInvalid": "Please enter a valid phone number",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject…",
+      "subjectRequired": "Please choose a subject",
+      "subjects": [
+        {
+          "value": "reservation",
+          "label": "Table Reservation"
+        },
+        {
+          "value": "event",
+          "label": "Private Event"
+        },
+        {
+          "value": "feedback",
+          "label": "Feedback"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ],
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help…",
+      "messageRequired": "Please write a message",
+      "messageMin": "Message must be at least 10 characters",
+      "send": "Send Message",
+      "sending": "Sending…",
+      "successTitle": "Message Received!",
+      "successText": "Thank you for reaching out. Our team will get back to you within 24 hours.",
+      "sendAnother": "Send Another Message"
+    },
+    "faq": {
+      "kicker": "FAQ",
+      "title": "Frequently Asked Questions",
+      "description": "Everything you need to know before you visit. Can't find an answer? Just ask us directly.",
+      "stillTitle": "Still have questions?",
+      "stillText": "Our team is one call or message away.",
+      "call": "Call Us",
+      "whatsapp": "WhatsApp",
+      "items": [
+        {
+          "q": "Do I need a reservation for dinner?",
+          "a": "Reservations are recommended on Friday and Saturday evenings. Walk-ins are always welcome for lunch and weekday dinners."
+        },
+        {
+          "q": "Do you cater private events?",
+          "a": "Absolutely. We offer full-service catering for up to 200 guests. Contact us at least two weeks in advance to plan your event."
+        },
+        {
+          "q": "Is there a vegetarian or vegan menu?",
+          "a": "Yes — we have a dedicated selection of vegetarian pizzas and can adapt most dishes to be vegan. Just ask your server."
+        },
+        {
+          "q": "What is your cancellation policy?",
+          "a": "For groups of eight or more, please let us know 24 hours in advance. For smaller parties, same-day cancellations are fine."
+        },
+        {
+          "q": "Do you offer gluten-free bases?",
+          "a": "We offer a certified gluten-free dough. Please note our kitchen is not entirely gluten-free, so tell us about any allergies."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Ready to visit?",
+      "title": "Reserve Your Table Today",
+      "description": "Whether it's a romantic dinner for two or a celebration with the whole family — we'll make sure it's memorable.",
+      "callNow": "Call Us Now",
+      "viewMenu": "View Menu"
+    }
+  },
+  "Auth": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to pick up where you left off",
+    "email": "Email",
+    "emailPlaceholder": "m@example.com",
+    "password": "Password",
+    "signIn": "Sign In",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithEmail": "Or continue with email",
+    "google": "Google",
+    "github": "GitHub",
+    "forgotPassword": "Forgot?",
+    "createAccount": "Create an account",
+    "newHere": "New here?",
+    "rememberMe": "Remember me",
+    "terms": "Terms",
+    "privacy": "Privacy Policy",
+    "orContinueWith": "or",
+    "byContinuing": "By continuing you agree to our",
+    "and": "and",
+    "noAccount": "Don't have an account?",
+    "marketingCopy": "Experience culinary excellence. Every detail handcrafted for your dining pleasure.",
+    "brandTagline": "A premium dining experience.",
+    "reservedForYou": "Reserved for you",
+    "tableOrder": "NO. 047 · TABLE ORDER",
+    "signUpTitle": "Create your account",
+    "signUpSubtitle": "Join Pizza Roma and get your favourite dishes delivered faster.",
+    "secureSignup": "Secure sign-up",
+    "name": "Full Name",
+    "namePlaceholder": "Marco Romano",
+    "passwordPlaceholder": "At least 8 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "alreadyHaveAccount": "Already have an account?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "passwordStrength": {
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong"
+    },
+    "LoginForm": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "passwordMin": "Password must be at least 6 characters",
+      "userNotFound": "User not found",
+      "invalidCredentials": "Invalid email or password",
+      "invalidPassword": "Invalid password or email",
+      "accountDisabled": "This account has been disabled. Please contact support.",
+      "accountLocked": "Too many failed attempts. Try again in {minutes} minute(s).",
+      "loginSuccess": "Login successful",
+      "serverError": "Server error",
+      "invalidData": "Invalid data",
+      "useGoogleSignIn": "This account uses Google sign in. Please continue with Google."
+    },
+    "session": {
+      "expired": "Your session has expired. Please sign in again.",
+      "accountDisabled": "Your account has been disabled. Please contact support.",
+      "accountLocked": "Your account is temporarily locked. Try again later.",
+      "noMembership": "You do not have access to this restaurant.",
+      "restaurantSuspended": "This restaurant is currently suspended."
+    },
+    "SignUpForm": {
+      "nameRequired": "Full name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "passwordMin": "Password must be at least 8 characters",
+      "passwordUpper": "Add at least one uppercase letter",
+      "passwordLower": "Add at least one lowercase letter",
+      "passwordNumber": "Add at least one number",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordMatch": "Passwords do not match",
+      "termsRequired": "Please accept the terms to continue",
+      "emailExists": "An account with this email already exists. Please sign in instead.",
+      "signUpSuccess": "Account created successfully! Welcome to Pizza Roma.",
+      "signupFailed": "Signup failed. Please try again.",
+      "serverError": "Something went wrong. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "brand": {
+      "title": "Restora",
+      "subtitle": "Control Center"
+    },
+    "nav": {
+      "overview": "Overview",
+      "orders": "Orders",
+      "products": "Products",
+      "categories": "Categories",
+      "offers": "Offers",
+      "deliveryZones": "Delivery Zones",
+      "reservations": "Reservations",
+      "homeSections": "Home Sections",
+      "customers": "Customers",
+      "staff": "Staff",
+      "roles": "Roles",
+      "security": "Security",
+      "activity": "Activity Logs",
+      "notifications": "Notifications",
+      "documents": "Documents",
+      "analytics": "Analytics",
+      "restaurant": "Restaurant",
+      "signOut": "Sign out",
+      "backToSite": "Back to website",
+      "keyboardShortcuts": "Keyboard shortcuts"
+    },
+    "common": {
+      "save": "Save",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "create": "Create",
+      "search": "Search",
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive",
+      "actions": "Actions",
+      "noResults": "No results found",
+      "close": "Close",
+      "loading": "Loading…",
+      "confirm": "Confirm",
+      "name": "Name",
+      "status": "Status",
+      "price": "Price",
+      "date": "Date",
+      "total": "Total",
+      "items": "items",
+      "clear": "Clear",
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page",
+      "of": "of",
+      "saved": "Saved",
+      "failed": "Something went wrong",
+      "unauthorized": "You are not authorized",
+      "orderNumber": "Order number",
+      "customer": "Customer",
+      "emptyState": "Nothing here yet",
+      "reset": "Reset",
+      "deleteConfirmDescription": "This action cannot be undone.",
+      "chart": "Chart",
+      "primaryNavigation": "Primary navigation"
+    },
+    "statuses": {
+      "PENDING": "Pending",
+      "CONFIRMED": "Confirmed",
+      "PREPARING": "Preparing",
+      "READY": "Ready",
+      "OUT_FOR_DELIVERY": "Out for delivery",
+      "DELIVERED": "Delivered",
+      "CANCELLED": "Cancelled"
+    },
+    "payment": {
+      "PENDING": "Pending",
+      "PAID": "Paid",
+      "FAILED": "Failed",
+      "REFUNDED": "Refunded",
+      "PARTIALLY_REFUNDED": "Partially refunded",
+      "UNPAID": "Unpaid",
+      "CASH": "Cash",
+      "CARD": "Card",
+      "ONLINE": "Online",
+      "paymentStatus": "Payment",
+      "paid": "Mark as paid"
+    },
+    "overview": {
+      "title": "Overview",
+      "subtitle": "Your restaurant at a glance",
+      "todayRevenue": "Today's revenue",
+      "todayOrders": "Today's orders",
+      "activeOrders": "Active orders",
+      "avgOrderValue": "Avg. order value",
+      "weekRevenue": "Revenue this week",
+      "monthRevenue": "Revenue this month",
+      "fromLastDay": "vs yesterday",
+      "fromLastWeek": "vs same period last week",
+      "fromLastMonth": "vs same period last month",
+      "pendingCount": "Pending",
+      "productCount": "Products",
+      "categoryCount": "Categories",
+      "userCount": "Customers",
+      "orderPipeline": "Order pipeline",
+      "recentOrders": "Recent orders",
+      "topProducts": "Top products",
+      "revenueByPayment": "Revenue by payment",
+      "viewOrders": "View orders",
+      "viewReservations": "View reservations",
+      "viewAnalytics": "View analytics",
+      "live": "Live",
+      "noRecentOrders": "No recent orders",
+      "noTopProducts": "No sales yet",
+      "emptyPipeline": "No active orders",
+      "topCategories": "Top categories",
+      "delivery": {
+        "title": "Delivery performance",
+        "deliveryOrders": "Delivery orders",
+        "pickupOrders": "Pickup orders",
+        "share": "share",
+        "feeRevenue": "Delivery fees",
+        "avgFee": "Avg. fee",
+        "avgEta": "Avg. ETA",
+        "split": "Pickup vs delivery",
+        "topZones": "Top delivery zones",
+        "empty": "No delivery activity yet"
+      },
+      "reservations": {
+        "title": "Reservations",
+        "total": "Total",
+        "avgParty": "Avg. party",
+        "noShowRate": "No-show rate",
+        "completedRate": "Completion rate",
+        "empty": "No reservations yet"
+      }
+    },
+    "restaurant": {
+      "title": "Restaurant Control Center",
+      "subtitle": "Manage hours, closures, branding and localization in one place",
+      "saved": "Saved",
+      "failed": "Couldn't save changes",
+      "reset": "Reset",
+      "errors": {
+        "businessHours": {
+          "count": "Exactly 7 days are required.",
+          "day": "Invalid day value.",
+          "duplicate": "Duplicate day entries.",
+          "status": "Invalid status.",
+          "shifts": "Invalid shifts.",
+          "noShifts": "An open day needs at least one shift.",
+          "invalidShift": "Each shift needs a valid open and close time.",
+          "overlap": "Shifts must not overlap."
+        },
+        "temporaryClosure": {
+          "status": "Invalid closure status.",
+          "date": "Invalid date.",
+          "pastDate": "The reopen date must be in the future."
+        },
+        "holidays": {
+          "list": "Invalid holidays list.",
+          "date": "Invalid or missing holiday date.",
+          "duplicate": "Two holidays share the same date.",
+          "reason": "Please add a reason in at least one language.",
+          "noShifts": "An open holiday needs at least one shift.",
+          "invalidShift": "Each shift needs a valid open and close time."
+        },
+        "reservations": {
+          "invalid": "Check the reservation values."
+        },
+        "country": {
+          "invalid": "Invalid country."
+        },
+        "unauthorized": "Please sign in to continue.",
+        "forbidden": "You do not have permission to do this.",
+        "account-disabled": "This account has been disabled. Please contact support.",
+        "account-locked": "Your account is temporarily locked. Try again later.",
+        "no-membership": "You do not have access to this restaurant.",
+        "restaurant-suspended": "This restaurant is currently suspended."
+      },
+      "status": {
+        "checking": "Checking status…",
+        "open": "Open now",
+        "closed": "Currently closed",
+        "accepting": "Accepting orders",
+        "reopens": "Reopens",
+        "reopensLater": "Reopens later",
+        "refresh": "Refresh"
+      },
+      "general": {
+        "title": "General & Delivery Pricing",
+        "description": "Core identity and the delivery settings used across the site.",
+        "restaurantName": "Restaurant name",
+        "shortDescription": "Short description",
+        "descriptionHint": "Shown on the home page and in search results.",
+        "currency": "Currency",
+        "timezone": "Time zone",
+        "derived": "Currency & time zone",
+        "countryHint": "Set by the Country section below.",
+        "deliveryZonesLink": "Manage delivery zones",
+        "pricing": "Delivery pricing",
+        "deliveryFee": "Delivery fee",
+        "freeDeliveryThreshold": "Free delivery above",
+        "freeDeliveryHint": "Orders at or above this amount ship free.",
+        "minOrder": "Minimum order",
+        "deliveryTime": "Estimated delivery time",
+        "deliveryTimeHint": "In minutes."
+      },
+      "country": {
+        "title": "Country & currency",
+        "description": "Select the country your restaurant operates in. Currency, time zone and default locale derive from it.",
+        "country": "Country",
+        "countryHint": "Changing the country updates the currency, time zone and default locale everywhere.",
+        "derived": "Derived from this country",
+        "currency": "Currency",
+        "timezone": "Time zone",
+        "locale": "Default locale",
+        "phoneCode": "Phone code",
+        "noCountries": "No countries available. Contact your platform administrator."
+      },
+      "hours": {
+        "title": "Business hours",
+        "description": "Set opening hours per day. \"24 hours\" marks a day as always open.",
+        "day": "Day",
+        "status": {
+          "24": "24 hours",
+          "open": "Open",
+          "closed": "Closed"
+        },
+        "statusHint": {
+          "24": "Open around the clock",
+          "closed": "Closed all day"
+        },
+        "days": {
+          "0": "Monday",
+          "1": "Tuesday",
+          "2": "Wednesday",
+          "3": "Thursday",
+          "4": "Friday",
+          "5": "Saturday",
+          "6": "Sunday"
+        },
+        "openAt": "opens at",
+        "closeAt": "closes at",
+        "addShift": "Add shift",
+        "removeShift": "Remove shift"
+      },
+      "closure": {
+        "title": "Temporary closure",
+        "description": "Pause ordering for maintenance, vacation, emergency or prayer times.",
+        "status": "Closed for now",
+        "statusHint": "Turn on to stop accepting orders immediately.",
+        "closedUntil": "Reopen date",
+        "closedUntilHint": "Optional. Leave empty to stay closed until you open it again.",
+        "reason": "Reason",
+        "reasonNone": "No reason",
+        "reasons": {
+          "maintenance": "Maintenance",
+          "vacation": "Vacation",
+          "emergency": "Emergency",
+          "prayer": "Prayer time",
+          "other": "Other"
+        },
+        "message": "Customer message",
+        "messageHint": "Shown to customers on the cart page while closed."
+      },
+      "holidays": {
+        "title": "Holidays & special days",
+        "description": "Full-day or custom-hours closures for holidays.",
+        "emptyTitle": "No holidays",
+        "emptyDescription": "Add holidays and special days to override the weekly schedule.",
+        "add": "Add holiday",
+        "remove": "Remove holiday",
+        "date": "Date",
+        "reason": "Reason",
+        "reasonPlaceholder": "E.g. Eid, New Year…",
+        "closedAllDay": "Closed all day",
+        "openAt": "opens at",
+        "closeAt": "closes at",
+        "addShift": "Add shift",
+        "removeShift": "Remove shift"
+      },
+      "reservations": {
+        "title": "Reservations",
+        "description": "Policies for future table reservations.",
+        "enabled": "Enable reservations",
+        "capacity": "Tables / capacity",
+        "capacityHint": "Number of available tables.",
+        "maxGuests": "Max guests per reservation",
+        "intervalMinutes": "Booking interval",
+        "intervalHint": "Every N minutes a new slot opens.",
+        "windowDays": "Booking window",
+        "windowHint": "How many days ahead customers can book."
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Visual identity used across the public site.",
+        "primaryColor": "Primary color",
+        "primaryColorHint": "Keep it aligned with the site's theme colors.",
+        "logo": "Logo URL",
+        "coverImage": "Cover image URL",
+        "urlHint": "Paste an image URL."
+      },
+      "contact": {
+        "title": "Contact details",
+        "description": "Where customers can reach you — used by the footer and contact pages.",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp",
+        "email": "Email",
+        "address": "Address",
+        "googleMaps": "Google Maps link",
+        "urlHint": "Paste a link."
+      },
+      "social": {
+        "title": "Social media",
+        "description": "Your public profiles.",
+        "website": "Website",
+        "urlHint": "Paste a link."
+      },
+      "localization": {
+        "title": "Localization",
+        "description": "Which languages the site is available in, and the default one.",
+        "supportedLanguages": "Enabled languages",
+        "defaultLanguage": "Default language",
+        "defaultLanguageHint": "Used for guests who haven't chosen a language."
+      },
+      "future": {
+        "title": "Planned modules",
+        "description": "Coming in future releases — these integrations are on the roadmap.",
+        "soon": "Soon",
+        "modules": {
+          "payments": "Online payments",
+          "taxes": "Tax engine",
+          "notifications": "Order notifications",
+          "security": "Team & security"
+        }
+      }
+    },
+    "orders": {
+      "title": "Orders",
+      "subtitle": "Manage incoming orders and their status",
+      "filters": {
+        "allStatuses": "All statuses",
+        "allPayments": "All payments",
+        "searchPlaceholder": "Search by number, name or phone",
+        "from": "From",
+        "to": "To"
+      },
+      "order": "Order",
+      "time": "Time",
+      "itemsCount": "{count} items",
+      "payment": "Payment",
+      "noOrders": "No orders match your filters",
+      "statusUpdated": "Status updated",
+      "statusChangeTitle": "Change order status?",
+      "statusChangeBody": "Set {orderNumber} to {status}?",
+      "details": "Order details",
+      "customerInfo": "Customer",
+      "address": "Delivery address",
+      "notes": "Notes",
+      "delivery": "Delivery",
+      "item": "Item",
+      "qty": "Qty",
+      "subtotal": "Subtotal",
+      "grandTotal": "Total",
+      "variant": "Variant",
+      "markPaid": "Mark as paid",
+      "markUnpaid": "Mark as unpaid",
+      "paymentMethod": "Payment method",
+      "unknownPayment": "Not set",
+      "print": "Print",
+      "timeline": "Status timeline",
+      "currentStatus": "Current",
+      "itemNotes": "Item notes",
+      "live": "Live",
+      "kitchenNotes": "Kitchen notes",
+      "kitchenNotesPlaceholder": "Add preparation instructions…",
+      "saveKitchenNotes": "Save notes",
+      "kitchenNotesSaved": "Notes saved",
+      "noKitchenNotes": "No kitchen notes",
+      "deliveryStatus": "Delivery status",
+      "estimatedTime": "Estimated time",
+      "etaRange": "{min}–{max} min",
+      "etaMinutes": "{value} min",
+      "deliveryZone": "Zone",
+      "deliveryFeeLine": "Delivery fee",
+      "printTicket": "Print ticket",
+      "invoice": "Invoice",
+      "advanceTo": "Advance to {status}",
+      "cancelOrder": "Cancel order",
+      "cancelConfirm": "Cancel this order?",
+      "timelineEmpty": "No status events yet",
+      "kitchenTicketTitle": "Kitchen Ticket",
+      "invoiceTitle": "Invoice"
+    },
+    "products": {
+      "title": "Products",
+      "subtitle": "Create and manage your menu",
+      "newProduct": "New product",
+      "addProduct": "Add product",
+      "editProduct": "Edit product",
+      "image": "Image",
+      "basePrice": "Base price",
+      "category": "Category",
+      "variants": "Variants",
+      "optionGroups": "Options",
+      "featured": "Featured",
+      "available": "Available",
+      "unavailable": "Unavailable",
+      "notFeatured": "Not featured",
+      "selectCategory": "Select category",
+      "noCategories": "Create a category first",
+      "imagePlaceholder": "Image URL",
+      "description": "Description",
+      "deleteConfirm": "Delete this product? Products referenced by orders cannot be deleted.",
+      "inUse": "This product is used by past orders and cannot be deleted.",
+      "empty": "No products yet",
+      "addVariant": "Add size",
+      "addOptionGroup": "Add option group",
+      "addOption": "Add option",
+      "required": "Required",
+      "multipleSelection": "Multiple selection",
+      "minSelection": "Min selection",
+      "maxSelection": "Max selection",
+      "nameOfVariant": "Variant name",
+      "nameOfOptionGroup": "Option group name",
+      "nameOfOption": "Option name",
+      "toggleAvailable": "Toggle availability",
+      "toggleFeatured": "Toggle featured",
+      "duplicate": "Duplicate",
+      "tabs": {
+        "details": "Details",
+        "options": "Options",
+        "homeSections": "Home sections",
+        "preview": "Preview"
+      },
+      "from": "From",
+      "untitled": "Untitled",
+      "homeSectionsHint": "Pick the home sections where this product should appear.",
+      "searchPlaceholder": "Search products…",
+      "allCategories": "All categories",
+      "availabilityFilter": "Availability",
+      "statusAll": "All statuses",
+      "featuredFilter": "Featured",
+      "featuredAll": "All",
+      "sortBy": "Sort by",
+      "sortOrder": "Manual order",
+      "sortNewest": "Newest",
+      "selectAll": "Select all",
+      "selected": "{count} selected",
+      "bulkAvailable": "Set available",
+      "bulkUnavailable": "Set unavailable",
+      "bulkFeatured": "Mark featured",
+      "bulkNotFeatured": "Unmark featured",
+      "sectionShortcuts": "Section shortcuts",
+      "sectionShortcutsHint": "Quickly mark this product as a best seller, chef recommendation and more.",
+      "badgeBestSeller": "Best Seller",
+      "badgeChefRecommendation": "Chef Rec",
+      "badgeKidsMeal": "Kids",
+      "badgeFamilyMeal": "Family",
+      "badgeComboMeal": "Combo",
+      "badges": "Tags",
+      "bulkAddBestSellers": "Add to Best Sellers",
+      "bulkRemoveBestSellers": "Remove from Best Sellers",
+      "bulkAddChefRecommendations": "Add to Chef Recommendations",
+      "bulkRemoveChefRecommendations": "Remove from Chef Recommendations",
+      "bulkAddKidsMeals": "Add to Kids Meals",
+      "bulkRemoveKidsMeals": "Remove from Kids Meals",
+      "bulkAddFamilyMeals": "Add to Family Meals",
+      "bulkRemoveFamilyMeals": "Remove from Family Meals",
+      "bulkAddComboMeals": "Add to Combo Meals",
+      "bulkRemoveComboMeals": "Remove from Combo Meals"
+    },
+    "categories": {
+      "title": "Categories",
+      "subtitle": "Organize your menu",
+      "newCategory": "New category",
+      "displayOrder": "Order",
+      "productCount": "Products",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "deleteConfirm": "Delete this category? Its products must be moved first.",
+      "inUse": "This category still contains products.",
+      "empty": "No categories yet",
+      "image": "Image",
+      "imagePlaceholder": "Image URL",
+      "visible": "Visible",
+      "hidden": "Hidden",
+      "visibility": "Visibility",
+      "toggleVisibility": "Toggle visibility",
+      "preview": "Preview",
+      "previewTitle": "Category preview",
+      "noImage": "No image",
+      "scheduling": "Scheduling",
+      "schedulingSoon": "Soon",
+      "schedulingHint": "Schedule category availability for a future release."
+    },
+    "offers": {
+      "kicker": "Promotions",
+      "title": "Offers",
+      "subtitle": "Discounts, bundles and meal deals",
+      "newOffer": "New offer",
+      "formDescription": "Configure an offer — type, value, scope and schedule.",
+      "image": "Image",
+      "imagePlaceholder": "Image URL",
+      "type": "Type",
+      "discountType": "Discount basis",
+      "discountTypes": {
+        "percentage": "Percentage",
+        "fixed_amount": "Fixed amount"
+      },
+      "types": {
+        "percentage": "Percentage discount",
+        "fixed": "Fixed discount",
+        "bogo": "Buy X Get Y",
+        "bundle": "Bundle offer",
+        "meal_deal": "Meal deal",
+        "family_meal": "Family meal",
+        "kids_meal": "Kids meal"
+      },
+      "percentageValue": "Percentage (%)",
+      "fixedValue": "Amount",
+      "buyQty": "Buy quantity",
+      "getQty": "Get quantity",
+      "rewardDiscountPct": "Reward discount (%)",
+      "bundlePrice": "Bundle price",
+      "triggerProducts": "Buy these products",
+      "rewardProducts": "Get these products",
+      "includedProducts": "Included products",
+      "noProducts": "No products available",
+      "searchProducts": "Search products…",
+      "description": "Description",
+      "startsAt": "Starts at",
+      "endsAt": "Ends at",
+      "priority": "Priority",
+      "displayOrder": "Order",
+      "active": "Active",
+      "visible": "Public",
+      "toggleActive": "Toggle active",
+      "toggleVisibility": "Toggle public visibility",
+      "deleteConfirm": "Delete this offer? Past orders keep their snapshot.",
+      "deleteFailed": "Failed to delete the offer. Try again.",
+      "empty": "No offers yet",
+      "preview": "Offer preview",
+      "usage": "{count, plural, =0{Never used} one{Used by # order} other{Used by # orders}} · {discount} saved",
+      "statusBadge": {
+        "visible": "Public",
+        "hidden": "Hidden"
+      },
+      "status": {
+        "live": "Live",
+        "scheduled": "Scheduled",
+        "expired": "Expired",
+        "disabled": "Disabled"
+      },
+      "validation": {
+        "type_required": "Offer type is required.",
+        "type_unknown": "Unknown offer type.",
+        "value_negative": "Value cannot be negative.",
+        "percentage_over_100": "Percentage cannot exceed 100.",
+        "discount_type_required": "Discount basis is required.",
+        "discount_type_unknown": "Unknown discount basis.",
+        "ends_before_starts": "End date must be after the start date.",
+        "bogo_invalid_quantities": "Buy and get quantities must be at least 1.",
+        "bogo_missing_trigger": "Select at least one trigger product.",
+        "bogo_missing_reward": "Select at least one reward product.",
+        "bundle_missing_products": "Select at least two included products.",
+        "bundle_invalid_price": "Bundle price cannot be negative.",
+        "value_required": "Value is required."
+      }
+    },
+    "deliveryZones": {
+      "title": "Delivery Zones",
+      "subtitle": "Define delivery areas, fees and time estimates",
+      "newZone": "New zone",
+      "formDescription": "Set the delivery fee, estimated time and minimum order for this area.",
+      "deliveryPrice": "Delivery fee",
+      "minOrder": "Minimum order",
+      "etaMin": "ETA from (min)",
+      "etaMax": "ETA to (min)",
+      "etaRange": "{min}-{max} min",
+      "etaInvalid": "ETA to must be greater than or equal to ETA from.",
+      "displayOrder": "Order",
+      "ordersCount": "Orders",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "deleteConfirm": "Delete this delivery zone?",
+      "deleteDescription": "Past orders keep their snapshot; the zone will just stop appearing in checkout.",
+      "empty": "No delivery zones yet",
+      "emptyDescription": "Add your first zone so customers can pick a delivery area at checkout."
+    },
+    "reservations": {
+      "title": "Reservations",
+      "subtitle": "Table reservations, status timeline and capacity",
+      "kicker": "Reservations",
+      "newReservation": "New reservation",
+      "formDescription": "Book a table for a guest. Validation runs against the restaurant settings, business hours and live capacity.",
+      "editReservation": "Edit reservation",
+      "customerName": "Guest name",
+      "customerPhone": "Phone",
+      "customerEmail": "Email",
+      "partySize": "Party size",
+      "date": "Date & time",
+      "durationMinutes": "Duration (min)",
+      "tableNumber": "Table",
+      "notes": "Notes",
+      "status": "Status",
+      "timeline": "Timeline",
+      "guest": "Guest",
+      "capacity": "Capacity",
+      "ofCapacity": "{used} / {capacity}",
+      "guests": "{count} guests",
+      "durationShort": "{minutes} min",
+      "tableShort": "Table {table}",
+      "empty": "No reservations yet",
+      "emptyDescription": "New reservation requests will appear here.",
+      "deleteConfirm": "Delete this reservation permanently?",
+      "deleteDescription": "Prefer cancelling to keep the timeline. Delete only removes spam or test rows.",
+      "cancelReservation": "Cancel reservation",
+      "cancelDescription": "The reservation will be marked as cancelled and added to the timeline.",
+      "cancelNotePlaceholder": "Optional note for the timeline",
+      "statusChangeTitle": "Change status",
+      "statusChangeBody": "Move {name} to {status}?",
+      "viewDetails": "View",
+      "currentStatus": "Current",
+      "timelineEmpty": "No timeline events yet",
+      "timelineNote": "Note",
+      "viewToggle": "Switch view",
+      "viewList": "List",
+      "viewCalendar": "Calendar",
+      "calendarEmpty": "No slots on this day",
+      "calendarEmptyDescription": "The restaurant is closed, reservations are disabled, or the day is outside the booking window.",
+      "calendarHint": "Pick a slot to create a reservation. Darker slots are closer to full.",
+      "heatmap": {
+        "empty": "Empty",
+        "bookingUp": "Booking up",
+        "filling": "Filling",
+        "full": "Full"
+      },
+      "slotReason": {
+        "outsideHours": "Closed",
+        "closedHoliday": "Holiday",
+        "closedTemporary": "Closed",
+        "past": "Past",
+        "outsideWindow": "Too far",
+        "disabled": "Off",
+        "full": "Full"
+      },
+      "filters": {
+        "allStatuses": "All statuses",
+        "from": "From",
+        "to": "To",
+        "searchPlaceholder": "Search guest, phone or table"
+      },
+      "statusLabels": {
+        "PENDING": "Pending",
+        "CONFIRMED": "Confirmed",
+        "SEATED": "Seated",
+        "COMPLETED": "Completed",
+        "CANCELLED": "Cancelled",
+        "NO_SHOW": "No-show"
+      },
+      "actions": {
+        "confirm": "Confirm",
+        "seat": "Seat",
+        "complete": "Complete",
+        "markNoShow": "Mark no-show",
+        "cancel": "Cancel",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "valid": {
+        "disabled": "Reservations are disabled in the restaurant settings.",
+        "nameRequired": "Guest name is required.",
+        "phoneRequired": "Phone is required.",
+        "partySizeInvalid": "Party size must be at least 1.",
+        "maxGuests": "Party size exceeds the maximum allowed guests.",
+        "dateRequired": "A reservation date is required.",
+        "pastDate": "The reservation time must be in the future.",
+        "outsideWindow": "The reservation is outside the allowed booking window.",
+        "outsideHours": "The reservation time is outside business hours.",
+        "closedHoliday": "The restaurant is closed on a holiday at that time.",
+        "closedTemporary": "The restaurant is temporarily closed at that time.",
+        "capacityFull": "Capacity is full. Reduce the party size by {shortfall}."
+      }
+    },
+    "homeSections": {
+      "title": "Home sections",
+      "subtitle": "Control what appears on the home page",
+      "newSection": "New section",
+      "key": "Key",
+      "visible": "Visible on home",
+      "assignProducts": "Assign products",
+      "assign": "Assign",
+      "selected": "{count} selected",
+      "saveSelection": "Save selection",
+      "noSections": "No sections yet",
+      "deleteConfirm": "Delete this section?",
+      "preview": "Preview",
+      "updatedAt": "Updated"
+    },
+    "customers": {
+      "kicker": "Clients",
+      "title": "Customers",
+      "subtitle": "Registered users and guests — search profiles, order history and notes",
+      "registered": "Registered",
+      "guests": "Guests",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "city": "City",
+      "joined": "Joined",
+      "ordersCount": "Orders",
+      "totalSpend": "Total spend",
+      "lastOrder": "Last order",
+      "noRegistered": "No registered customers yet",
+      "noGuests": "No guest customers yet",
+      "noResults": "No customers match your search",
+      "noAccess": "No access to customers",
+      "noAccessDescription": "Your role does not include permission to view customer profiles.",
+      "searchPlaceholder": "Search name, phone or email…",
+      "guest": "Guest",
+      "orderHistory": "Order history",
+      "view": "View",
+      "counts": {
+        "registered": "Registered",
+        "guests": "Guests",
+        "orders": "Total orders",
+        "spend": "Lifetime spend"
+      },
+      "reservations": "Reservations",
+      "noOrders": "No orders yet",
+      "noReservations": "No reservations yet",
+      "partySize": "{count} guests",
+      "table": "Table",
+      "favorites": "Favorite products",
+      "noFavorites": "No favorite products yet",
+      "quantity": "{count}×",
+      "notes": "Notes",
+      "noNotes": "No notes yet",
+      "addNote": "Add note",
+      "notePlaceholder": "Write an internal note about this customer…",
+      "noteAdded": "Note added",
+      "noteRemoved": "Note removed",
+      "deleteNote": "Delete note",
+      "confirmDeleteNote": "Delete this note?",
+      "confirmDeleteNoteDescription": "This removes the note from this customer's profile. This action cannot be undone.",
+      "detail": {
+        "noMeta": "No contact details on file"
+      },
+      "valid": {
+        "error": "Something went wrong. Please try again.",
+        "customers": {
+          "bodyRequired": "Write a note first.",
+          "bodyTooLong": "The note must be 500 characters or fewer.",
+          "noteNotFound": "This note no longer exists."
+        }
+      }
+    },
+    "analytics": {
+      "title": "Analytics",
+      "subtitle": "Revenue and performance trends",
+      "period": {
+        "7": "Last 7 days",
+        "30": "Last 30 days"
+      },
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "avgOrder": "Avg. order",
+      "revenueSeries": "Daily revenue",
+      "hourlySales": "Hourly sales",
+      "topProducts": "Top products",
+      "topPayments": "Revenue by payment",
+      "avgOrderSeries": "Avg. order value trend",
+      "paymentMethod": "Payment method",
+      "share": "Share",
+      "completionRate": "Completion rate",
+      "newCustomers": "New customers",
+      "returningCustomers": "Returning customers",
+      "activeCustomers": "Active customers",
+      "cancelled": "Cancelled orders",
+      "vsPrev": "vs previous {days} days",
+      "weekday": "Revenue by weekday",
+      "topCategories": "Top categories",
+      "byMonth": "Monthly revenue",
+      "paymentMix": "Payment mix",
+      "units": "units",
+      "minutes": "min",
+      "delivery": {
+        "title": "Delivery",
+        "deliveryOrders": "Delivery orders",
+        "pickupOrders": "Pickup orders",
+        "share": "delivery share",
+        "feeRevenue": "Delivery fees",
+        "avgFee": "Avg. delivery fee",
+        "avgEta": "Avg. ETA",
+        "pickupVsDelivery": "Delivery / pickup",
+        "topZones": "Top delivery zones",
+        "empty": "No delivery orders in this period"
+      },
+      "reservations": {
+        "title": "Reservations",
+        "total": "Reservations",
+        "avgParty": "Avg. party",
+        "noShowRate": "No-show rate",
+        "completedRate": "Completed",
+        "byStatus": "Reservations by status",
+        "byHour": "Reservations by hour",
+        "byWeekday": "Reservations by day",
+        "empty": "No reservations in this period"
+      },
+      "offers": {
+        "title": "Offers",
+        "orders": "Orders with offers",
+        "totalDiscount": "Discount given",
+        "penetration": "Offer penetration",
+        "topOffers": "Top offers",
+        "empty": "No offers used in this period"
+      }
+    },
+    "staff": {
+      "kicker": "Team",
+      "title": "Staff",
+      "subtitle": "Manage your team — invitations, roles, access and active sessions",
+      "invite": "Invite staff",
+      "add": "Add employee",
+      "you": "You",
+      "noAccess": "No access to staff",
+      "noAccessDescription": "Your role does not include permission to view or manage team members.",
+      "searchPlaceholder": "Search name, email or phone…",
+      "filterStatus": "Filter by status",
+      "filterRole": "Filter by role",
+      "allStatuses": "All statuses",
+      "allRoles": "All roles",
+      "changeRole": "Change role",
+      "ownerHint": "Owner",
+      "counts": {
+        "active": "Active",
+        "invited": "Pending",
+        "suspended": "Suspended",
+        "total": "Total"
+      },
+      "statusLabels": {
+        "ACTIVE": "Active",
+        "INVITED": "Pending",
+        "SUSPENDED": "Suspended",
+        "REMOVED": "Removed"
+      },
+      "empty": "No staff yet",
+      "emptyDescription": "Invite your first team member to get started.",
+      "noResults": "No staff match your filters",
+      "sessionsCount": "{count} active session(s)",
+      "overridesBadge": "Custom permissions",
+      "pendingInvites": "Pending invitations",
+      "inviteExpires": "Expires {date}",
+      "copy": "Copy",
+      "copied": "Copied",
+      "inviteRole": "Role: {role}",
+      "inviteDialog": {
+        "title": "Job title",
+        "subtitle": "They will receive a unique invite code to join the restaurant team.",
+        "email": "Email address",
+        "emailPlaceholder": "name@example.com",
+        "role": "Role",
+        "titlePlaceholder": "e.g. Kitchen shift lead",
+        "send": "Send invite"
+      },
+      "addDialog": {
+        "title": "Job title",
+        "subtitle": "Create a sign-in account for a new team member.",
+        "name": "Full name",
+        "namePlaceholder": "e.g. Omar El-Sayed",
+        "email": "Email address",
+        "emailPlaceholder": "name@example.com",
+        "password": "Password",
+        "passwordPlaceholder": "At least 8 characters",
+        "passwordHint": "Min. 8 characters with an uppercase letter, a lowercase letter and a number.",
+        "confirmPassword": "Confirm password",
+        "confirmPlaceholder": "Re-enter the password",
+        "role": "Role",
+        "titlePlaceholder": "e.g. Kitchen shift lead",
+        "create": "Create account",
+        "createdTitle": "Account created",
+        "createdDescription": "{name} can now sign in with {email} and their password."
+      },
+      "inviteCodeDescription": "Share this code with {email}. They will need it to join your team. It expires on {date}.",
+      "editDialog": {
+        "title": "Edit {name}",
+        "subtitle": "Update their role and job title."
+      },
+      "permissions": {
+        "title": "Permissions for {name}",
+        "subtitle": "Fine-tune access on top of their role. Changes apply immediately.",
+        "save": "Save permissions",
+        "changedHint": "{count} change(s) pending",
+        "overridden": "Overridden",
+        "modules": {
+          "dashboard": "Dashboard",
+          "orders": "Orders",
+          "products": "Products",
+          "categories": "Categories",
+          "customers": "Customers",
+          "reservations": "Reservations",
+          "offers": "Offers",
+          "homeSections": "Home sections",
+          "deliveryZones": "Delivery zones",
+          "analytics": "Analytics",
+          "members": "Staff",
+          "roles": "Roles",
+          "security": "Security",
+          "logs": "Activity Logs",
+          "documents": "Documents",
+          "settings": "Settings"
+        }
+      },
+      "actions": {
+        "suspend": "Suspend",
+        "restore": "Restore",
+        "forceLogout": "Force logout",
+        "remove": "Remove",
+        "revoke": "Revoke invite",
+        "editPermissions": "Edit permissions"
+      },
+      "confirm": {
+        "suspendTitle": "Suspend {name}?",
+        "suspendDescription": "Their access is revoked immediately and they are signed out of every device.",
+        "restoreTitle": "Restore {name}?",
+        "restoreDescription": "Their account is reactivated with their previous access.",
+        "forceLogoutTitle": "Force logout {name}?",
+        "forceLogoutDescription": "They are signed out of every device, but keep their access.",
+        "removeTitle": "Remove {name}?",
+        "removeDescription": "Their membership is revoked, every session signed out, and they are removed from the roster.",
+        "revokeTitle": "Revoke the invite for {email}?",
+        "revokeDescription": "The invite code stops working and any pending member is removed."
+      },
+      "valid": {
+        "error": "Something went wrong. Please try again.",
+        "members": {
+          "nameRequired": "Enter the member's full name",
+          "nameTooShort": "The name must be at least 2 characters",
+          "emailRequired": "Enter an email address",
+          "emailInvalid": "Enter a valid email address",
+          "emailTaken": "This email is already registered",
+          "passwordRequired": "Enter a password",
+          "passwordTooShort": "The password must be at least 8 characters",
+          "passwordUpper": "The password must include an uppercase letter",
+          "passwordLower": "The password must include a lowercase letter",
+          "passwordNumber": "The password must include a number",
+          "passwordMismatch": "The passwords do not match",
+          "titleTooLong": "The job title is too long",
+          "roleRequired": "Choose a role",
+          "roleNotFound": "That role no longer exists",
+          "ownerRoleRestricted": "The owner role cannot be assigned",
+          "notFound": "Staff member not found",
+          "alreadyMember": "This user is already on your team",
+          "alreadyInvited": "An invitation is already pending for this email",
+          "maxMembers": "You have reached the member limit for your plan",
+          "cannotModifyOwner": "The owner cannot be managed from here",
+          "cannotModifySelf": "You cannot manage your own account here",
+          "inviteNotFound": "Invitation not found or already used"
+        },
+        "roles": {
+          "keyRequired": "Role key is required",
+          "keyInvalid": "Use lowercase letters, numbers, underscores or dashes only",
+          "keyTaken": "A role with this key already exists",
+          "nameEnRequired": "English name is required",
+          "nameArRequired": "Arabic name is required",
+          "nameTooLong": "Name must be under 50 characters",
+          "notFound": "Role not found",
+          "systemLocked": "System roles cannot be changed",
+          "inUse": "This role is still assigned to team members",
+          "invalidPermissions": "One or more permissions are invalid"
+        }
+      }
+    },
+    "roles": {
+      "kicker": "Access Control",
+      "title": "Roles",
+      "subtitle": "Create custom roles and control exactly which capabilities each team member receives.",
+      "noAccess": "Access restricted",
+      "noAccessDescription": "You don't have permission to view roles.",
+      "createRole": "New role",
+      "counts": {
+        "total": "Total roles",
+        "system": "Built-in",
+        "members": "Members",
+        "permissions": "Permissions granted"
+      },
+      "system": "Built-in",
+      "custom": "Custom",
+      "builtIn": "System",
+      "membersCount": "{count, plural, one {# member} other {# members}}",
+      "permissionsCount": "{count, plural, one {# permission} other {# permissions}}",
+      "pendingInvites": "{count, plural, one {# pending invite} other {# pending invites}}",
+      "actions": {
+        "delete": "Delete role"
+      },
+      "empty": "No roles yet",
+      "emptyDescription": "Create your first custom role to start managing permissions.",
+      "confirm": {
+        "deleteTitle": "Delete {name}?",
+        "deleteDescription": "This permanently removes the role. Members currently assigned to it must be moved to another role first."
+      },
+      "dialog": {
+        "createTitle": "New role",
+        "createSubtitle": "Define a reusable permission set you can assign to staff.",
+        "editTitle": "Edit {name}",
+        "editSubtitle": "Update the role name or its permission set.",
+        "key": "Role key",
+        "keyPlaceholder": "e.g. shift_manager",
+        "keyHint": "Lowercase letters, numbers, underscores or dashes. Cannot be changed later.",
+        "nameEn": "English name",
+        "nameEnPlaceholder": "e.g. Shift Manager",
+        "nameAr": "Arabic name",
+        "nameArPlaceholder": "مثال: مدير المناوبة",
+        "permissionsHeading": "Permissions · {count} selected",
+        "searchPermissions": "Search permissions",
+        "selectAll": "Select all",
+        "clearAll": "Clear",
+        "noPermissionResults": "No permissions match your search",
+        "create": "Create role"
+      }
+    },
+    "security": {
+      "kicker": "Security",
+      "title": "Security Center",
+      "subtitle": "Active devices, staff sessions and security events for your restaurant.",
+      "noAccess": "No access to security",
+      "noAccessDescription": "Your role does not include permission to view the Security Center.",
+      "counts": {
+        "activeSessions": "Active sessions",
+        "onlineMembers": "Members online",
+        "failedLogins24h": "Failed sign-ins · 24h",
+        "critical24h": "Critical · 24h"
+      },
+      "sessionsTitle": "Active sessions",
+      "sessionsSubtitle": "Every device currently signed in to your staff accounts",
+      "filterAll": "All sessions",
+      "filterActive": "Active",
+      "filterRevoked": "Revoked",
+      "current": "Current",
+      "lastSeen": "Last seen",
+      "ip": "IP",
+      "revoke": "Revoke",
+      "revokeAll": "Sign out all",
+      "revoked": "Revoked",
+      "logoutReasons": {
+        "security-center-revoke": "Revoked from the Security Center",
+        "security-center-force-logout": "Signed out from the Security Center",
+        "member-force-logout": "Signed out from staff management",
+        "member-suspended": "Account suspended",
+        "member-removed": "Member removed",
+        "revoked-all": "Signed out from all devices",
+        "forced": "Force signed out",
+        "revoked": "Session revoked"
+      },
+      "emptySessions": "No sessions yet",
+      "emptySessionsDescription": "Devices signed in to your staff accounts will appear here.",
+      "noSessionResults": "No sessions match your filters",
+      "actions": {
+        "revoke": "Revoke session",
+        "revokeAll": "Sign out all devices"
+      },
+      "confirm": {
+        "revokeTitle": "Revoke this session?",
+        "revokeDescription": "This device is signed out immediately. The user keeps their access.",
+        "revokeAllTitle": "Sign out all devices?",
+        "revokeAllDescription": "{name} is signed out of every device but keeps their access."
+      },
+      "eventsTitle": "Security events",
+      "eventsSubtitle": "Sign-ins and security activity across your staff",
+      "searchEvents": "Search events…",
+      "filterSeverity": "Severity",
+      "allSeverities": "All severities",
+      "severities": {
+        "INFO": "Info",
+        "WARNING": "Warning",
+        "CRITICAL": "Critical"
+      },
+      "emptyEvents": "No security events",
+      "emptyEventsDescription": "Sign-ins and security activity will appear here.",
+      "noEventResults": "No events match your filters",
+      "types": {
+        "SIGNUP": "Account created",
+        "LOGIN_SUCCESS": "Sign-in",
+        "LOGIN_FAILED": "Failed sign-in",
+        "LOGOUT": "Sign-out",
+        "SESSION_EXPIRED": "Session expired",
+        "SESSION_REVOKED": "Session revoked",
+        "FORCE_LOGOUT": "Force sign-out",
+        "PASSWORD_CHANGED": "Password changed",
+        "EMAIL_CHANGED": "Email changed",
+        "GOOGLE_LINKED": "Google account linked",
+        "ACCOUNT_LOCKED": "Account locked",
+        "ACCOUNT_UNLOCKED": "Account unlocked",
+        "RESTAURANT_SWITCHED": "Restaurant switched",
+        "RESTAURANT_SUSPENDED": "Restaurant suspended",
+        "ROLE_CHANGED": "Role changed",
+        "PERMISSIONS_UPDATED": "Permissions updated",
+        "MEMBERSHIP_CHANGED": "Membership changed",
+        "SECURITY_SETTINGS_UPDATED": "Security settings updated",
+        "IMPERSONATION_STARTED": "Impersonation started",
+        "IMPERSONATION_ENDED": "Impersonation ended"
+      },
+      "valid": {
+        "error": "Something went wrong. Please try again.",
+        "security": {
+          "sessionNotFound": "This session no longer exists",
+          "memberNotFound": "Staff member not found",
+          "cannotModifyOwner": "The owner cannot be managed from here",
+          "cannotModifySelf": "You cannot manage your own session here"
+        }
+      }
+    },
+    "activity": {
+      "kicker": "Activity",
+      "title": "Activity Center",
+      "subtitle": "Who did what and when — the complete history of changes across your restaurant.",
+      "noAccess": "No access to activity logs",
+      "noAccessDescription": "Your role does not include permission to view the Activity Center.",
+      "counts": {
+        "total": "Total events",
+        "last24h": "Events · 24h",
+        "uniqueActors": "Unique actors",
+        "activeModules": "Modules"
+      },
+      "filtersTitle": "Filters",
+      "filtersSubtitle": "Narrow the timeline by module, action, actor or date",
+      "searchPlaceholder": "Search action, actor, target…",
+      "filterModule": "Module",
+      "allModules": "All modules",
+      "filterAction": "Action",
+      "allActions": "All actions",
+      "filterActor": "Actor",
+      "allActors": "All actors",
+      "dateFrom": "From",
+      "dateTo": "To",
+      "timelineTitle": "Activity timeline",
+      "timelineSubtitle": "Most recent first",
+      "entries": "entries",
+      "viewDetails": "View details",
+      "systemActor": "System",
+      "emptyTitle": "No activity yet",
+      "emptyDescription": "Changes made by your team will appear here as a timeline.",
+      "noResults": "No activity matches your filters",
+      "detailsSubtitle": "Full record of this event",
+      "details": {
+        "actor": "Actor",
+        "date": "When",
+        "target": "Target",
+        "ip": "IP address",
+        "userAgent": "User agent",
+        "metadata": "Metadata"
+      },
+      "modules": {
+        "dashboard": "Dashboard",
+        "orders": "Orders",
+        "products": "Products",
+        "categories": "Categories",
+        "offers": "Offers",
+        "deliveryZones": "Delivery zones",
+        "reservations": "Reservations",
+        "customers": "Customers",
+        "staff": "Staff",
+        "roles": "Roles",
+        "security": "Security",
+        "settings": "Settings",
+        "homeSections": "Home sections",
+        "documents": "Documents",
+        "notifications": "Notifications",
+        "system": "System"
+      },
+      "targetTypes": {
+        "order": "Order",
+        "product": "Product",
+        "category": "Category",
+        "offer": "Offer",
+        "deliveryZone": "Delivery zone",
+        "reservation": "Reservation",
+        "customer": "Customer",
+        "member": "Staff member",
+        "invitation": "Invitation",
+        "setting": "Setting",
+        "session": "Session",
+        "role": "Role",
+        "homeSection": "Home section"
+      },
+      "actions": {
+        "order": {
+          "status_changed": "Order status changed",
+          "kitchen_notes_updated": "Kitchen notes updated"
+        },
+        "product": {
+          "created": "Product created",
+          "updated": "Product updated",
+          "deleted": "Product deleted",
+          "home_section_bulk_toggled": "Home sections bulk updated"
+        },
+        "category": {
+          "created": "Category created",
+          "updated": "Category updated",
+          "visibility_changed": "Category visibility changed",
+          "deleted": "Category deleted"
+        },
+        "offer": {
+          "created": "Offer created",
+          "updated": "Offer updated",
+          "visibility_changed": "Offer visibility changed",
+          "public_visibility_changed": "Offer public visibility changed",
+          "deleted": "Offer deleted"
+        },
+        "deliveryZone": {
+          "created": "Delivery zone created",
+          "updated": "Delivery zone updated",
+          "deleted": "Delivery zone deleted"
+        },
+        "reservation": {
+          "created": "Reservation created",
+          "updated": "Reservation updated",
+          "status_changed": "Reservation status changed",
+          "deleted": "Reservation deleted"
+        },
+        "customers": {
+          "note_added": "Customer note added",
+          "note_removed": "Customer note removed"
+        },
+        "staff": {
+          "created": "Staff member created",
+          "invited": "Staff member invited",
+          "invite_revoked": "Invitation revoked",
+          "suspended": "Staff member suspended",
+          "restored": "Staff member restored",
+          "removed": "Staff member removed",
+          "force_logged_out": "Staff member force signed out",
+          "role_updated": "Staff role updated",
+          "updated": "Staff member updated",
+          "permissions_updated": "Staff permissions updated"
+        },
+        "roles": {
+          "created": "Role created",
+          "updated": "Role updated",
+          "deleted": "Role deleted"
+        },
+        "security": {
+          "session_revoked": "Session revoked",
+          "force_logged_out": "Member force signed out"
+        },
+        "session": {
+          "revoked": "Admin revoked session"
+        },
+        "user": {
+          "sessions_revoked": "All sessions revoked",
+          "status_changed": "User status changed",
+          "unlocked": "User unlocked",
+          "password_reset": "User password reset",
+          "force_logged_out": "User force signed out"
+        },
+        "settings": {
+          "updated": "Settings updated"
+        },
+        "homeSection": {
+          "created": "Home section created",
+          "updated": "Home section updated",
+          "deleted": "Home section deleted"
+        },
+        "restaurant": {
+          "owner_assigned": "Owner assigned",
+          "ownership_transferred": "Ownership transferred",
+          "created": "Restaurant created",
+          "updated": "Restaurant updated",
+          "archived": "Restaurant archived",
+          "restored": "Restaurant restored"
+        },
+        "membership": {
+          "role_changed": "Membership role changed",
+          "removed": "Membership removed"
+        },
+        "subscription": {
+          "status_changed": "Subscription status changed",
+          "plan_changed": "Subscription plan changed",
+          "trial_extended": "Trial extended",
+          "plan_status_changed": "Subscription plan status changed"
+        },
+        "feature_flag": {
+          "toggled": "Feature flag toggled",
+          "assigned": "Feature flag assigned",
+          "cleared": "Feature flag cleared"
+        },
+        "country": {
+          "status_changed": "Country status changed"
+        },
+        "platform": {
+          "settings_updated": "Platform settings updated"
+        },
+        "permissions": {
+          "template_updated": "Permission template updated"
+        },
+        "documents": {
+          "export": "Orders exported (CSV)",
+          "send": "Document sent on WhatsApp"
+        },
+        "notification": {
+          "read": "Notification marked read",
+          "unread": "Notification marked unread",
+          "read_all": "All notifications marked read",
+          "archived": "Notification archived",
+          "unarchived": "Notification unarchived"
+        }
+      }
+    },
+    "notifications": {
+      "kicker": "Notifications",
+      "title": "Notification Center",
+      "subtitle": "Stay on top of new orders, reservations and team activity across your restaurant.",
+      "noAccess": "No access to notifications",
+      "noAccessDescription": "Your role does not include permission to view the Notification Center.",
+      "unread": "Unread",
+      "none": "None",
+      "total": "Total",
+      "new": "New",
+      "markAllRead": "Mark all as read",
+      "viewAll": "View all notifications",
+      "filtersTitle": "Filters",
+      "filtersSubtitle": "Narrow the list by type or read state",
+      "filterType": "Type",
+      "allTypes": "All types",
+      "unreadOnly": "Unread only",
+      "showArchived": "Show archived",
+      "listTitle": "Notifications",
+      "listSubtitle": "Most recent first",
+      "markRead": "Mark read",
+      "markUnread": "Mark unread",
+      "archive": "Archive",
+      "unarchive": "Unarchive",
+      "emptyTitle": "You're all caught up",
+      "emptyDescription": "New orders, reservations and team events will appear here.",
+      "noResults": "No notifications match your filters",
+      "noResultsDescription": "Try changing the type or read state.",
+      "unknownType": "New notification",
+      "severity": {
+        "info": "Info",
+        "warning": "Warning",
+        "critical": "Critical"
+      },
+      "types": {
+        "order": {
+          "created": {
+            "label": "New orders",
+            "title": "New order",
+            "body": "Order {orderNumber} has been placed"
+          },
+          "status_changed": {
+            "label": "Order updates",
+            "title": "Order status changed",
+            "body": "Order {orderNumber} is now {status}"
+          }
+        },
+        "reservation": {
+          "created": {
+            "label": "New reservations",
+            "title": "New reservation",
+            "body": "{customerName} — party of {partySize}"
+          },
+          "status_changed": {
+            "label": "Reservation updates",
+            "title": "Reservation updated",
+            "body": "{customerName} — {status}"
+          }
+        },
+        "staff": {
+          "invited": {
+            "label": "Staff invitations",
+            "title": "New staff invitation",
+            "body": "{email} invited as {role}"
+          },
+          "created": {
+            "label": "New staff members",
+            "title": "New staff member",
+            "body": "{email} added as {role}"
+          }
+        }
+      }
+    },
+    "documents": {
+      "kicker": "Documents",
+      "title": "Document Center",
+      "subtitle": "Generate invoices, kitchen tickets and order sheets for any order — preview, print, download as PDF, export to CSV or send to the customer on WhatsApp.",
+      "noAccess": "No access to documents",
+      "noAccessDescription": "Your role does not include permission to view the Document Center.",
+      "counts": {
+        "total": "Total orders",
+        "inProgress": "In progress",
+        "paid": "Paid",
+        "awaitingPayment": "Awaiting payment"
+      },
+      "filtersTitle": "Filters",
+      "filtersSubtitle": "Find orders by document type, status, payment or date",
+      "searchPlaceholder": "Search order, customer, phone…",
+      "filterKind": "Document type",
+      "allKinds": "All documents",
+      "filterStatus": "Order status",
+      "allStatuses": "All statuses",
+      "filterPayment": "Payment",
+      "allPayments": "All payments",
+      "dateFrom": "From",
+      "dateTo": "To",
+      "listTitle": "Orders",
+      "listSubtitle": "Select rows to export, or open one to generate its documents",
+      "selected": "{count} selected",
+      "exportAll": "Export all",
+      "exportSelected": "Export selected",
+      "exporting": "Exporting…",
+      "exported": "Exported {count} orders",
+      "exportFailed": "Couldn't export orders.",
+      "noResults": "No orders match your filters",
+      "emptyTitle": "No orders yet",
+      "emptyDescription": "Orders placed through your website will appear here, ready to print or export.",
+      "columns": {
+        "order": "Order",
+        "customer": "Customer",
+        "status": "Status",
+        "payment": "Payment",
+        "total": "Total",
+        "date": "Date"
+      },
+      "openOrder": "Open in Orders",
+      "preview": "Preview",
+      "types": {
+        "invoice": "Invoice",
+        "kitchen": "Kitchen Ticket",
+        "printable": "Order Sheet"
+      },
+      "dialog": {
+        "title": "Documents · {orderNumber}",
+        "subtitle": "Preview, print, download or send",
+        "invoiceTab": "Invoice",
+        "kitchenTab": "Kitchen Ticket",
+        "printableTab": "Order Sheet",
+        "download": "Download PDF",
+        "downloading": "Preparing PDF…",
+        "downloaded": "PDF downloaded",
+        "downloadFailed": "Couldn't generate the PDF.",
+        "print": "Print",
+        "whatsapp": "Send on WhatsApp",
+        "sending": "Sending…",
+        "sent": "Sent",
+        "linkOpened": "Opening WhatsApp…",
+        "sendFailed": "Couldn't send the document.",
+        "whatsappNotConfigured": "Add a WhatsApp number in Business Settings before sending.",
+        "noPhone": "This order has no customer phone number.",
+        "whatsappNote": "Opens a prepared WhatsApp chat with the customer.",
+        "loading": "Loading document…",
+        "loadFailed": "Couldn't load this order's documents."
+      },
+      "whatsapp": {
+        "heading": "{restaurant} · {type}",
+        "order": "Order: {orderNumber}",
+        "date": "Date: {date}",
+        "customer": "Customer: {customer}",
+        "phone": "Phone: {phone}",
+        "line": "{qty}× {name}",
+        "subtotal": "Subtotal: {amount}",
+        "delivery": "Delivery: {amount}",
+        "total": "Total: {amount}",
+        "thankYou": "Thank you for your order!"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Store configuration",
+      "sections": {
+        "general": "General",
+        "delivery": "Delivery",
+        "payments": "Payments",
+        "notifications": "Notifications"
+      },
+      "restaurantName": "Restaurant name",
+      "restaurantNameHint": "Shown across the app",
+      "phone": "Support phone",
+      "phoneHint": "Shown on the contact page",
+      "currency": "Currency",
+      "currencyHint": "Used for money display",
+      "address": "Address",
+      "addressHint": "Shown on the contact page",
+      "email": "Support email",
+      "emailHint": "Where order notifications go",
+      "deliveryFee": "Delivery fee",
+      "deliveryFeeHint": "Charged per delivery",
+      "freeDeliveryThreshold": "Free delivery over",
+      "freeDeliveryThresholdHint": "Orders above this total get free delivery",
+      "minOrder": "Minimum order",
+      "minOrderHint": "Smallest order allowed",
+      "deliveryTime": "Estimated delivery time",
+      "deliveryTimeHint": "In minutes",
+      "saved": "Settings saved",
+      "reset": "Reset to defaults"
+    },
+    "confirm": {
+      "title": "Are you sure?",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "signInPrompt": {
+      "title": "Dashboard access",
+      "subtitle": "Please sign in to continue",
+      "button": "Go to login"
+    },
+    "commandPalette": {
+      "title": "Command Palette",
+      "searchPlaceholder": "Search or run a command…",
+      "clear": "Clear",
+      "empty": "No results for \"{query}\"",
+      "navigate": "Navigate",
+      "select": "Select",
+      "pin": "Pin",
+      "favorite": "Add to favorites",
+      "unfavorite": "Remove from favorites",
+      "quickActions": "Quick actions",
+      "close": "Close",
+      "then": "then",
+      "helpTitle": "Keyboard shortcuts",
+      "helpSubtitle": "Everything you can do without leaving the keyboard",
+      "helpSearch": "Search shortcuts…",
+      "helpPrefix": "Restora Navigation: press R then a letter to jump between pages — e.g. R then O opens Orders.",
+      "groups": {
+        "navigation": "Navigation",
+        "products": "Products",
+        "orders": "Orders",
+        "customers": "Customers",
+        "delivery": "Delivery",
+        "offers": "Offers",
+        "reservations": "Reservations",
+        "analytics": "Analytics",
+        "staff": "Staff",
+        "notifications": "Notifications",
+        "settings": "Settings",
+        "general": "General"
+      },
+      "commands": {
+        "overview": "Overview",
+        "products": "Products",
+        "categories": "Categories",
+        "homeSections": "Home sections",
+        "addProduct": "Add product",
+        "addCategory": "Add category",
+        "offers": "Offers",
+        "createOffer": "Create offer",
+        "orders": "Orders",
+        "customers": "Customers",
+        "customerKeywords": "client, clients, clientele, guest, member",
+        "deliveryZones": "Delivery zones",
+        "reservations": "Reservations",
+        "analytics": "Open analytics",
+        "staff": "Staff",
+        "inviteStaff": "Invite staff",
+        "addStaff": "Add employee",
+        "staffKeywords": "member, members, team, roster",
+        "inviteStaffKeywords": "member, members, team, employee",
+        "addStaffKeywords": "member, members, team, employee, hire",
+        "roles": "Roles",
+        "createRole": "Create role",
+        "security": "Security Center",
+        "securityKeywords": "device, devices, session, sessions, force logout, sign out, events, shield",
+        "activity": "Activity Logs",
+        "activityKeywords": "logs, log, history, timeline, activity, audit, events, changes",
+        "documents": "Document Center",
+        "documentsKeywords": "invoice, invoices, kitchen ticket, pdf, csv, print, export, receipt, bill, orders, documents",
+        "notifications": "Notifications",
+        "notificationsKeywords": "alerts, alert, bell, inbox, unread, notification, notifications, announce",
+        "restaurantSettings": "Restaurant settings",
+        "search": "Search",
+        "searchHint": "Open the command palette",
+        "quickCreate": "Quick create",
+        "quickCreateHint": "Jump to any create action",
+        "keyboardShortcuts": "Keyboard shortcuts",
+        "keyboardShortcutsHint": "View all shortcuts",
+        "backToSite": "Back to website"
+      },
+      "sections": {
+        "favorites": "Favorites",
+        "recent": "Recent"
+      },
+      "firstTimeTip": {
+        "title": "Tip",
+        "body": "Next time try using:",
+        "dismiss": "Dismiss"
+      }
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Platform Command Center",
+      "description": "Super admin console for the Restora platform"
+    },
+    "brand": {
+      "title": "Restora",
+      "subtitle": "Command Center"
+    },
+    "common": {
+      "navLabel": "Command Center navigation",
+      "openMenu": "Open navigation menu",
+      "close": "Close",
+      "loading": "Loading…",
+      "noResults": "No results",
+      "actions": "Actions",
+      "search": "Search",
+      "all": "All",
+      "viewAll": "View all",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved",
+      "failed": "Something went wrong",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "back": "Back",
+      "filters": "Filters",
+      "reset": "Reset",
+      "perPage": "per page",
+      "selected": "selected",
+      "select": "Select",
+      "none": "None",
+      "view": "View",
+      "error": "An error occurred"
+    },
+    "nav": {
+      "overview": "Overview",
+      "search": "Search",
+      "restaurants": "Restaurants",
+      "users": "Users",
+      "owners": "Owners",
+      "subscriptions": "Subscriptions",
+      "analytics": "Analytics",
+      "notifications": "Notifications",
+      "security": "Security",
+      "audit": "Audit",
+      "countries": "Countries",
+      "permissions": "Permissions",
+      "featureFlags": "Feature Flags",
+      "settings": "Platform Settings",
+      "systemHealth": "System Health",
+      "backToSite": "Back to website",
+      "signOut": "Sign out"
+    },
+    "impersonation": {
+      "title": "Impersonation Mode",
+      "actingAs": "Acting as {name}",
+      "actingAsAt": "Acting as {name} at {restaurant}",
+      "by": "by {name}",
+      "exit": "Exit impersonation",
+      "exiting": "Exiting…",
+      "inProgress": "An impersonation session is already active",
+      "startFailed": "Unable to start impersonation"
+    },
+    "overview": {
+      "kicker": "Command Center",
+      "title": "Platform Overview",
+      "subtitle": "Live numbers across the whole platform — restaurants, users, orders and revenue.",
+      "globalSearch": "Global search",
+      "quick": {
+        "title": "Quick Actions",
+        "hint": "Shortcuts",
+        "newRestaurant": "New restaurant",
+        "manageUsers": "Manage users",
+        "owners": "Owners",
+        "subscriptions": "Subscriptions"
+      },
+      "stats": {
+        "restaurants": "Restaurants",
+        "users": "Users",
+        "orders": "Orders",
+        "revenue": "Revenue",
+        "activeSubscriptions": "Active plans",
+        "impersonations": "Impersonations",
+        "security": "Critical events",
+        "tickets": "Open tickets",
+        "active": "active",
+        "owners": "owners",
+        "today": "today"
+      },
+      "charts": {
+        "ordersTitle": "Orders — last 14 days",
+        "revenueTitle": "Paid revenue — last 14 days"
+      },
+      "health": {
+        "title": "System Health",
+        "database": "Database",
+        "memory": "Memory",
+        "cpu": "CPU",
+        "storage": "Storage",
+        "build": "Build",
+        "deployment": "Deployment",
+        "email": "Email",
+        "sms": "SMS"
+      },
+      "recentRestaurants": {
+        "title": "Recent Restaurants"
+      },
+      "recentSecurity": {
+        "title": "Recent Security Events"
+      }
+    },
+    "search": {
+      "kicker": "Global Search",
+      "title": "Search the platform",
+      "placeholder": "Search restaurants, users, orders, countries…",
+      "searchButton": "Search",
+      "empty": "Type at least one character to search.",
+      "noResults": "No matches for",
+      "restaurants": "Restaurants",
+      "users": "Users",
+      "orders": "Orders",
+      "countries": "Countries",
+      "view": "View",
+      "orderRestaurant": "restaurant",
+      "results": "results",
+      "subtitle": "Find anything across the platform instantly."
+    },
+    "badge": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive",
+      "SUSPENDED": "Suspended",
+      "DISABLED": "Disabled",
+      "CLOSED": "Closed",
+      "ARCHIVED": "Archived",
+      "TRIAL": "Trial",
+      "PAST_DUE": "Past due",
+      "CANCELED": "Canceled",
+      "EXPIRED": "Expired",
+      "PENDING": "Pending",
+      "CONFIRMED": "Confirmed",
+      "PREPARING": "Preparing",
+      "READY": "Ready",
+      "OUT_FOR_DELIVERY": "Out for delivery",
+      "DELIVERED": "Delivered",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "REMOVED": "Removed",
+      "INFO": "Info",
+      "WARNING": "Warning",
+      "CRITICAL": "Critical"
+    },
+    "health": {
+      "rule": {
+        "subscription": "Active subscription",
+        "products": "Has menu products",
+        "categories": "Has categories",
+        "deliveryZones": "Has delivery zones",
+        "businessHours": "Has business hours configured",
+        "branding": "Has branding settings",
+        "recentOrders": "Has received orders",
+        "owner": "Has an assigned owner",
+        "availability": "Accepting orders"
+      }
+    },
+    "restaurants": {
+      "kicker": "Restaurants",
+      "title": "All Restaurants",
+      "subtitle": "Search, filter and manage every restaurant on the platform.",
+      "create": "New restaurant",
+      "searchPlaceholder": "Search restaurants…",
+      "filterStatus": "Status",
+      "filterCountry": "Country",
+      "favoritesOnly": "Favorites",
+      "favorite": "Favorite",
+      "unfavorite": "Unfavorite",
+      "suspend": "Suspend",
+      "close": "Close",
+      "archive": "Archive",
+      "restore": "Restore",
+      "health": "Health",
+      "products": "Products",
+      "orders": "Orders",
+      "members": "Members",
+      "deliveryZones": "Delivery zones",
+      "homeSections": "Home sections",
+      "categories": "Categories",
+      "since": "Since",
+      "workspaceKicker": "Workspace",
+      "emptyDescription": "No restaurants match your filters.",
+      "form": {
+        "name": "Name",
+        "slug": "Slug",
+        "slugPlaceholder": "auto-generated",
+        "email": "Email",
+        "phone": "Phone",
+        "country": "Country",
+        "timezone": "Timezone",
+        "owner": "Owner",
+        "description": "Description"
+      },
+      "createDialog": {
+        "title": "Create restaurant",
+        "subtitle": "Set up a new restaurant on the platform."
+      },
+      "ws": {
+        "healthTitle": "Health score",
+        "healthScore": "Health",
+        "recommendations": "Recommendations",
+        "ordersToday": "Orders today",
+        "revenueToday": "Revenue today",
+        "orders7d": "Orders 7d",
+        "revenue7d": "Revenue 7d",
+        "openOrders": "Open",
+        "customers": "Customers",
+        "products": "Products",
+        "staff": "Staff",
+        "recentOrders": "Recent orders",
+        "order": "Order",
+        "customer": "Customer",
+        "status": "Status",
+        "total": "Total",
+        "topProducts": "Top products",
+        "recentActivity": "Recent activity",
+        "subscription": "Subscription",
+        "plan": "Plan",
+        "subStatus": "Status",
+        "periodEnd": "Period ends",
+        "changePlan": "Change plan",
+        "extendTrial": "Extend trial (+14 days)",
+        "owners": "Owners",
+        "noOwners": "No owners assigned",
+        "totals": "Counts",
+        "platform": "Quick links",
+        "backToList": "Back to restaurant list"
+      },
+      "confirm": {
+        "suspendTitle": "Suspend restaurant?",
+        "suspendDescription": "This will immediately stop the restaurant from appearing to customers.",
+        "closeTitle": "Close restaurant?",
+        "closeDescription": "This will permanently close the restaurant.",
+        "archiveTitle": "Archive restaurant?",
+        "archiveDescription": "This will soft-delete the restaurant from the platform.",
+        "reason": "Reason (optional)",
+        "reasonPlaceholder": "Why are you performing this action?"
+      }
+    },
+    "users": {
+      "kicker": "Users",
+      "title": "All Users",
+      "subtitle": "Search and manage every user on the platform.",
+      "searchPlaceholder": "Search users…",
+      "filterStatus": "Status",
+      "filterRole": "Role",
+      "user": "User",
+      "status": "Status",
+      "role": {
+        "owner": "Owner",
+        "platformAdmin": "Platform admin",
+        "user": "User"
+      },
+      "owns": "Owner of",
+      "phone": "Phone",
+      "joined": "Joined",
+      "failedLogins": "Failed logins",
+      "sessionVersion": "Session version",
+      "restaurant": "Restaurant",
+      "membershipStatus": "Membership",
+      "noMemberships": "No memberships",
+      "detailKicker": "User detail",
+      "account": "Account",
+      "impersonate": "Impersonate",
+      "impersonateConfirmTitle": "Impersonate this user?",
+      "impersonateConfirmDescription": "You will be redirected to the dashboard as this user.",
+      "grantAdmin": "Grant admin",
+      "revokeAdmin": "Revoke admin",
+      "resetPassword": "Reset password",
+      "passwordHint": "Minimum 8 characters.",
+      "newPassword": "New password",
+      "forceLogout": "Force logout",
+      "activate": "Activate",
+      "unlock": "Unlock account",
+      "suspend": "Suspend user",
+      "roleLabel": "Role",
+      "memberships": "Memberships"
+    },
+    "owners": {
+      "kicker": "Owners",
+      "title": "Restaurant Owners",
+      "subtitle": "Every user who owns at least one restaurant on the platform.",
+      "searchPlaceholder": "Search owners…",
+      "owner": "Owner",
+      "restaurants": "Restaurants",
+      "assign": "Assign owner",
+      "status": "Status",
+      "assignDialog": {
+        "title": "Assign owner role",
+        "subtitle": "Grant the owner role to a user on a specific restaurant.",
+        "restaurant": "Restaurant",
+        "user": "User"
+      }
+    },
+    "subscriptions": {
+      "kicker": "Subscriptions",
+      "title": "Subscriptions & Plans",
+      "subtitle": "Manage every subscription, plan and feature flag on the platform.",
+      "tab": {
+        "subscriptions": "Subscriptions",
+        "plans": "Plans"
+      },
+      "searchPlaceholder": "Search by restaurant name…",
+      "filterStatus": "Status",
+      "restaurant": "Restaurant",
+      "plan": "Plan",
+      "status": "Status",
+      "periodEnd": "Period end",
+      "cancelAtPeriodEnd": "cancels at period end",
+      "actions": "Actions",
+      "changePlan": "Change",
+      "extendTrial": "Extend +14d",
+      "cancel": "Cancel",
+      "activate": "Activate",
+      "confirm": {
+        "cancelTitle": "Cancel subscription?",
+        "activateTitle": "Reactivate subscription?"
+      },
+      "newPlan": "New plan",
+      "subscribers": "subscribers",
+      "editPlan": "Edit",
+      "month": "month",
+      "planActive": "Active",
+      "planKey": "Plan key",
+      "planName": "Plan name",
+      "priceMonthly": "Monthly price",
+      "priceYearly": "Yearly price",
+      "currency": "Currency",
+      "sortOrder": "Sort order",
+      "features": "Features",
+      "newPlanDialog": {
+        "title": "Create plan",
+        "subtitle": "Define a new subscription plan."
+      },
+      "editPlanDialog": {
+        "title": "Edit plan"
+      }
+    },
+    "featureFlags": {
+      "kicker": "Feature Flags",
+      "title": "Feature Flags",
+      "subtitle": "Toggle global features and manage per-restaurant overrides.",
+      "active": "Active",
+      "inactive": "Inactive",
+      "overrides": "overrides"
+    },
+    "countries": {
+      "kicker": "Countries",
+      "title": "Countries",
+      "subtitle": "Manage the countries available on the platform.",
+      "new": "New country",
+      "edit": "Edit",
+      "code": "Code",
+      "name": "Name",
+      "currencyCode": "Currency code",
+      "currencySymbol": "Symbol",
+      "timezone": "Default timezone",
+      "locale": "Default locale",
+      "phoneCode": "Phone code",
+      "sortOrder": "Sort order",
+      "currency": "Currency",
+      "restaurants": "Restaurants",
+      "newDialog": {
+        "title": "Create country",
+        "subtitle": "Add a new country to the platform."
+      },
+      "editDialog": {
+        "title": "Edit country"
+      }
+    },
+    "settings": {
+      "kicker": "Settings",
+      "title": "Platform Settings",
+      "subtitle": "Global defaults and provider configuration.",
+      "general": "General",
+      "providers": "Providers",
+      "providersHint": "Configure third-party integration state for email and SMS providers.",
+      "defaultCurrency": "Currency",
+      "defaultCountry": "Default country",
+      "defaultLocale": "Default locale",
+      "trialDays": "Trial days",
+      "supportEmail": "Support email",
+      "supportedLocales": "Supported locales",
+      "providerEmail": "Email provider",
+      "providerSms": "SMS provider",
+      "saved": "Settings saved."
+    },
+    "permissions": {
+      "kicker": "Permissions",
+      "title": "Permissions & Roles",
+      "subtitle": "Edit role templates and manage the permission catalog.",
+      "templates": "Role templates",
+      "catalog": "Permission catalog",
+      "system": "System",
+      "permissions": "permissions",
+      "restaurants": "restaurants",
+      "members": "members",
+      "edit": "Edit",
+      "save": "Save"
+    },
+    "security": {
+      "kicker": "Security Centre",
+      "title": "Security & Sessions",
+      "subtitle": "Monitor active sessions, security events and critical activity.",
+      "tab": {
+        "summary": "Summary",
+        "events": "Events",
+        "sessions": "Sessions"
+      },
+      "stats": {
+        "activeSessions": "Active sessions",
+        "sessions24h": "Sessions 24h",
+        "lockedAccounts": "Locked accounts",
+        "suspendedAccounts": "Suspended",
+        "failedLogins24h": "Failed logins 24h",
+        "critical24h": "Critical 24h",
+        "impersonations": "Active impersonations"
+      },
+      "event": "Event",
+      "actor": "Actor",
+      "severity": "Severity",
+      "ip": "IP",
+      "eventsPlaceholder": "Search events…",
+      "filterSeverity": "Severity",
+      "sessionUser": "User",
+      "device": "Device",
+      "lastSeen": "Last seen",
+      "current": "current",
+      "revoke": "Revoke",
+      "revokeTitle": "Revoke session?",
+      "revokeDescription": "The user will be logged out of this device immediately."
+    },
+    "audit": {
+      "kicker": "Audit Log",
+      "title": "Audit Log",
+      "subtitle": "Every auditable action on the platform, filterable and exportable.",
+      "searchPlaceholder": "Search audit log…",
+      "filterAction": "Action",
+      "export": "Export CSV",
+      "timestamp": "Timestamp",
+      "action": "Action",
+      "actor": "Actor",
+      "target": "Target",
+      "ip": "IP"
+    },
+    "notifications": {
+      "kicker": "Notifications",
+      "title": "Notification Centre",
+      "subtitle": "Platform-level system, security and billing notifications.",
+      "filterCategory": "Category",
+      "showArchived": "Show archived",
+      "markRead": "Mark read",
+      "markUnread": "Mark unread",
+      "archive": "Archive",
+      "unarchive": "Unarchive"
+    },
+    "systemHealth": {
+      "kicker": "System Health",
+      "title": "System Health",
+      "subtitle": "Modular probes covering every platform subsystem.",
+      "refresh": "Refresh",
+      "overall": "Overall status",
+      "healthy": "healthy",
+      "info": "Info",
+      "node": "Node version",
+      "environment": "Environment",
+      "generatedAt": "Generated",
+      "check": {
+        "database": "Database",
+        "memory": "Heap memory",
+        "cpu": "CPU",
+        "storage": "Storage",
+        "build": "Build version",
+        "deployment": "Deployment",
+        "email": "Email provider",
+        "sms": "SMS provider"
+      }
+    },
+    "analytics": {
+      "kicker": "Analytics",
+      "title": "Platform Analytics",
+      "subtitle": "Aggregated trends across orders, revenue, restaurants and users.",
+      "days": "days",
+      "totalOrders": "Total orders",
+      "totalRevenue": "Total revenue",
+      "newRestaurants": "New restaurants",
+      "newUsers": "New users",
+      "ordersTrend": "Orders trend",
+      "revenueTrend": "Revenue trend",
+      "newRestaurantsTrend": "New restaurants trend",
+      "ordersByStatus": "Orders by status",
+      "subscriptionsByPlan": "Subscriptions by plan",
+      "topRestaurants": "Top restaurants"
+    }
+  }
+}
