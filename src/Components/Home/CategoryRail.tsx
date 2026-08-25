@@ -61,7 +61,7 @@ export function CategoryRail({ categories }: CategoryRailProps) {
           >
             <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-border/60 bg-muted">
               <Image
-                src={category.products?.[0]?.image || IMAGE_FALLBACK}
+                src={category.image || IMAGE_FALLBACK}
                 alt={category.name}
                 fill
                 sizes="48px"
