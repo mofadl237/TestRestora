@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import { Link } from "@/src/i18n/routing";
 import { FaPizzaSlice } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
@@ -11,6 +12,7 @@ export function FooterBrand({ variants }: { variants?: Variants }) {
   const tCommon = useTranslations("common");
   const publicSettings = usePublicSettings();
   const brandName = publicSettings?.restaurantName?.trim() || tCommon("brandName");
+  const logo = publicSettings?.branding?.logo || null;
 
   return (
     <motion.div variants={variants} className="flex flex-col gap-5">
@@ -19,8 +21,18 @@ export function FooterBrand({ variants }: { variants?: Variants }) {
         className="group inline-flex items-center gap-3 transition-colors duration-300"
         aria-label={tCommon("homeAria")}
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-110">
-          <FaPizzaSlice className="text-xl" />
+        <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-110">
+          {logo ? (
+            <Image
+              src={logo}
+              alt=""
+              fill
+              sizes="44px"
+              className="object-cover"
+            />
+          ) : (
+            <FaPizzaSlice className="text-xl" />
+          )}
         </span>
         <span className="font-heading text-xl font-semibold tracking-[0.18em] text-foreground">
           {brandName}

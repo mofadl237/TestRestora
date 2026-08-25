@@ -2,6 +2,7 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { FaPizzaSlice } from "react-icons/fa6";
 import NavBar from "./NavBar";
 import { ToggleMode } from "./ToggleMode";
@@ -17,6 +18,7 @@ const Header = () => {
   const t = useTranslations("common");
   const publicSettings = usePublicSettings();
   const brandName = publicSettings?.restaurantName?.trim() || t("brandName");
+  const logo = publicSettings?.branding?.logo || null;
   const [isScrolled, setIsScrolled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const { scrollY } = useScroll();
@@ -55,9 +57,20 @@ const Header = () => {
           <motion.span
             whileHover={{ scale: 1.08, rotate: -6 }}
             transition={{ type: "spring", stiffness: 320, damping: 18 }}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm md:h-10 md:w-10"
+            className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground shadow-sm md:h-10 md:w-10"
           >
-            <FaPizzaSlice className="text-base md:text-lg" />
+            {logo ? (
+              <Image
+                src={logo}
+                alt=""
+                fill
+                sizes="40px"
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <FaPizzaSlice className="text-base md:text-lg" />
+            )}
           </motion.span>
 
           <span className="hidden font-heading text-md font-semibold tracking-[0.18em] text-foreground md:inline md:text-xl">

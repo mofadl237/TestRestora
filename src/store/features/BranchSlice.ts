@@ -1,7 +1,7 @@
 import {
-  ACTIVE_BRANCH_STORAGE_KEY,
-  removeNamedStorage,
-  setNamedStorage,
+  getBranchStorageKey,
+  setSessionStorage,
+  removeSessionStorage,
 } from "@/lib/localStorageHandle";
 import { useSelector } from "react-redux";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
@@ -14,8 +14,9 @@ import type { RootState } from "@/src/store/store";
  * The branch is resolved ONCE (branch gate → selection screen / deep link /
  * table QR) and then reused everywhere: catalog queries, offers, delivery
  * zones, reservations and order creation are all scoped with the active
- * `branchId`. The snapshot is persisted to localStorage so a returning
- * customer lands directly in their last location instead of re-selecting.
+ * `branchId`. The snapshot is persisted to sessionStorage so a returning
+ * customer lands directly in their last location within the same browsing
+ * session — but NOT across sessions (a new tab/window starts fresh).
  *
  * Single-branch restaurants never surface this slice in the UI — the gate
  * resolves the only branch silently (see BranchGate).
@@ -55,16 +56,22 @@ export const branchSlice = createSlice({
       state.hydrated = true;
     },
 
-    /** Activate + persist a branch (selection screen, switcher, QR flow). */
+    /**
+     * Activate + persist a branch (selection screen, switcher, QR flow).
+     * Persisted to sessionStorage (not localStorage) so the selection
+     * survives page refreshes but is discarded when the tab is closed.
+     */
     setActiveBranch: (state, action: PayloadAction<IActiveBranchSnapshot>) => {
       state.active = action.payload;
-      setNamedStorage(ACTIVE_BRANCH_STORAGE_KEY, JSON.stringify(action.payload));
+      const key = getBranchStorageKey();
+      setSessionStorage(key, JSON.stringify(action.payload));
     },
 
     /** Forget the active branch (invalid table, storage reset). */
     clearActiveBranch: (state) => {
       state.active = null;
-      removeNamedStorage(ACTIVE_BRANCH_STORAGE_KEY);
+      const key = getBranchStorageKey();
+      removeSessionStorage(key);
     },
   },
 });

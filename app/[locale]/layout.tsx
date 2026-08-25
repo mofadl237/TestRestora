@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { getI18nRuntimeConfig } from "@/src/i18n/config";
 import { getSiteUrl } from "@/src/lib/seo/structuredData";
+import { fetchPublicRestaurant } from "@/src/lib/seo/serverData";
 import RestaurantJsonLd from "@/src/Components/Seo/RestaurantJsonLd";
 import "../globals.css";
 import { cn } from "@/lib/utils";
@@ -35,26 +36,55 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()),
-  title: {
-    default: "Restaurant",
-    template: "%s | Restaurant",
-  },
-  description: "Order your favorite meals online.",
-  robots: { index: true, follow: true },
-  alternates: {
-    // hreflang parity across the template's locales (same path per locale,
-    // resolved against metadataBase by Next.js).
-    languages: Object.fromEntries(
-      routing.locales.map((l) => [l, `/${l}`]),
-    ),
-  },
-  openGraph: {
-    type: "website",
-    siteName: "Restaurant",
-  },
-};
+const SITE_URL = getSiteUrl();
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const restaurant = await fetchPublicRestaurant(locale);
+
+  const name = restaurant?.restaurantName?.trim() || "Restaurant";
+  const description = restaurant?.contact?.address
+    ? `${name} — ${restaurant.contact.address}`
+    : `Order from ${name} online.`;
+  const coverImage = restaurant?.branding?.coverImage || null;
+  const logo = restaurant?.branding?.logo || null;
+
+  const images = coverImage ? [{ url: coverImage, width: 1200, height: 630, alt: name }] : [];
+  const icons = logo ? { icon: logo } : undefined;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: name,
+      template: `%s | ${name}`,
+    },
+    description,
+    icons,
+    robots: { index: true, follow: true },
+    alternates: {
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `/${l}`]),
+      ),
+    },
+    openGraph: {
+      type: "website",
+      siteName: name,
+      title: name,
+      description,
+      ...(images.length ? { images } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: name,
+      description,
+      ...(images.length ? { images: images.map((i) => i.url) } : {}),
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const { locales } = await getI18nRuntimeConfig();

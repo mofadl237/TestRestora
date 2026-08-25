@@ -16,7 +16,7 @@ import {
   type IApiBranch,
 } from "@/src/store/api/publicApi";
 import { clearCart, setCartBranch } from "@/src/store/features/CartSlice";
-import { getNamedStorage, ACTIVE_BRANCH_STORAGE_KEY } from "@/lib/localStorageHandle";
+import { getBranchStorageKey, getSessionStorage } from "@/lib/localStorageHandle";
 
 import BranchSplash from "./BranchSplash";
 import BranchSelection from "./BranchSelection";
@@ -84,7 +84,8 @@ export function BranchGate({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     let persisted: IActiveBranchSnapshot | null = null;
     try {
-      const raw = getNamedStorage(ACTIVE_BRANCH_STORAGE_KEY);
+      const key = getBranchStorageKey();
+      const raw = getSessionStorage(key);
       if (raw) {
         const saved = JSON.parse(raw) as Partial<IActiveBranchSnapshot> | null;
         if (saved?.id && saved.name) {
@@ -110,30 +111,6 @@ export function BranchGate({ children }: { children: React.ReactNode }) {
 
   const tableEntry = Boolean(intent.tableId);
   const urlBranchIntent = intent.branch;
-
-  // ── DEBUG: branch gate resolution trace ────────────────────────────────────
-  React.useEffect(() => {
-    console.group("[BranchGate] resolution trace");
-    console.log("locale:", locale);
-    console.log("intent:", intent);
-    console.log("tableEntry:", tableEntry);
-    console.log("urlBranchIntent:", urlBranchIntent);
-    console.log("branchesQuery.status:", branchesQuery.status);
-    console.log("branchesQuery.isFetching:", branchesQuery.isFetching);
-    console.log("branchesQuery.isSuccess:", branchesQuery.isSuccess);
-    console.log("branchesQuery.isError:", branchesQuery.isError);
-    console.log("branchesQuery.error:", branchesQuery.error);
-    console.log("branches.length:", branches.length);
-    console.log("branches:", branches.map(b => ({ id: b.id, name: b.name, slug: b.slug, isOpenNow: b.isOpenNow })));
-    console.log("listResolved:", listResolved);
-    console.log("active:", active);
-    console.log("activeIsValid:", Boolean(active && branches.some((b) => b.id === active.id)));
-    const _needsSelection = !tableEntry && listResolved && branches.length > 1 && !(active && branches.some((b) => b.id === active.id));
-    console.log("needsSelection (computed):", _needsSelection);
-    const _ready = tableEntry || (listResolved && (branches.length <= 1 || (active && branches.some((b) => b.id === active.id))));
-    console.log("ready (computed):", _ready);
-    console.groupEnd();
-  }, [locale, intent, tableEntry, urlBranchIntent, branchesQuery.status, branchesQuery.isFetching, branchesQuery.isSuccess, branchesQuery.isError, branchesQuery.error, branches, listResolved, active]);
 
   // ── Resolution effects ───────────────────────────────────────────────────
 

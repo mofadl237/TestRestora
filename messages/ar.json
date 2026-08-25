@@ -184,6 +184,8 @@
   "hero": {
     "badge": "طعم حاصل على جوايز",
     "shopNow": "اطلب دلوقتي",
+    "orderNow": "اطلب دلوقتي",
+    "from": "يبدأ من",
     "goToSlide": "اذهب إلى الشريحة {number}",
     "goToNamedSlide": "اذهب إلى شريحة {title}",
     "slides": [

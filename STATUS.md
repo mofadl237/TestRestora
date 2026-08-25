@@ -1,6 +1,6 @@
 # Restora Website Template — Status
 
-**Version 1.3.0 — Multi-Branch + API Contract Verification**
+**Version 1.5.0 — Branch Selection Persistence: sessionStorage**
 Last updated: 2026-08-25
 
 ---
@@ -8,10 +8,94 @@ Last updated: 2026-08-25
 ## Current state
 
 The template is a standalone restaurant public website consuming ONLY the
-Restora Public API (`/api/v1/public`). As of v1.1.0 it supports both
-single-branch and multi-branch restaurants while preserving the existing
-architecture end to end (RTK Query single client, Redux cart, pricing engine,
-next-intl localization, GSAP + Framer Motion animation system).
+Restora Public API (`/api/v1/public`). As of v1.5.0 it features:
+multi-branch support with session-scoped branch persistence (sessionStorage),
+dynamic branding from the API (logo, cover image, primary color), a dynamic
+homepage product slider replacing hardcoded hero images, server-side
+OG/Twitter metadata from API data, and a compact premium BranchSelection
+redesign.
+
+## Branch persistence: sessionStorage (v1.5.0)
+
+Branch selection is persisted to **sessionStorage**, NOT localStorage.
+
+**Why:** A customer may select a branch today and later physically move to
+another location. We do not want the old branch selection to persist across
+future sessions.
+
+**Key format:** `restora.pub.branch.{restaurantId}` (restaurant-scoped to
+prevent cross-restaurant collisions in the same browser tab).
+
+**Session flow:**
+1. Customer opens restaurant → resolve branches
+2. Check sessionStorage for this restaurant's key
+3. If stored branch is still active → restore it
+4. Otherwise → single branch auto-activates; multi-branch shows selector
+5. Customer selects branch → persist to sessionStorage + activate
+6. Close tab / new session → previous selection is NOT inherited
+
+**QR priority:** QR/table resolution overrides sessionStorage. If `?tableId=`
+resolves to a branch, that branch activates and sessionStorage is updated.
+
+**Single branch:** auto-activates; no selector shown; stored in sessionStorage
+for the current session.
+
+**Security:** sessionStorage is UX-only, NOT authorization. Server continues
+validating `restaurantId + branchId` for every request.
+
+**Files changed:**
+- `lib/localStorageHandle.ts` — added `getBranchStorageKey()`,
+  `setSessionStorage`, `getSessionStorage`, `removeSessionStorage` helpers.
+  Old `ACTIVE_BRANCH_STORAGE_KEY` / `setNamedStorage` / `getNamedStorage` /
+  `removeNamedStorage` removed (were only used by branch code).
+- `src/store/features/BranchSlice.ts` — `setActiveBranch` and
+  `clearActiveBranch` reducers now write to sessionStorage via
+  `getBranchStorageKey()`. Comment updated.
+- `src/Components/Branch/BranchGate.tsx` — hydration reads from sessionStorage
+  via `getSessionStorage(getBranchStorageKey())` instead of localStorage.
+
+## Dynamic branding (v1.4.0)
+
+- **Header logo:** API `branding.logo` rendered via `next/image`; falls back to
+  first-letter monogram when logo is empty/missing.
+- **Footer logo:** Same pattern via `FooterBrand.tsx`.
+- **BranchSplash:** Shows `branding.logo` when available; monogram fallback
+  otherwise. Primary color pulse animation.
+- **BranchSelection redesign:** Compact, cinematic, restaurant-branded. Logo as
+  brand reveal (no oversized hero), compact branch cards (h-28 images), tighter
+  spacing, phone/maps links, Ken Burns ambient cover entrance.
+
+## Dynamic homepage product slider (v1.4.0)
+
+- **Hero.tsx** rewritten: hardcoded pizza images (`sliderData` from `src/data`)
+  replaced with dynamic product collection from `useGetHomeQuery`.
+- Merges `bestSellers` + `chefRecommendations` + `familyMeals` + `newItems` +
+  `kidsMeals` + `comboMeals` (deduplicates by `id`).
+- Shows product name, description, base price with locale currency formatting,
+  animated crossfade transitions with GSAP.
+- `AddToCartDialog` integration removed from Hero (link to `/menu` instead);
+  Hero is a showcase, not a cart surface.
+- Loading state: animated skeleton cards. Empty state: `EmptyState` message.
+- `prefers-reduced-motion` respected (no autoplay, no transitions).
+
+## Server-side dynamic metadata (v1.4.0)
+
+- `app/[locale]/layout.tsx` now uses `generateMetadata` (async, server-side)
+  instead of static `export const metadata`.
+- `fetchPublicRestaurant(locale)` in `src/lib/seo/serverData.ts` fetches
+  `branding.coverImage`, `branding.logo`, `restaurantName` server-side.
+- `og:image` + `twitter:image` set from `branding.coverImage` (when present).
+- `favicon` set from `branding.logo` (when present).
+- Title template: `{name}` (default), `%s | {name}` (nested pages).
+- Graceful fallback: empty/missing branding → defaults to "Restaurant" name,
+  no image tags. **Verified working** — API returns empty strings for
+  `coverImage`/`logo` on the current tenant, so image meta tags are correctly
+  omitted.
+
+## Translation keys added (v1.4.0)
+
+- `hero.orderNow` / `hero.from` added to `messages/en.json`, `ar.json`,
+  `it.json` — structural parity maintained.
 
 ## Multi-branch support (v1.1.0)
 
@@ -27,18 +111,19 @@ Visitor → BranchGate (MarketingChrome wrapper)
             ├─ >1 branches    → premium selection screen (first visit)
             └─ ?tableId= (QR) → skip gate; table resolves table + branch
                                    ↓
-                     Active branch in Redux (persisted localStorage)
+                     Active branch in Redux (sessionStorage)
                                    ↓
         All catalog / offers / delivery / reservations / orders scoped
         with ?branchId= (server remains authoritative for pricing)
 ```
 
 - **State:** `src/store/features/BranchSlice.ts` — `{ active: {id,name,slug},
-  hydrated }`, persisted under the `restora.activeBranch` localStorage key.
+  hydrated }`, persisted to sessionStorage under key
+  `restora.pub.branch.{restaurantId}` (session-scoped, NOT localStorage).
 - **Gate:** `src/Components/Branch/BranchGate.tsx` — resolves once per page
-  load; exposes `useBranchContext()` (`branches`, `activeBranch`,
-  `isMultiBranch`, `requestSwitch`). Deep links via `?branch=<slug|id>` are
-  activated then cleaned from the URL.
+  load; reads from sessionStorage on mount; exposes `useBranchContext()`
+  (`branches`, `activeBranch`, `isMultiBranch`, `requestSwitch`). Deep links
+  via `?branch=<slug|id>` are activated then cleaned from the URL.
 - **API:** `getBranches` endpoint (`GET /branches`) + optional `branchId`
   parameter on availability, home, categories, products, product detail,
   offers, delivery zones, reservation config/slots/creation, promo validation,
@@ -202,11 +287,23 @@ restaurant-level data — identical to the pre-branch wire format.
 | `GET /ar/reservations` | 200 |
 | `GET /ar/track-order` | 200 |
 
+### Dynamic branding (runtime)
+
+| Check | Result |
+| --- | --- |
+| `fetchPublicRestaurant` server-side | ✅ 200, data present |
+| API `branding.coverImage` | Empty string (tenant not configured) — metadata gracefully omits og:image |
+| API `branding.logo` | Empty string (tenant not configured) — favicon defaults to Next.js icon |
+| Header/footer logo fallback | ✅ monogram when logo is empty |
+| Homepage product data | ✅ 14 products from `/home` (bestSellers=4, chefRecs=6, newItems=4) |
+
 ### API contract (live server)
 
 | Check | Result |
 | --- | --- |
-| `GET /branches` (legacy server, 404) | ✅ silent degradation → gate renders single-branch experience |
+| `GET /branches` (restora.world, restaurant=cmt49arro0003jr04dsnh7v62) | **404 — server does not have this endpoint** |
+| `GET /branches` (via Next.js proxy) | **404 — proxy correctly forwards; server returns Next.js HTML error** |
+| `GET /branches` (without restaurantId) | **404 — endpoint not deployed on restora.world** |
 | `GET /home` (no branchId) | ✅ `{"success":true}` — restaurant-level data |
 | `GET /home` (branchId=test-branch) | ✅ `{"success":true}` — server accepts branchId param |
 | `GET /products` (branchId=test-branch) | ✅ `{"success":true}` — branch-scoped products |
@@ -226,15 +323,25 @@ restaurant-level data — identical to the pre-branch wire format.
 | TableResolver activates branch from QR | ✅ `setActiveBranch(resolved.branch)` at TableResolver.tsx:66-73 |
 | BranchGate blocks children until resolved | ✅ children only rendered when `ready = true` |
 | Deep link `?branch=X` activates match | ✅ BranchGate.tsx:128-142, URL cleaned after activation |
+| Gate render paths (8 scenarios verified) | ✅ no state where needsSelection + ready are both true |
+| Effects have idempotency guards | ✅ no render loops possible |
+| `needsSelection` + `ready` are mutually exclusive | ✅ mathematically impossible for both to be true |
+| **Branch persistence: sessionStorage** | ✅ `BranchSlice.ts` writes to `sessionStorage` via `setSessionStorage(getBranchStorageKey(), ...)` |
+| **Branch persistence: NOT localStorage** | ✅ no `localStorage` import/usage in branch code (verified: 0 references to `ACTIVE_BRANCH_STORAGE_KEY` / `setNamedStorage` / `getNamedStorage` / `removeNamedStorage` in branch files) |
+| **Restaurant-scoped key** | ✅ `restora.pub.branch.{restaurantId}` via `getBranchStorageKey()` |
+| **Cart remains in localStorage** | ✅ `CartSlice.ts` still imports `setLocalStorage` (cart persistence is independent, correct) |
 
 ### SEO
 
 | Check | Result |
 | --- | --- |
-| JSON-LD in initial HTML | ✅ `@type: Restaurant` present |
+| JSON-LD in initial HTML | ✅ `@type: Restaurant` present; `logo` field included |
 | sitemap.xml | ✅ all locales × routes with hreflang alternates |
 | robots.txt | ✅ cart/orders/track-order disallowed |
-| Metadata (title, description, OG) | ✅ layout-level defaults + per-page `generateMetadata` |
+| `generateMetadata` (server-side) | ✅ title, description from API; `og:image`/`twitter:image` from `branding.coverImage` when present |
+| `og:image` / `twitter:image` | ✅ correctly omitted when API returns empty `coverImage` (current tenant); will populate when branding is configured |
+| `favicon` from API | ✅ from `branding.logo` when present; falls back to Next.js default |
+| Server-side fetch (`serverData.ts`) | ✅ `res.text()` before `JSON.parse` (defensive); failure-tolerant |
 
 ### i18n
 
@@ -304,13 +411,64 @@ dev server is running — stop `yarn dev` first (or delete `.next` afterwards).
 
 ---
 
+## Runtime investigation: "multi-branch selection not appearing" (2026-08-25)
+
+### Symptom
+
+Opening a restaurant website expected to have multiple branches never shows the
+branch-selection screen — the normal website loads immediately.
+
+### Investigation
+
+1. Confirmed `NEXT_PUBLIC_RESTORA_RESTAURANT_ID=cmt49arro0003jr04dsnh7v62`.
+2. Called `GET /branches` (direct to `restora.world` AND via Next.js proxy):
+   **HTTP 404** in every case — the server returns a Next.js HTML error page.
+3. Called `GET /branches` without restaurantId: **404** — endpoint simply does
+   not exist on `restora.world`.
+4. Confirmed all other endpoints (`/restaurant`, `/home`, `/availability`) work
+   — the server is alive, just lacks `/branches`.
+
+### Root cause
+
+**The server at `restora.world` does not have `GET /branches` deployed.**
+BranchGate's graceful degradation is working as designed:
+
+```
+branchesQuery.isError = true    (404)
+branchesQuery.data = undefined  → branches = []
+listResolved = true             (isError counts as "resolved")
+branches.length = 0             → needsSelection = false
+branches.length <= 1            → ready = true
+→ normal website renders without selection screen
+```
+
+### Client code verification
+
+A thorough code review (8 files, all BranchGate paths) confirmed **0 bugs**:
+
+- `needsSelection` and `ready` are mathematically mutually exclusive — no
+  flicker risk.
+- Every effect has idempotency guards — no render loops.
+- Single-branch, multi-branch, QR, deep-link, stale-persistence, and error
+  (404) paths all handle correctly.
+- All data containers (`HomeClient`, `MenuPage`, `RenderOrder`, etc.) thread
+  `branchId` from `useActiveBranchId()`.
+- BranchGate correctly blocks children from rendering until resolution.
+
+**The client is ready. The server must ship `GET /branches`.**
+
+---
+
 ## Remaining work
 
-1. **Restora server:** ship `GET /branches` and accept `?branchId=` on the
-   documented endpoints; include `branch` in `tables/resolve` responses.
-   Until then the website runs in graceful single-location mode.
-2. **Live E2E** against a real multi-branch tenant: per-branch prices,
-   availability gating, offer scoping, QR branch resolution (needs server).
+1. **Restora server (BLOCKER):** ship `GET /branches` endpoint returning the
+   light branch list (`[{id, name, slug, image, address, isOpenNow, ...}]`).
+   Without this endpoint the website runs in single-location mode — the
+   selection screen cannot appear. Also: accept `?branchId=` on documented
+   endpoints and include `branch` in `tables/resolve` responses.
+2. **Live E2E** against a real multi-branch tenant (requires #1): selection
+   screen, per-branch prices, availability gating, offer scoping, QR branch
+   resolution, branch switching, cart safety.
 3. **Optional polish:** bottom-sheet switcher variant for very small viewports;
    per-branch structured-data pages if/when real branch routes exist.
 4. **Deployment:** set `NEXT_PUBLIC_SITE_URL` for canonical/sitemap URLs.

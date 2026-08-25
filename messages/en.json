@@ -184,6 +184,8 @@
   "hero": {
     "badge": "Award-Winning Taste",
     "shopNow": "Shop Now",
+    "orderNow": "Order Now",
+    "from": "From",
     "goToSlide": "Go to slide {number}",
     "goToNamedSlide": "Go to {title} slide",
     "slides": [

@@ -1,7 +1,7 @@
 # RESTORA Execution Plan
 
-**Scope:** Restaurant Public Website — multi-branch support + refinement of
-the existing website.
+**Scope:** Restaurant Public Website — multi-branch support + dynamic branding
++ refinement of the existing website.
 
 **Principle:** ADD intelligent multi-branch support on top of the existing
 architecture. Never rebuild, never duplicate the API client, cart, checkout,
@@ -50,9 +50,21 @@ The template already provided (and still owns):
 | Performance | Light `/branches` payload only pre-selection; children unmounted until resolved; `next/image` everywhere. |
 | Design | Existing RESTORA identity kept; orange as accent, token-based surfaces, no AI-generic decoration. |
 
+## 3a. Dynamic branding + homepage slider + metadata (v1.4.0 — completed)
+
+| Phase | What was delivered |
+| --- | --- |
+| Dynamic logo | API `branding.logo` in Header and Footer via `next/image`; monogram fallback when empty. |
+| Dynamic metadata | `generateMetadata` (async server) in `layout.tsx`; `og:image`/`twitter:image` from `branding.coverImage`; favicon from `branding.logo`; title/description from API. |
+| Server helper | `src/lib/seo/serverData.ts` — `fetchPublicRestaurant(locale)` with defensive `res.text()` before `JSON.parse`; failure-tolerant. |
+| Homepage slider | `Hero.tsx` rewritten: dynamic product slider from `useGetHomeQuery` (bestSellers + chefRecs + familyMeals + newItems + kidsMeals + comboMeals, deduplicated); API product images, names, descriptions, prices. |
+| Translation keys | `hero.orderNow` + `hero.from` added to en/ar/it (structural parity). |
+| BranchSelection redesign | Compact cinematic layout: smaller logo reveal, compact branch cards (h-28 images), tighter spacing, phone/maps links. |
+| Verified | `fetchPublicRestaurant` returns 200 with data; empty branding gracefully handled; homepage renders with 14 products from API; build clean (25/25 routes). |
+
 ## 3. Files changed
 
-**New**
+**New (v1.1.0 — multi-branch):**
 - `src/store/features/BranchSlice.ts`
 - `src/Components/Branch/BranchGate.tsx` (+ `useBranchContext`)
 - `src/Components/Branch/BranchSelection.tsx`
@@ -66,7 +78,10 @@ The template already provided (and still owns):
 - `app/sitemap.ts`, `app/robots.ts`
 - `STATUS.md`, this file
 
-**Modified**
+**New (v1.4.0 — dynamic branding):**
+- `src/lib/seo/serverData.ts` — shared server-side API fetch helper
+
+**Modified (v1.1.0 — multi-branch):**
 - `src/Components/Branch/BranchSelection.tsx` — card restructure (`<button>` →
   `<div role="button">` + `<a>` for phone/maps); GSAP ambient cover entrance;
   phone + Google Maps link display.
@@ -75,8 +90,11 @@ The template already provided (and still owns):
 - `src/store/api/publicApi.ts` — `getBranches`, `tenantParams`/`branchParams`
   helpers, `Branches` tag, optional `branchId` across endpoints.
 - `src/store/store.ts` — registered `branch` reducer.
-- `lib/localStorageHandle.ts` — named-key helpers +
-  `ACTIVE_BRANCH_STORAGE_KEY`.
+- `lib/localStorageHandle.ts` — named-key helpers (v1.1.0);
+  + sessionStorage helpers + `getBranchStorageKey()` (v1.5.0);
+  old `ACTIVE_BRANCH_STORAGE_KEY` / `setNamedStorage` / `getNamedStorage` /
+  `removeNamedStorage` removed (were branch-only; cart still uses
+  `setLocalStorage`/`getLocalStorage`).
 - `src/store/features/CartSlice.ts` — cart `branchId` binding, object-style
   `persist(state)` refactor, `setCartBranch`.
 - `app/[locale]/MarketingChrome.tsx` — wraps chrome in `BranchGate`.
@@ -88,8 +106,29 @@ The template already provided (and still owns):
   `RenderOrder`, `RestaurantClosedBanner`, `PromoCodeInput`,
   `PublicReservations`.
 - `messages/en.json`, `messages/ar.json`, `messages/it.json` — `branches.*`
-  (including `card.directions`).
+  (including `card.directions`); + `hero.orderNow`, `hero.from` (v1.4.0).
 - `docs/API_ENDPOINTS.md` — `/branches`, `branchId`, table `branch`.
+
+**Modified (v1.4.0 — dynamic branding):**
+- `app/[locale]/layout.tsx` — `generateMetadata` replacing static metadata;
+  fetches API for dynamic og:image/twitter:image/title/description.
+- `src/lib/seo/structuredData.ts` — imports shared `fetchPublicRestaurant`;
+  adds `logo` to JSON-LD.
+- `src/Components/header/Header.tsx` — API logo with fallback (replaces
+  `FaPizzaSlice` icon).
+- `src/Components/Footer/FooterBrand.tsx` — API logo with fallback.
+- `src/Components/Home/Hero.tsx` — complete rewrite: dynamic product slider
+  from API (replaces hardcoded pizza images). Removes AddToCartDialog import.
+- `src/Components/Branch/BranchSelection.tsx` — premium compact redesign
+  (smaller logo reveal, h-28 card images, tighter spacing, phone/maps links).
+
+**Modified (v1.5.0 — sessionStorage):**
+- `lib/localStorageHandle.ts` — sessionStorage helpers added; old branch
+  localStorage helpers removed.
+- `src/store/features/BranchSlice.ts` — `setActiveBranch`/`clearActiveBranch`
+  write to sessionStorage via `getBranchStorageKey()`.
+- `src/Components/Branch/BranchGate.tsx` — hydration reads from sessionStorage
+  via `getSessionStorage(getBranchStorageKey())`.
 
 ## 4. Behavior contracts
 
@@ -97,8 +136,10 @@ The template already provided (and still owns):
   DOM reveals branches. Internally, the only branch is auto-resolved silently
   and all requests carry `branchId` — the customer never notices.
 - **Multi-branch:** gate → selection → website; switcher appears; deep links
-  work; returning customers skip selection.
-- **QR:** never shows selection; restaurant→branch→table resolve silently.
+  work. Branch selection persists to **sessionStorage** (not localStorage) so
+  it survives page refreshes within a session but NOT across sessions.
+- **QR:** never shows selection; restaurant→branch→table resolve silently;
+  QR branch overrides any stored session branch.
   Order is stamped with the table's branch.
 - **Cart safety:** orders can never silently across locations.
 - **Pricing:** client displays estimates; Restora recomputes authoritatively.
@@ -128,18 +169,30 @@ absent.
 
 ## 6. Verification
 
-See `STATUS.md` → "Verification results". Typecheck, lint, production build,
-runtime smoke tests against a live tenant (including legacy-server 404
-degradation), and API-level contract verification all pass. Every branch-scoped
-endpoint was tested with and without `branchId` — the server accepts both.
-Scenario matrix A–K is implemented; live multi-branch E2E awaits server-side
-`/branches` endpoint.
+See `STATUS.md` → "Verification results" and "Runtime investigation". Typecheck,
+lint, production build, runtime smoke tests, and API-level contract
+verification all pass. Every branch-scoped endpoint was tested with and without
+`branchId` — the server accepts both.
 
-## 6. Remaining work
+**Branch persistence verified (v1.5.0):**
+- `BranchSlice` writes to `sessionStorage` (not localStorage) via
+  `setSessionStorage(getBranchStorageKey(), ...)`.
+- `BranchGate` reads from `sessionStorage` on mount.
+- Key format: `restora.pub.branch.{restaurantId}` — restaurant-scoped.
+- Cart persistence remains in localStorage (independent, correct).
+- 0 references to old `ACTIVE_BRANCH_STORAGE_KEY` / `setNamedStorage` /
+  `getNamedStorage` / `removeNamedStorage` in branch code.
 
-1. Restora server: expose `GET /branches`, accept `?branchId=`, return
-   `branch` on `tables/resolve` (backward-compatible additions).
-2. Live E2E vs a real multi-branch tenant (prices, availability, offers, QR).
-3. Optional: bottom-sheet switcher variant; per-branch SEO landing routes if
-   product later wants real branch pages.
+**Runtime root cause identified:** `restora.world` does not have `GET /branches`
+deployed. BranchGate gracefully degrades to single-location mode when the
+endpoint returns 404. Client code is correct — verified by exhaustive code
+review (8 files, 0 bugs, all 8 render-path scenarios validated). Multi-branch
+selection screen will appear when the server ships `GET /branches`.
+
+## 7. Remaining work
+
+1. Restora server (BLOCKER): ship `GET /branches` returning light branch list.
+   Without this, the selection screen cannot appear.
+2. Live E2E vs a real multi-branch tenant (requires #1).
+3. Optional: bottom-sheet switcher variant; per-branch SEO landing routes.
 4. Set `NEXT_PUBLIC_SITE_URL` at deploy time for canonical URLs.

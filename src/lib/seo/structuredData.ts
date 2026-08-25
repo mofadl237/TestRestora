@@ -1,10 +1,10 @@
 import type { IApiBranch } from "@/src/store/api/types";
+import { fetchPublicRestaurant } from "./serverData";
 
 /**
  * Server-side SEO helpers (Phase: SEO).
  *
- * These fetch the Public API directly (server-to-server) to emit
- * structured data in the initial HTML — no client JS, no hydration cost.
+ * These use fetchPublicRestaurant() from the shared server module.
  * Every call is failure-tolerant: SEO enrichment must NEVER break rendering.
  */
 
@@ -36,22 +36,14 @@ async function publicFetch<T>(
       next: { revalidate },
     });
     if (!res.ok) return null;
-    const body = (await res.json()) as { success?: boolean; data?: T };
+    const text = await res.text();
+    if (!text) return null;
+    const body = JSON.parse(text) as { success?: boolean; data?: T };
     if (!body?.success || !body.data) return null;
     return body.data;
   } catch {
     return null;
   }
-}
-
-interface IPublicSettingsLite {
-  restaurantName: string;
-  contact?: {
-    phone?: string;
-    email?: string;
-    address?: string;
-    googleMaps?: string;
-  };
 }
 
 /**
@@ -60,12 +52,12 @@ interface IPublicSettingsLite {
  * for multi-location restaurants). No fake pages are generated.
  */
 export async function getRestaurantJsonLd(locale: string): Promise<object | null> {
-  const [settings, branches] = await Promise.all([
-    publicFetch<IPublicSettingsLite>("/restaurant", locale),
+  const [restaurant, branches] = await Promise.all([
+    fetchPublicRestaurant(locale),
     publicFetch<IApiBranch[]>("/branches", locale),
   ]);
 
-  if (!settings) return null;
+  if (!restaurant) return null;
 
   const siteUrl = getSiteUrl();
 
@@ -76,7 +68,6 @@ export async function getRestaurantJsonLd(locale: string): Promise<object | null
     "@type": "PostalAddress",
     ...(b.address ? { streetAddress: b.address } : {}),
     ...(b.city ? { addressLocality: b.city } : {}),
-    // No fabricated country/region — only API-provided fields are emitted.
   });
 
   const branchNodes = (branches ?? [])
@@ -99,16 +90,18 @@ export async function getRestaurantJsonLd(locale: string): Promise<object | null
       ...(b.mapsUrl ? { hasMap: b.mapsUrl } : {}),
     }));
 
+  const logo = restaurant.branding?.logo || null;
+
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": (branches?.length ?? 0) > 1 ? "RestaurantChain" : "Restaurant",
-    name: settings.restaurantName,
+    name: restaurant.restaurantName,
     url: siteUrl,
-    ...(settings.contact?.phone ? { telephone: settings.contact.phone } : {}),
-    ...(settings.contact?.address
-      ? { address: addressFor({ address: settings.contact.address }) }
+    ...(logo ? { logo } : {}),
+    ...(restaurant.contact?.phone ? { telephone: restaurant.contact.phone } : {}),
+    ...(restaurant.contact?.address
+      ? { address: addressFor({ address: restaurant.contact.address }) }
       : {}),
-    // Multi-branch: real departments only. Single-branch: plain Restaurant.
     ...((branches?.length ?? 0) > 1 ? { department: branchNodes } : {}),
   };
 

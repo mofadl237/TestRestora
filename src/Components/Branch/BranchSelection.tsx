@@ -20,16 +20,10 @@ interface IBranchSelectionProps {
 }
 
 /**
- * Premium location-selection experience for multi-branch restaurants.
+ * Premium compact location-selection experience for multi-branch restaurants.
  *
- * Shown ONCE before the website when a customer has not picked a location
- * yet (or followed a shareable `?branch=` link). Uses only the restaurant's
- * own identity — logo, primary color, cover and branch imagery from the
- * Public API; never stock photos.
- *
- * Performance: by the time this screen mounts, the ONLY network payload is
- * the light `/branches` list plus the shared `/restaurant` snapshot. No menu
- * data is requested before a branch is selected.
+ * Feels like a short cinematic transition, not a standalone directory.
+ * The restaurant's identity dominates — logo, cover, primary color.
  */
 export default function BranchSelection({ branches, onSelect }: IBranchSelectionProps) {
   const t = useTranslations("branches");
@@ -40,9 +34,9 @@ export default function BranchSelection({ branches, onSelect }: IBranchSelection
   const restaurantName = settings?.restaurantName?.trim() ?? "";
   const logo = settings?.branding?.logo || null;
   const cover = settings?.branding?.coverImage || null;
+  const primaryColor = settings?.branding?.primaryColor || undefined;
 
-  // Subtle GSAP Ken Burns reveal on the ambient cover image — complements
-  // the Framer Motion entrance without over-animating the selection itself.
+  // Subtle GSAP Ken Burns on the cover image
   useEffect(() => {
     if (reduceMotion || !cover || !coverImageRef.current) return;
     const el = coverImageRef.current;
@@ -53,19 +47,18 @@ export default function BranchSelection({ branches, onSelect }: IBranchSelection
   const containerV = {
     hidden: {},
     show: {
-      transition: { staggerChildren: reduceMotion ? 0 : 0.09, delayChildren: 0.05 },
+      transition: { staggerChildren: reduceMotion ? 0 : 0.06, delayChildren: 0.1 },
     },
   };
 
   const fadeUp = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 22 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_OUT } },
+    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE_OUT } },
   };
 
   return (
     <main className="relative flex min-h-dvh flex-col overflow-hidden bg-background">
-      {/* Ambient layer — the restaurant's own cover imagery when available,
-          otherwise a restrained brand-tinted vignette. One effect, one reason. */}
+      {/* Cinematic cover layer — full bleed, darkened */}
       <div className="absolute inset-0" aria-hidden="true">
         {cover ? (
           <>
@@ -76,17 +69,18 @@ export default function BranchSelection({ branches, onSelect }: IBranchSelection
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover opacity-20 dark:opacity-15"
+                className="object-cover opacity-25 dark:opacity-15"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
           </>
         ) : (
           <div
-            className="absolute inset-x-0 top-0 h-[45vh]"
+            className="absolute inset-x-0 top-0 h-[50vh]"
             style={{
-              background:
-                "radial-gradient(60% 90% at 50% -20%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%)",
+              background: primaryColor
+                ? `radial-gradient(70% 80% at 50% -15%, color-mix(in oklab, ${primaryColor} 16%, transparent), transparent 70%)`
+                : "radial-gradient(60% 90% at 50% -20%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%)",
             }}
           />
         )}
@@ -96,35 +90,39 @@ export default function BranchSelection({ branches, onSelect }: IBranchSelection
         variants={containerV}
         initial="hidden"
         animate="show"
-        className="relative mx-auto flex w-full max-w-5xl flex-1 flex-col items-center px-4 pb-12 pt-12 md:px-6 md:pt-20"
+        className="relative mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 py-10 md:px-6"
       >
-        {/* ── Brand header ── */}
+        {/* Brand header — compact, elegant */}
         <motion.div variants={fadeUp} className="flex flex-col items-center text-center">
-          <span className="relative mb-6 inline-flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl bg-primary text-primary-foreground shadow-[0_18px_50px_-18px_color-mix(in_oklab,var(--primary)_65%,transparent)] ring-1 ring-border/60 md:h-24 md:w-24">
+          {/* Logo as brand reveal */}
+          <motion.div
+            variants={fadeUp}
+            className="relative mb-4 inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-[0_14px_40px_-14px_color-mix(in_oklab,var(--primary)_60%,transparent)] ring-1 ring-border/50 md:h-16 md:w-16"
+          >
             {logo ? (
-              <Image src={logo} alt="" fill priority sizes="96px" className="object-cover" />
+              <Image src={logo} alt="" fill priority sizes="64px" className="object-cover" />
             ) : (
-              <span className="font-heading text-2xl font-semibold">
+              <span className="font-heading text-xl font-semibold">
                 {(restaurantName || "?").charAt(0).toUpperCase()}
               </span>
             )}
-          </span>
+          </motion.div>
 
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             {restaurantName || t("fallbackName")}
           </p>
-          <h1 className="mt-3 max-w-xl font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
+          <h1 className="mt-2 max-w-lg font-heading text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl md:text-[2rem]">
             {t("title")}
           </h1>
-          <p className="mt-3 max-w-md text-sm text-muted-foreground sm:text-base">
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">
             {t("subtitle")}
           </p>
         </motion.div>
 
-        {/* ── Branch cards ── */}
+        {/* Branch cards — compact grid */}
         <motion.ul
           variants={containerV}
-          className="mt-10 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
         >
           {branches.map((branch) => (
             <BranchCard key={branch.id} branch={branch} onSelect={onSelect} />
@@ -135,7 +133,7 @@ export default function BranchSelection({ branches, onSelect }: IBranchSelection
   );
 }
 
-// ─── Card ─────────────────────────────────────────────────────────────────────
+// ─── Compact Branch Card ──────────────────────────────────────────────────────
 
 function BranchCard({
   branch,
@@ -148,8 +146,8 @@ function BranchCard({
   const reduceMotion = useReducedMotion();
 
   const cardV = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 26, scale: 0.98 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: EASE_OUT } },
+    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: EASE_OUT } },
   };
 
   const addressLine = [branch.address, branch.city].filter(Boolean).join(", ");
@@ -168,33 +166,33 @@ function BranchCard({
         }}
         aria-label={`${branch.name} — ${branch.isOpenNow ? t("openNow") : t("closed")}`}
         className={cn(
-          "group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-card text-start",
+          "group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/60 bg-card/90 text-start backdrop-blur-sm",
           "shadow-sm transition-all duration-300",
-          "hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_60px_-28px_color-mix(in_oklab,var(--primary)_40%,transparent)]",
+          "hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_16px_48px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent)]",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           "active:translate-y-0 active:scale-[0.99]",
         )}
       >
-        {/* Imagery — branch photo when provided, branded monogram fallback. */}
-        <div className="relative h-36 w-full overflow-hidden sm:h-40">
+        {/* Branch image — compact height */}
+        <div className="relative h-28 w-full overflow-hidden sm:h-32">
           {branch.image ? (
             <Image
               src={branch.image}
               alt=""
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
             />
           ) : (
             <span
               className="absolute inset-0 flex items-center justify-center"
               style={{
                 background:
-                  "linear-gradient(140deg, color-mix(in oklab, var(--primary) 22%, transparent), color-mix(in oklab, var(--primary) 8%, transparent))",
+                  "linear-gradient(140deg, color-mix(in oklab, var(--primary) 20%, transparent), color-mix(in oklab, var(--primary) 6%, transparent))",
               }}
               aria-hidden="true"
             >
-              <span className="font-heading text-4xl font-semibold text-primary/80">
+              <span className="font-heading text-3xl font-semibold text-primary/70">
                 {branch.name.charAt(0).toUpperCase()}
               </span>
             </span>
@@ -203,15 +201,15 @@ function BranchCard({
           {/* Status pill */}
           <span
             className={cn(
-              "absolute start-3 top-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold backdrop-blur-md",
+              "absolute start-2.5 top-2.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold backdrop-blur-md",
               branch.isOpenNow
-                ? "bg-emerald-950/55 text-emerald-300 ring-1 ring-emerald-400/30"
-                : "bg-red-950/55 text-red-300 ring-1 ring-red-400/30",
+                ? "bg-emerald-950/60 text-emerald-300 ring-1 ring-emerald-400/25"
+                : "bg-red-950/60 text-red-300 ring-1 ring-red-400/25",
             )}
           >
             <span
               className={cn(
-                "size-1.5 rounded-full",
+                "size-1 rounded-full",
                 branch.isOpenNow ? "bg-emerald-400" : "bg-red-400",
               )}
               aria-hidden="true"
@@ -220,30 +218,30 @@ function BranchCard({
           </span>
         </div>
 
-        {/* Body */}
-        <div className="flex flex-1 flex-col gap-2 p-4">
-          <h3 className="font-heading text-lg font-bold leading-snug text-foreground">
+        {/* Body — compact */}
+        <div className="flex flex-1 flex-col gap-1.5 p-3">
+          <h3 className="font-heading text-base font-bold leading-snug text-foreground">
             {branch.name}
           </h3>
 
           {addressLine ? (
-            <p className="flex items-start gap-1.5 text-sm leading-snug text-muted-foreground">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+            <p className="flex items-start gap-1 text-xs leading-snug text-muted-foreground">
+              <MapPin className="mt-0.5 size-3.5 shrink-0 text-primary" aria-hidden="true" />
               <span>{addressLine}</span>
             </p>
           ) : null}
 
           {branch.openingHoursSummary ? (
-            <p className="flex items-center gap-1.5 text-xs text-muted-foreground/90">
-              <Clock3 className="size-3.5 shrink-0" aria-hidden="true" />
+            <p className="flex items-center gap-1 text-[11px] text-muted-foreground/80">
+              <Clock3 className="size-3 shrink-0" aria-hidden="true" />
               <span>{branch.openingHoursSummary}</span>
             </p>
           ) : null}
 
-          {/* Contact links — stopPropagation prevents card selection */}
+          {/* Contact links */}
           {(branch.phone || branch.mapsUrl) && (
             <div
-              className="flex items-center gap-2 text-xs"
+              className="flex items-center gap-2 text-[11px]"
               onClick={(e) => e.stopPropagation()}
             >
               {branch.phone ? (
@@ -251,7 +249,7 @@ function BranchCard({
                   href={`tel:${branch.phone}`}
                   className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <Phone className="size-3.5 shrink-0" aria-hidden="true" />
+                  <Phone className="size-3 shrink-0" aria-hidden="true" />
                   <span>{branch.phone}</span>
                 </a>
               ) : null}
@@ -262,25 +260,25 @@ function BranchCard({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+                  <ExternalLink className="size-3 shrink-0" aria-hidden="true" />
                   <span>{t("card.directions")}</span>
                 </a>
               ) : null}
             </div>
           )}
 
-          {/* CTA row */}
-          <span className="mt-auto flex items-center justify-between pt-3">
+          {/* CTA */}
+          <span className="mt-auto flex items-center justify-between pt-2">
             <span
               className={cn(
-                "text-sm font-semibold",
+                "text-xs font-semibold",
                 branch.isOpenNow ? "text-primary" : "text-muted-foreground",
               )}
             >
               {branch.isOpenNow ? t("orderOnline") : t("viewMenu")}
             </span>
             <IconNextCircle
-              className="size-6 text-primary transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
+              className="size-5 text-primary transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
               aria-hidden="true"
             />
           </span>

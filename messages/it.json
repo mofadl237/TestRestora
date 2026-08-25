@@ -184,6 +184,8 @@
   "hero": {
     "badge": "Gusto premiato",
     "shopNow": "Ordina ora",
+    "orderNow": "Ordina ora",
+    "from": "Da",
     "goToSlide": "Vai alla slide {number}",
     "goToNamedSlide": "Vai alla slide {title}",
     "slides": [
