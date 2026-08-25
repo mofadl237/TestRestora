@@ -11,6 +11,7 @@ import {
   clearPromoCode,
 } from "@/src/store/features/CartSlice";
 import { useValidatePromoCodeMutation } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import type { IPromoCodeStatus } from "@/src/store/api/types";
 import { formattePrice } from "@/lib/utils";
 
@@ -36,6 +37,7 @@ const PromoCodeInput = ({ cartSubtotal }: { cartSubtotal: number }) => {
   const [error, setError] = useState<string | null>(null);
 
   const [validate, { isLoading }] = useValidatePromoCodeMutation();
+  const branchId = useActiveBranchId();
 
   const handleApply = useCallback(async () => {
     const trimmed = code.trim();
@@ -47,6 +49,7 @@ const PromoCodeInput = ({ cartSubtotal }: { cartSubtotal: number }) => {
       const result = await validate({
         code: trimmed,
         cartSubtotal,
+        branchId,
       }).unwrap();
 
       if (result.status === "valid" && result.offerId) {
@@ -74,7 +77,7 @@ const PromoCodeInput = ({ cartSubtotal }: { cartSubtotal: number }) => {
     } catch {
       setError(t("error"));
     }
-  }, [code, cartSubtotal, validate, dispatch, t]);
+  }, [code, cartSubtotal, branchId, validate, dispatch, t]);
 
   const handleRemove = useCallback(() => {
     dispatch(clearPromoCode());

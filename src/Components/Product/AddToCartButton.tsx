@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { useGetProductByIdQuery } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import ProductNotFound from "./ProductNotFound";
 import { AddToCartDialog } from "./AddToCartDialog";
 
@@ -11,7 +12,8 @@ interface IProps {
 
 export function AddToCartButton({ id }: IProps) {
   const locale = useLocale();
-  const { data: product, isError } = useGetProductByIdQuery({ id, locale });
+  const branchId = useActiveBranchId();
+  const { data: product, isError } = useGetProductByIdQuery({ id, locale, branchId });
 
   if (isError) return <ProductNotFound />;
   if (!product) return null;

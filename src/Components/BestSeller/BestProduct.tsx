@@ -2,12 +2,14 @@
 
 import { useLocale } from "next-intl";
 import { useGetHomeQuery } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import { AddToCartDialog } from "../Product/AddToCartDialog";
 import CardProduct from "../Product/CardProduct";
 
 const BestProduct = () => {
   const locale = useLocale();
-  const { data: home } = useGetHomeQuery({ locale });
+  const branchId = useActiveBranchId();
+  const { data: home } = useGetHomeQuery({ locale, branchId });
   const products = home?.bestSellers ?? [];
 
   return (

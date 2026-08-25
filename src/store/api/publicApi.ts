@@ -17,6 +17,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import type {
   IApiAvailability,
+  IApiBranch,
   IApiCategory,
   IApiOffer,
   IApiResponse,
@@ -42,6 +43,18 @@ const RESTAURANT_ID = process.env.NEXT_PUBLIC_RESTORA_RESTAURANT_ID ?? "";
 
 export const RESTORA_API_ROOT = API_URL;
 
+/** Tenant params appended to every request (see docs/TENANT.md). */
+const tenantParams = () => (RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {});
+
+/**
+ * Branch scope params. The active branch is optional — when absent
+ * (single-branch restaurants, or before resolution) requests stay
+ * restaurant-scoped exactly as before, so the Public API contract remains
+ * backward compatible.
+ */
+const branchParams = (branchId?: string | null) =>
+  branchId ? { branchId } : {};
+
 export const publicApi = createApi({
   reducerPath: "restoraPublicApi",
   baseQuery: fetchBaseQuery({
@@ -58,6 +71,7 @@ export const publicApi = createApi({
   tagTypes: [
     "Restaurant",
     "Availability",
+    "Branches",
     "Home",
     "Categories",
     "Products",
@@ -74,7 +88,7 @@ export const publicApi = createApi({
         url: "/restaurant",
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
         },
       }),
       transformResponse: (response: IApiResponse<IPublicSettings>) => {
@@ -84,10 +98,13 @@ export const publicApi = createApi({
       providesTags: ["Restaurant"],
     }),
 
-    getAvailability: builder.query<IApiAvailability, void>({
-      query: () => ({
+    getAvailability: builder.query<IApiAvailability, { branchId?: string | null } | void>({
+      query: ({ branchId } = {}) => ({
         url: "/restaurant/availability",
-        params: RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {},
+        params: {
+          ...tenantParams(),
+          ...branchParams(branchId),
+        },
       }),
       transformResponse: (response: IApiResponse<IApiAvailability>) => {
         if (!response.success) return {} as IApiAvailability;
@@ -96,13 +113,39 @@ export const publicApi = createApi({
       providesTags: ["Availability"],
     }),
 
-    // ─── Home ─────────────────────────────────────────────────────────────
-    getHome: builder.query<IHomePayload, { locale: string }>({
+    // ─── Branches ─────────────────────────────────────────────────────────
+    /**
+     * Light list of the restaurant's branches (id, name, slug, image,
+     * address, open status). This is the ONLY payload loaded before a
+     * customer picks a location — never full menus.
+     *
+     * When Restora returns no branches (single-location restaurant, or an
+     * older server), the transform yields an empty array and the website's
+     * branch gate silently resolves to the restaurant-level experience.
+     */
+    getBranches: builder.query<IApiBranch[], { locale?: string }>({
       query: ({ locale }) => ({
+        url: "/branches",
+        params: {
+          locale,
+          ...tenantParams(),
+        },
+      }),
+      transformResponse: (response: IApiResponse<IApiBranch[]>) => {
+        if (!response.success) return [];
+        return response.data ?? [];
+      },
+      providesTags: ["Branches"],
+    }),
+
+    // ─── Home ─────────────────────────────────────────────────────────────
+    getHome: builder.query<IHomePayload, { locale: string; branchId?: string | null }>({
+      query: ({ locale, branchId }) => ({
         url: "/home",
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<IHomePayload>) => {
@@ -113,12 +156,13 @@ export const publicApi = createApi({
     }),
 
     // ─── Catalog ──────────────────────────────────────────────────────────
-    getCategories: builder.query<IApiCategory[], { locale: string }>({
-      query: ({ locale }) => ({
+    getCategories: builder.query<IApiCategory[], { locale: string; branchId?: string | null }>({
+      query: ({ locale, branchId }) => ({
         url: "/categories",
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<IApiCategory[]>) => {
@@ -129,14 +173,15 @@ export const publicApi = createApi({
     }),
 
     getMenuPage: builder.query<IMenuPageResult, IMenuPageArg>({
-      query: ({ locale, categoryId, page = 1, limit = 50 }) => ({
+      query: ({ locale, categoryId, page = 1, limit = 50, branchId }) => ({
         url: "/products",
         params: {
           locale,
           ...(categoryId ? { categoryId } : {}),
           page,
           limit,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (
@@ -156,13 +201,14 @@ export const publicApi = createApi({
 
     getProductById: builder.query<
       IMenuPageResult["items"][number] | null,
-      { id: string; locale: string }
+      { id: string; locale: string; branchId?: string | null }
     >({
-      query: ({ id, locale }) => ({
+      query: ({ id, locale, branchId }) => ({
         url: `/products/${id}`,
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<IMenuPageResult["items"][number]>) => {
@@ -172,12 +218,13 @@ export const publicApi = createApi({
       providesTags: ["Products"],
     }),
 
-    getOffers: builder.query<IApiOffer[], { locale: string }>({
-      query: ({ locale }) => ({
+    getOffers: builder.query<IApiOffer[], { locale: string; branchId?: string | null }>({
+      query: ({ locale, branchId }) => ({
         url: "/offers",
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<IApiOffer[]>) => {
@@ -188,12 +235,13 @@ export const publicApi = createApi({
     }),
 
     // ─── Delivery zones ────────────────────────────────────────────────────
-    getDeliveryZones: builder.query<IDeliveryZone[], { locale: string }>({
-      query: ({ locale }) => ({
+    getDeliveryZones: builder.query<IDeliveryZone[], { locale: string; branchId?: string | null }>({
+      query: ({ locale, branchId }) => ({
         url: "/delivery-zones",
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<IDeliveryZone[]>) => {
@@ -204,10 +252,13 @@ export const publicApi = createApi({
     }),
 
     // ─── Reservations ──────────────────────────────────────────────────────
-    getReservationConfig: builder.query<IApiReservationConfig, void>({
-      query: () => ({
+    getReservationConfig: builder.query<IApiReservationConfig, { branchId?: string | null } | void>({
+      query: ({ branchId } = {}) => ({
         url: "/reservations/config",
-        params: RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {},
+        params: {
+          ...tenantParams(),
+          ...branchParams(branchId),
+        },
       }),
       transformResponse: (response: IApiResponse<IApiReservationConfig>) => {
         if (!response.success) {
@@ -218,12 +269,13 @@ export const publicApi = createApi({
       providesTags: ["Reservations"],
     }),
 
-    getReservationSlots: builder.query<IApiReservationSlot[], { date: string }>({
-      query: ({ date }) => ({
+    getReservationSlots: builder.query<IApiReservationSlot[], { date: string; branchId?: string | null }>({
+      query: ({ date, branchId }) => ({
         url: "/reservations/slots",
         params: {
           date,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
+          ...branchParams(branchId),
         },
       }),
       transformResponse: (response: IApiResponse<{ slots: IApiReservationSlot[] }>) => {
@@ -241,7 +293,7 @@ export const publicApi = createApi({
         url: "/reservations",
         method: "POST",
         body,
-        params: RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {},
+        params: tenantParams(),
       }),
       invalidatesTags: ["Reservations"],
     }),
@@ -252,7 +304,7 @@ export const publicApi = createApi({
         url: "/tables/resolve",
         params: {
           tableId,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
         },
       }),
       transformResponse: (response: IApiResponse<IResolvedTable>) => {
@@ -269,7 +321,7 @@ export const publicApi = createApi({
         params: {
           phone,
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
         },
       }),
       transformResponse: (response: IApiResponse<IOrderSummaryRow[]>) => {
@@ -287,7 +339,7 @@ export const publicApi = createApi({
         url: `/orders/${id}`,
         params: {
           locale,
-          ...(RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {}),
+          ...tenantParams(),
         },
       }),
       transformResponse: (response: IApiResponse<IOrderDetailPayload>) => {
@@ -302,7 +354,7 @@ export const publicApi = createApi({
         url: "/orders",
         method: "POST",
         body,
-        params: RESTAURANT_ID ? { restaurantId: RESTAURANT_ID } : {},
+        params: tenantParams(),
       }),
       transformResponse: (response: IApiResponse<ICreateOrderResult>) => {
         if (!response.success) return {} as ICreateOrderResult;
@@ -332,6 +384,7 @@ export const publicApi = createApi({
 export const {
   useGetRestaurantQuery,
   useGetAvailabilityQuery,
+  useGetBranchesQuery,
   useGetHomeQuery,
   useGetCategoriesQuery,
   useGetMenuPageQuery,
@@ -353,4 +406,4 @@ export const {
 } = publicApi;
 
 // Re-export types that components consume from the API layer.
-export type { IApiOrderItem } from "./types";
+export type { IApiOrderItem, IApiBranch } from "./types";

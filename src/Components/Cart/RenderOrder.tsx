@@ -33,6 +33,7 @@ import {
   useLazyGetProductByIdQuery,
   useCreateOrderMutation,
 } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import {
   apiErrorMessage,
   type ICreateOrderItem,
@@ -53,6 +54,7 @@ import type { IProductWithOptions } from "@/src/Components/Product/AddToCartDial
 import { DeliveryZoneSelector } from "@/src/Components/Cart/DeliveryZones/DeliveryZoneSelector";
 import { DeliverySummaryCard } from "@/src/Components/Cart/DeliveryZones/DeliverySummaryCard";
 import { RestaurantClosedBanner } from "@/src/Components/Cart/RestaurantClosedBanner";
+import { ActiveBranchBadge } from "@/src/Components/Branch/ActiveBranchBadge";
 import type { IDeliveryZoneCardData } from "@/src/Components/Cart/DeliveryZones";
 import PromoCodeInput from "./ShoppingCart/PromoCodeInput";
 
@@ -67,11 +69,14 @@ const RenderOrder = () => {
     useSelector((state: RootState) => state.cart);
 
   const isDineIn = table !== null;
+  // Active branch scope: zones, product lookups and the created order are
+  // all bound to this location (multi-branch restaurants).
+  const branchId = useActiveBranchId();
 
   // Live delivery zones from the Public API. Free-delivery thresholds are not
   // part of the public contract, so the checkout renders the raw zone fee.
   const { data: zones = [], isLoading: zonesLoading } =
-    useGetDeliveryZonesQuery({ locale });
+    useGetDeliveryZonesQuery({ locale, branchId });
   const freeDeliveryThreshold = 0;
 
   const [checkoutFields, setCheckoutFields] = useState<ICheckoutFields>({
@@ -222,6 +227,7 @@ const RenderOrder = () => {
         const product = await fetchProduct({
           id: item.productId,
           locale,
+          branchId,
         }).unwrap();
         if (!product) {
           toast.error(t("errorLoadProduct"));
@@ -235,7 +241,7 @@ const RenderOrder = () => {
         setEditLoading(false);
       }
     },
-    [items, locale, t, fetchProduct],
+    [items, locale, branchId, t, fetchProduct],
   );
 
   const handleEditClose = useCallback(() => {
@@ -349,6 +355,7 @@ const RenderOrder = () => {
         tax,
         discount,
         locale,
+        branchId: branchId ?? null,
         tableId: table?.id ?? null,
         tableNumber: table?.number ?? null,
       };
@@ -422,6 +429,7 @@ const RenderOrder = () => {
     tax,
     discount,
     locale,
+    branchId,
     dispatch,
     router,
     t,
@@ -562,6 +570,9 @@ const RenderOrder = () => {
                 </div>
               </motion.div>
             )}
+
+            {/* Wrong-branch guard: confirm the location before checkout */}
+            <ActiveBranchBadge />
 
             <CheckoutForm
               fields={checkoutFields}

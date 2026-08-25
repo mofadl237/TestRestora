@@ -18,6 +18,28 @@ with `apiErrorMessage()` / `apiErrorCode()` from `src/store/api/types.ts`.
 - `restaurantId` — the tenant. Resolution order: `?restaurantId=` query →
   `x-restaurant-id` header → default restaurant. This template always sends
   **both** (header via `prepareHeaders`, query via `params`).
+- `branchId` — optional branch scope (multi-branch restaurants). Accepted by
+  the catalog, offers, delivery, availability and reservations endpoints.
+  When absent, data is restaurant-scoped exactly as before (backward
+  compatible — older servers ignore the parameter).
+
+---
+
+## GET /branches
+
+Light branch list for multi-branch restaurants:
+`[ { id, name, slug, image, address, city, phone, mapsUrl, isOpenNow,
+deliveryAvailable, pickupAvailable, openingHoursSummary, latitude, longitude } ]`.
+
+This is the ONLY payload loaded before a customer picks a location — never
+full menus. Returns an empty list (or 404 on older servers) for
+single-location restaurants; the website then resolves silently with no
+branch UI.
+
+- Used by: branch gate / selection screen (`useGetBranchesQuery`),
+  header switcher, SEO structured data (`department`).
+- RTK endpoint: `getBranches` — tag `Branches`.
+- Tenant: yes (query + header).
 
 ---
 
@@ -104,7 +126,9 @@ Create a reservation. Body: `customerName`, `customerPhone`, `customerEmail?`,
 ## GET /tables/resolve?tableId=<id>
 
 Resolves a dine-in table for the QR entry flow. Returns `{ id, number, isActive }`
-only when the table exists, belongs to the tenant, and is active.
+only when the table exists, belongs to the tenant, and is active. On multi-branch
+tenants the payload also carries `branch: { id, name, slug }` — the QR entry flow
+activates that branch silently (no branch selector).
 
 - Used by: `TableResolver` on the home page after scanning a QR code.
 - RTK endpoint: `resolveTable` — tag `Tables`.
@@ -136,8 +160,8 @@ Full order with items, price breakdown and delivery zone snapshot.
 
 Create an order. Body:
 `{ customerName, customerPhone, deliveryAddress, city, notes?, deliveryZoneId?,
-discount?, tax?, locale?, tableId?, tableNumber?, items: [{ productId, productName,
-productImage, quantity, basePrice, variant?, options?, note? }] }`.
+discount?, tax?, locale?, branchId?, tableId?, tableNumber?, items: [{ productId,
+productName, productImage, quantity, basePrice, variant?, options?, note? }] }`.
 
 - **All prices are recomputed server-side** — client totals are ignored.
 - **Dine-in mode:** When `tableId` is provided, `deliveryAddress`, `city`, and

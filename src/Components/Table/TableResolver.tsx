@@ -13,6 +13,9 @@ import {
   setDineInTable,
   clearDineInTable,
 } from "@/src/store/features/CartSlice";
+import {
+  setActiveBranch,
+} from "@/src/store/features/BranchSlice";
 
 interface IProps {
   tableId?: string;
@@ -22,6 +25,10 @@ interface IProps {
  * Resolves a `?tableId=` query into an active dine-in table using the public
  * Restora API. The resolved table is stored in TableContext and shown in a
  * non-blocking banner.
+ *
+ * Multi-branch: when the resolved table carries branch context, the branch is
+ * activated SILENTLY — the QR already answered "which location?", so the
+ * customer never sees a branch selector (they land straight in the menu).
  */
 export function TableResolver({ tableId }: IProps) {
   const t = useTranslations("tables");
@@ -53,6 +60,17 @@ export function TableResolver({ tableId }: IProps) {
           toast.error(t("inactive", { number: resolved.number }), "table-inactive");
           clearTable();
           return;
+        }
+
+        // QR carries the full context: restaurant (tenant) → branch → table.
+        if (resolved.branch?.id) {
+          dispatch(
+            setActiveBranch({
+              id: resolved.branch.id,
+              name: resolved.branch.name,
+              slug: resolved.branch.slug ?? null,
+            }),
+          );
         }
 
         dispatch(setDineInTable({ id: resolved.id, number: resolved.number }));

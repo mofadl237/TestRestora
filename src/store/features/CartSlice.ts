@@ -107,6 +107,12 @@ interface ICartState {
   table: ICartTable | null;
   /** Applied promo code (order-level discount validated by server). */
   promoCode: ICartPromoCode | null;
+  /**
+   * Branch this cart belongs to (multi-branch restaurants). Captured when
+   * the first item is added; switching branch with a non-empty cart always
+   * requires explicit customer confirmation — never silently re-scoped.
+   */
+  branchId: string | null;
   /** Applied discounts (future: coupons) — an input, not a derived value. */
   discount: number;
   /** Tax input (flat amount today). */
@@ -119,16 +125,19 @@ interface IPersistedCart {
   promoCode?: ICartPromoCode | null;
   deliveryZone: ICartDeliveryZone | null;
   table: ICartTable | null;
+  branchId?: string | null;
 }
 
-const persist = (
-  items: ICartProduct[],
-  offerGroups: ICartOfferGroup[],
-  promoCode: ICartPromoCode | null,
-  deliveryZone: ICartDeliveryZone | null,
-  table: ICartTable | null,
-) => {
-  const payload: IPersistedCart = { items, offerGroups, promoCode, deliveryZone, table };
+/** Persist the cart exactly as it is (inputs only — derived values excluded). */
+const persist = (state: Pick<ICartState, "items" | "offerGroups" | "promoCode" | "deliveryZone" | "table" | "branchId">) => {
+  const payload: IPersistedCart = {
+    items: state.items,
+    offerGroups: state.offerGroups,
+    promoCode: state.promoCode,
+    deliveryZone: state.deliveryZone,
+    table: state.table,
+    branchId: state.branchId,
+  };
   setLocalStorage(JSON.stringify(payload));
 };
 
@@ -140,6 +149,7 @@ const initialState: ICartState = {
   deliveryZone: null,
   table: null,
   promoCode: null,
+  branchId: null,
   discount: 0,
   tax: 0,
 };
@@ -164,7 +174,7 @@ export const cartSlice = createSlice({
         state.items.push(incoming);
       }
 
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Replace an existing item by its cart id (used by Edit flow). */
@@ -172,20 +182,20 @@ export const cartSlice = createSlice({
       const idx = state.items.findIndex((i) => i.id === action.payload.id);
       if (idx !== -1) {
         state.items[idx] = action.payload;
-        persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+        persist(state);
       }
     },
 
     removeItem: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     increaseQuantity: (state, action: PayloadAction<string>) => {
       const item = state.items.find((i) => i.id === action.payload);
       if (item) {
         item.quantity += 1;
-        persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+        persist(state);
       }
     },
 
@@ -198,7 +208,7 @@ export const cartSlice = createSlice({
         } else {
           state.items[idx].quantity -= 1;
         }
-        persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+        persist(state);
       }
     },
 
@@ -217,7 +227,7 @@ export const cartSlice = createSlice({
         state.offerGroups.push(incoming);
       }
 
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Remove an offer group by its cart-entity ID. */
@@ -225,7 +235,7 @@ export const cartSlice = createSlice({
       state.offerGroups = state.offerGroups.filter(
         (og) => og.id !== action.payload,
       );
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Increase the quantity of an offer group (whole offer × N). */
@@ -233,7 +243,7 @@ export const cartSlice = createSlice({
       const og = state.offerGroups.find((g) => g.id === action.payload);
       if (og) {
         og.quantity += 1;
-        persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+        persist(state);
       }
     },
 
@@ -246,7 +256,7 @@ export const cartSlice = createSlice({
         } else {
           state.offerGroups[idx].quantity -= 1;
         }
-        persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+        persist(state);
       }
     },
 
@@ -255,13 +265,13 @@ export const cartSlice = createSlice({
     /** Apply a validated promo code to the cart. */
     setPromoCode: (state, action: PayloadAction<ICartPromoCode>) => {
       state.promoCode = action.payload;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Remove the applied promo code. */
     clearPromoCode: (state) => {
       state.promoCode = null;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     // ─── Zone / Table / Cart ───────────────────────────────────────────────
@@ -269,26 +279,26 @@ export const cartSlice = createSlice({
     /** Select / change the checkout delivery zone. */
     setDeliveryZone: (state, action: PayloadAction<ICartDeliveryZone>) => {
       state.deliveryZone = action.payload;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Remove the delivery zone selection (cart emptied, etc). */
     clearDeliveryZone: (state) => {
       state.deliveryZone = null;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Set the active dine-in table from the QR entry flow. */
     setDineInTable: (state, action: PayloadAction<ICartTable>) => {
       state.table = action.payload;
       state.deliveryZone = null;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Clear the active dine-in table. */
     clearDineInTable: (state) => {
       state.table = null;
-      persist(state.items, state.offerGroups, state.promoCode, state.deliveryZone, state.table);
+      persist(state);
     },
 
     /** Clear the entire cart. */
@@ -298,7 +308,14 @@ export const cartSlice = createSlice({
       state.promoCode = null;
       state.deliveryZone = null;
       state.table = null;
-      persist([], [], null, null, null);
+      state.branchId = null;
+      persist(state);
+    },
+
+    /** Bind / rebind the cart to a branch (multi-branch safety, see gate). */
+    setCartBranch: (state, action: PayloadAction<string | null>) => {
+      state.branchId = action.payload;
+      persist(state);
     },
 
     /**
@@ -317,12 +334,14 @@ export const cartSlice = createSlice({
         state.promoCode = null;
         state.deliveryZone = null;
         state.table = null;
+        state.branchId = null;
       } else {
         state.items = payload.items ?? [];
         state.offerGroups = payload.offerGroups ?? [];
         state.promoCode = payload.promoCode ?? null;
         state.deliveryZone = payload.deliveryZone ?? null;
         state.table = payload.table ?? null;
+        state.branchId = payload.branchId ?? null;
       }
     },
   },
@@ -344,6 +363,7 @@ export const {
   clearDeliveryZone,
   setDineInTable,
   clearDineInTable,
+  setCartBranch,
   clearCart,
   hydrateCart,
 } = cartSlice.actions;

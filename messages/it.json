@@ -3037,5 +3037,31 @@
       "subscriptionsByPlan": "Abbonamenti per piano",
       "topRestaurants": "Ristoranti top"
     }
+  },
+  "branches": {
+    "fallbackName": "Il nostro Ristorante",
+    "title": "Da quale sede vuoi ordinare?",
+    "subtitle": "Scegli la sede più vicina per vedere menu, prezzi e offerte disponibili lì.",
+    "openNow": "Aperto ora",
+    "closed": "Chiuso",
+    "orderOnline": "Ordina Online",
+    "viewMenu": "Vedi il Menu",
+    "card": {
+      "directions": "Indicazioni"
+    },
+    "switcher": {
+      "label": "Cambia sede"
+    },
+    "confirm": {
+      "title": "Cambiare sede?",
+      "titleCart": "Il carrello appartiene a un'altra sede",
+      "description": "Stai per passare da {current} a {target}. Piatti disponibili, prezzi e offerte potrebbero cambiare.",
+      "warning": "Cambiando sede il carrello attuale verrà svuotato.",
+      "cancel": "Mantieni la sede attuale",
+      "proceed": "Continua"
+    },
+    "checkout": {
+      "label": "Stai ordinando da:"
+    }
   }
 }

@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import { ToggleMode } from "./ToggleMode";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { CartButton } from "./CartButton";
+import { BranchSwitcher } from "@/src/Components/Branch/BranchSwitcher";
 import { Link } from "@/src/i18n/routing";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { useTranslations } from "next-intl";
@@ -65,9 +66,14 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-1.5 md:gap-2">
+          {/* Multi-branch only — renders nothing for single-branch tenants */}
+          <div className="md:hidden">
+            <BranchSwitcher />
+          </div>
           <NavBar />
           {/* Theme + language live inside the mobile sidebar — see NavBar */}
           <div className="hidden items-center gap-1.5 md:flex md:gap-2">
+            <BranchSwitcher />
             <ToggleMode />
             <LanguageSwitcher />
           </div>

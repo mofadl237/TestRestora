@@ -10,6 +10,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { getI18nRuntimeConfig } from "@/src/i18n/config";
+import { getSiteUrl } from "@/src/lib/seo/structuredData";
+import RestaurantJsonLd from "@/src/Components/Seo/RestaurantJsonLd";
 import "../globals.css";
 import { cn } from "@/lib/utils";
 import { MarketingChrome } from "./MarketingChrome";
@@ -34,8 +36,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Restaurant",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default: "Restaurant",
+    template: "%s | Restaurant",
+  },
   description: "Order your favorite meals online.",
+  robots: { index: true, follow: true },
+  alternates: {
+    // hreflang parity across the template's locales (same path per locale,
+    // resolved against metadataBase by Next.js).
+    languages: Object.fromEntries(
+      routing.locales.map((l) => [l, `/${l}`]),
+    ),
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Restaurant",
+  },
 };
 
 export async function generateStaticParams() {
@@ -75,6 +93,8 @@ export default async function LocaleLayout({
       )}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
+        {/* Structured data is emitted server-side from the Public API. */}
+        <RestaurantJsonLd locale={locale} />
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <MarketingChrome>{children}</MarketingChrome>

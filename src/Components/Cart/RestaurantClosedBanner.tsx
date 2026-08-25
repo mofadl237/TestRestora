@@ -9,6 +9,7 @@ import {
   useGetAvailabilityQuery,
   useGetRestaurantQuery,
 } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 
 interface IStatus {
   isOpenNow: boolean;
@@ -27,7 +28,10 @@ interface IStatus {
 export function RestaurantClosedBanner({ onStatusChange }: { onStatusChange?: (open: boolean) => void }) {
   const locale = useLocale();
   const t = useTranslations("cart.closed");
-  const { data: availability } = useGetAvailabilityQuery();
+  // Availability follows the ACTIVE branch (multi-branch restaurants keep
+  // per-location business hours).
+  const branchId = useActiveBranchId();
+  const { data: availability } = useGetAvailabilityQuery(branchId ? { branchId } : undefined);
   const { data: settings } = useGetRestaurantQuery({ locale });
 
   const status: IStatus | null = availability

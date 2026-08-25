@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useGetOffersQuery } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,8 +24,9 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function PromoBanner() {
   const locale = useLocale();
+  const branchId = useActiveBranchId();
   const t = useTranslations("home.promoBanner");
-  const { data: offers = [] } = useGetOffersQuery({ locale });
+  const { data: offers = [] } = useGetOffersQuery({ locale, branchId });
   const [copied, setCopied] = useState(false);
 
   // Find the top order-level promo offer (percentage or fixed, no products).

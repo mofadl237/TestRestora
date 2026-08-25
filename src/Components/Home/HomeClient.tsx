@@ -4,7 +4,9 @@ import { useLocale, useTranslations } from "next-intl";
 import {
   useGetHomeQuery,
   useGetCategoriesQuery,
+  useGetOffersQuery,
 } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import { Hero } from "@/src/Components/Home/Hero";
 import { PromoBanner } from "@/src/Components/Home/PromoBanner";
 import { CategoryRail } from "@/src/Components/Home/CategoryRail";
@@ -29,27 +31,30 @@ const sectionDataMap: Record<string, (home: ReturnType<typeof useGetHomeQuery>["
 export function HomeClient() {
   const locale = useLocale();
   const tHome = useTranslations("home.categories");
+  const tOffers = useTranslations("mainSection.offers");
+  const branchId = useActiveBranchId();
 
-  const { data: home } = useGetHomeQuery({ locale });
-  const { data: categories = [] } = useGetCategoriesQuery({ locale });
+  // All home data is branch-scoped: products, prices, offers and sections
+  // reflect the active location (restaurant-level fallback when unresolved).
+  const { data: home } = useGetHomeQuery({ locale, branchId });
+  const { data: categories = [] } = useGetCategoriesQuery({ locale, branchId });
+  const { data: offers = [] } = useGetOffersQuery({ locale, branchId });
 
-  const orderedSections = (home?.sections ?? [])
-    .filter((section) => section.isActive)
+  // Product sections only — offers are NOT a product home section.
+  // Order follows the Dashboard displayOrder; visibility per section isActive.
+  const productSections = (home?.sections ?? [])
+    .filter(
+      (section) => section.isActive && section.key !== OFFER_SECTION_KEY,
+    )
     .sort((a, b) => a.displayOrder - b.displayOrder);
 
-  const productSections = orderedSections.filter(
-    (s) => s.key !== OFFER_SECTION_KEY,
-  );
   const sectionData = productSections.map((section) => ({
     key: section.key,
     products: sectionDataMap[section.key]?.(home) ?? [],
   }));
 
-  const offerSection = orderedSections.find(
-    (s) => s.key === OFFER_SECTION_KEY,
-  );
-
   const hasCategories = categories.length > 0;
+  const hasOffers = offers.length > 0;
 
   return (
     <main className="flex min-h-screen w-full flex-col">
@@ -84,17 +89,16 @@ export function HomeClient() {
         </section>
       )}
 
+      {hasOffers && (
+        <OffersHorizontalRail
+          sectionName={tOffers("title")}
+          sectionSubtitle={tOffers("subTitle")}
+        />
+      )}
+
       <HomeSectionRenderer
-        orderedSections={orderedSections}
+        orderedSections={productSections}
         productSectionData={sectionData}
-        offerNode={
-          offerSection ? (
-            <OffersHorizontalRail
-              sectionName={offerSection.name}
-              sectionSubtitle="Deals and bundles available right now"
-            />
-          ) : undefined
-        }
       />
 
       <StorySection />

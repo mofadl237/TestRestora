@@ -3037,5 +3037,31 @@
       "subscriptionsByPlan": "Subscriptions by plan",
       "topRestaurants": "Top restaurants"
     }
+  },
+  "branches": {
+    "fallbackName": "Our Restaurant",
+    "title": "Where would you like to order from?",
+    "subtitle": "Choose your nearest location to see the menu, prices and offers available there.",
+    "openNow": "Open now",
+    "closed": "Closed",
+    "orderOnline": "Order Online",
+    "viewMenu": "View Menu",
+    "card": {
+      "directions": "Directions"
+    },
+    "switcher": {
+      "label": "Change branch"
+    },
+    "confirm": {
+      "title": "Switch location?",
+      "titleCart": "Your cart belongs to another location",
+      "description": "You are about to switch from {current} to {target}. Available items, prices and offers may change.",
+      "warning": "Changing location will clear your current cart.",
+      "cancel": "Keep current location",
+      "proceed": "Continue"
+    },
+    "checkout": {
+      "label": "Ordering from:"
+    }
   }
 }

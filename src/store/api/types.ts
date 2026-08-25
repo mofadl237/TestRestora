@@ -104,6 +104,43 @@ export function apiErrorDetailCode(error: unknown): string | null {
   return typeof value === "string" && value ? value : null;
 }
 
+// ─── Branches ───────────────────────────────────────────────────────────────
+
+/**
+ * A restaurant branch as exposed by the Public API (`GET /branches`).
+ *
+ * This is deliberately a LIGHT payload — it carries only what a branch
+ * selector needs (identity, imagery, address, open status). Menus / prices /
+ * availability are NOT part of it; they are loaded per selected branch
+ * through the regular catalog endpoints scoped with `?branchId=`.
+ */
+export interface IApiBranch {
+  id: string;
+  /** Localized display name. */
+  name: string;
+  /** URL-safe identifier used for deep links (`?branch=<slug>`). */
+  slug: string | null;
+  image: string | null;
+  address: string | null;
+  city: string | null;
+  phone: string | null;
+  mapsUrl: string | null;
+  isOpenNow: boolean;
+  deliveryAvailable: boolean;
+  pickupAvailable: boolean;
+  /** Human-readable opening summary, e.g. "10:00 – 00:00". */
+  openingHoursSummary: string | null;
+  latitude: number | null;
+  longitude: number | null;
+}
+
+/** Branch snapshot embedded in other payloads (e.g. resolved tables). */
+export interface IApiBranchRef {
+  id: string;
+  name: string;
+  slug: string | null;
+}
+
 // ─── Restaurant ─────────────────────────────────────────────────────────────
 
 export interface ICountry {
@@ -190,6 +227,8 @@ export interface IMenuPageArg {
   categoryId?: string;
   page?: number;
   limit?: number;
+  /** Active branch scope (multi-branch restaurants). */
+  branchId?: string | null;
 }
 
 export interface IMenuPageResult {
@@ -239,6 +278,8 @@ export interface ICreateReservationInput {
   date: string;
   durationMinutes?: number;
   notes?: string;
+  /** Active branch scope (multi-branch restaurants). */
+  branchId?: string | null;
 }
 
 // ─── Orders ─────────────────────────────────────────────────────────────────
@@ -346,6 +387,8 @@ export interface ICreateOrderInput {
   discount?: number;
   tax?: number;
   locale?: string;
+  /** Active branch scope (multi-branch restaurants). Resolved server-side. */
+  branchId?: string | null;
   /** Dine-in table context established by the QR entry flow. */
   tableId?: string | null;
   tableNumber?: string | null;
@@ -369,6 +412,8 @@ export interface IPromoCodeValidateInput {
   code: string;
   phone?: string;
   cartSubtotal: number;
+  /** Active branch scope (multi-branch restaurants). */
+  branchId?: string | null;
 }
 
 export type IPromoCodeStatus =
@@ -403,4 +448,10 @@ export interface IResolvedTable {
   id: string;
   number: string;
   isActive: boolean;
+  /**
+   * Branch context for multi-branch restaurants. When present, the QR entry
+   * flow silently activates this branch — the customer never sees a branch
+   * selector because the QR already answered that question.
+   */
+  branch?: IApiBranchRef | null;
 }

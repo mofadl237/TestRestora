@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import Header from "@/src/Components/header/Header";
 import { Footer, usePublicSettings } from "@/src/Components/Footer";
+import { BranchGate } from "@/src/Components/Branch/BranchGate";
 
 const DASHBOARD_SEGMENTS = ["dashboard", "admin"];
 
@@ -42,11 +43,17 @@ export function MarketingChrome({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex flex-1 flex-col" style={brandStyle}>
-      <div className="container flex-1">
-        <Header />
-        {children}
-      </div>
-      <Footer />
+      {/* Branch gate: resolves the active location BEFORE the website renders.
+          Single-branch restaurants pass straight through; multi-branch ones
+          see the premium selection screen until a branch is chosen. QR entry
+          (?tableId=) bypasses selection — the QR answers the question. */}
+      <BranchGate>
+        <div className="container flex-1">
+          <Header />
+          {children}
+        </div>
+        <Footer />
+      </BranchGate>
     </div>
   );
 }

@@ -9,6 +9,8 @@ import {
   useGetReservationSlotsQuery,
   useCreateReservationMutation,
 } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
+import { ActiveBranchBadge } from "@/src/Components/Branch/ActiveBranchBadge";
 import {
   apiErrorDetailCode,
   apiErrorKey,
@@ -41,6 +43,9 @@ export function PublicReservations() {
   const t = useTranslations("reservations");
   const locale = useLocale();
   const { isRTL } = useLocaleDirection();
+  // Reservations always target the ACTIVE branch — slot availability,
+  // capacity and the created booking all belong to that location.
+  const branchId = useActiveBranchId();
 
   const todayKey = new Date().toISOString().slice(0, 10);
   const [date, setDate] = React.useState(todayKey);
@@ -49,7 +54,7 @@ export function PublicReservations() {
     data: slotsData,
     isFetching: slotsLoading,
     isError: slotsError,
-  } = useGetReservationSlotsQuery({ date: `${date}T12:00:00` });
+  } = useGetReservationSlotsQuery({ date: `${date}T12:00:00`, branchId });
   const slots: IReservationSlot[] | null = slotsError ? null : slotsData ?? [];
 
   const [createReservation] = useCreateReservationMutation();
@@ -95,6 +100,7 @@ export function PublicReservations() {
         partySize: party,
         date: new Date(selectedSlot.date).toISOString(),
         notes: form.notes.trim() || undefined,
+        branchId,
       }).unwrap();
       setDone(true);
       setSelectedSlot(null);
@@ -142,6 +148,8 @@ export function PublicReservations() {
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             {t("hero.description")}
           </p>
+          {/* Multi-branch: confirm which location the table is booked at */}
+          <ActiveBranchBadge />
         </motion.div>
 
         <motion.div

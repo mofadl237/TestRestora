@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGetOffersQuery } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import { PremiumOfferCard } from "./OfferCard";
 
 if (typeof window !== "undefined") {
@@ -21,13 +22,14 @@ export function OffersHorizontalRail({
   sectionSubtitle,
 }: OffersHorizontalRailProps) {
   const locale = useLocale();
+  const branchId = useActiveBranchId();
   const isRTL = locale === "ar";
   const containerRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<ScrollTrigger | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  const { data: offers = [] } = useGetOffersQuery({ locale });
+  const { data: offers = [] } = useGetOffersQuery({ locale, branchId });
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);

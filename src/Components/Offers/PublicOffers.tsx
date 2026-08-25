@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 import { useGetOffersQuery } from "@/src/store/api/publicApi";
+import { useActiveBranchId } from "@/src/store/features/BranchSlice";
 import { OfferCard } from "./OfferCard";
 
 /**
@@ -15,8 +16,9 @@ import { OfferCard } from "./OfferCard";
  */
 export function PublicOffers() {
   const locale = useLocale();
+  const branchId = useActiveBranchId();
   const t = useTranslations("mainSection.offers");
-  const { data: offers = [] } = useGetOffersQuery({ locale });
+  const { data: offers = [] } = useGetOffersQuery({ locale, branchId });
 
   if (offers.length === 0) return null;
 
