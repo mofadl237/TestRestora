@@ -59,7 +59,7 @@ export function Hero() {
         }
       }
     }
-    return result.slice(0, 12);
+    return result.slice(0, 6);
   }, [home]);
 
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
