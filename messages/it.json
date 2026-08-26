@@ -150,6 +150,10 @@
     }
   },
   "home": {
+    "meta": {
+      "title": "Home",
+      "description": "Benvenuto nel nostro ristorante. Scopri il menu, le offerte e prenota il tuo tavolo oggi."
+    },
     "promoBanner": {
       "eyebrow": "Offerta a tempo limitato",
       "copyCode": "Copia codice",
@@ -212,6 +216,10 @@
     ]
   },
   "cart": {
+    "meta": {
+      "title": "Carrello",
+      "description": "Rivedi il tuo ordine e procedi al checkout."
+    },
     "page": {
       "title": "Carrello",
       "subtitle": "Articoli nel carrello"
@@ -533,6 +541,10 @@
     }
   },
   "menu": {
+    "meta": {
+      "title": "Menù",
+      "description": "Sfoglia il nostro menu completo. Scopri piatti deliziosi, bevande e offerte speciali."
+    },
     "title": "Menù",
     "back": "Indietro",
     "fromPrice": "A partire da",

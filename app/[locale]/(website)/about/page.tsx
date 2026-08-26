@@ -8,6 +8,7 @@ import { RestaurantStats } from "@/src/Components/About/RestaurantStats";
 import { WhyChooseUs } from "@/src/Components/About/WhyChooseUs";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { buildPageMetadata, getRestaurantForSeo } from "@/src/lib/seo/seo";
 
 export async function generateMetadata({
   params,
@@ -15,12 +16,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about.meta" });
+  const [restaurant, t] = await Promise.all([
+    getRestaurantForSeo(locale),
+    getTranslations({ locale, namespace: "about.meta" }),
+  ]);
 
-  return {
+  return buildPageMetadata(restaurant, locale, "/about", {
     title: t("title"),
     description: t("description"),
-  };
+  });
 }
 
 export default function AboutPage() {

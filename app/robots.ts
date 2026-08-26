@@ -1,13 +1,23 @@
 import type { MetadataRoute } from "next";
-import { getSiteUrl } from "@/src/lib/seo/structuredData";
+import { getSiteUrl } from "@/src/lib/seo/seo";
 
+/**
+ * Robots.txt for the restaurant website clone.
+ * Allows all public pages; blocks private surfaces and internal routes.
+ */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      // Private, per-customer surfaces stay out of search indexes.
-      disallow: ["/*/cart", "/*/orders/*", "/*/track-order"],
+      disallow: [
+        "/*/cart",
+        "/*/orders/*",
+        "/*/track-order",
+        "/dashboard",
+        "/admin",
+        "/api/",
+      ],
     },
     sitemap: `${getSiteUrl()}/sitemap.xml`,
   };

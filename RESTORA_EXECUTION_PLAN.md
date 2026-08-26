@@ -1,11 +1,11 @@
 # RESTORA Execution Plan
 
 **Scope:** Restaurant Public Website — multi-branch support + dynamic branding
-+ refinement of the existing website.
++ clone-based SEO architecture + refinement of the existing website.
 
-**Principle:** ADD intelligent multi-branch support on top of the existing
-architecture. Never rebuild, never duplicate the API client, cart, checkout,
-pricing or localization systems.
+**Principle:** ADD intelligent multi-branch support and clone-based SEO on top
+of the existing architecture. Never rebuild, never duplicate the API client,
+cart, checkout, pricing or localization systems.
 
 ---
 
@@ -50,17 +50,75 @@ The template already provided (and still owns):
 | Performance | Light `/branches` payload only pre-selection; children unmounted until resolved; `next/image` everywhere. |
 | Design | Existing RESTORA identity kept; orange as accent, token-based surfaces, no AI-generic decoration. |
 
-## 3a. Dynamic branding + homepage slider + metadata (v1.4.0 — completed)
+## 3b. Complete Clone-Based SEO Architecture (v1.6.0 — completed)
 
 | Phase | What was delivered |
 | --- | --- |
-| Dynamic logo | API `branding.logo` in Header and Footer via `next/image`; monogram fallback when empty. |
-| Dynamic metadata | `generateMetadata` (async server) in `layout.tsx`; `og:image`/`twitter:image` from `branding.coverImage`; favicon from `branding.logo`; title/description from API. |
-| Server helper | `src/lib/seo/serverData.ts` — `fetchPublicRestaurant(locale)` with defensive `res.text()` before `JSON.parse`; failure-tolerant. |
-| Homepage slider | `Hero.tsx` rewritten: dynamic product slider from `useGetHomeQuery` (bestSellers + chefRecs + familyMeals + newItems + kidsMeals + comboMeals, deduplicated); API product images, names, descriptions, prices. |
-| Translation keys | `hero.orderNow` + `hero.from` added to en/ar/it (structural parity). |
-| BranchSelection redesign | Compact cinematic layout: smaller logo reveal, compact branch cards (h-28 images), tighter spacing, phone/maps links. |
-| Verified | `fetchPublicRestaurant` returns 200 with data; empty branding gracefully handled; homepage renders with 14 products from API; build clean (25/25 routes). |
+| Centralized SEO helpers | New `src/lib/seo/seo.ts` — `getSiteUrl()`, `getRestaurantForSeo()`, `canonicalUrl()`, `buildRootMetadata()`, `buildPageMetadata()`. All metadata logic lives here. |
+| Root metadata | `app/[locale]/layout.tsx` uses `buildRootMetadata()` — title template `%s | {name}`, OG/Twitter with cover image, canonical URL, hreflang alternates. |
+| Per-page metadata | Every page (home, menu, cart, about, contact, reservations, track-order) has `generateMetadata` using `buildPageMetadata()` — canonical, OG, Twitter per page. |
+| Menu page metadata | `menu/page.tsx` now exports `generateMetadata` via `menu.meta` translation keys. |
+| Cart page metadata | `cart/page.tsx` now exports `generateMetadata` with `noindex: true`. |
+| JSON-LD enhancement | `structuredData.ts` now emits `image`, `openingHoursSpecification`, `sameAs` (social links), `email`, `areaServed`, country code in address. |
+| Sitemap enhancement | `changeFrequency` and `priority` per route; all imports from centralized `seo.ts`. |
+| Robots enhancement | Disallows `/api/`, `/dashboard/`, `/admin/` in addition to private pages. |
+| Environment | `NEXT_PUBLIC_SITE_URL` added to `.env` and `.env.local` with documentation. |
+| Translation keys | `home.meta`, `menu.meta`, `cart.meta` added to en/ar/it with structural parity. |
+| Clone safety | Zero hardcoded restaurant names, URLs, images, or canonical domains in source code. All from `NEXT_PUBLIC_RESTORA_RESTAURANT_ID` + `NEXT_PUBLIC_SITE_URL` + API data. |
+
+### Clone workflow
+
+```
+Clone Template → set 2 env vars → deploy → SEO adapts automatically
+
+NEXT_PUBLIC_RESTAURANT_ID=<restaurant-api-id>
+NEXT_PUBLIC_SITE_URL=https://<restaurant>.restora.world
+```
+
+### Metadata generation chain
+
+```
+NEXT_PUBLIC_SITE_URL → metadataBase, canonical, og:url, sitemap, robots sitemap ref
+NEXT_PUBLIC_RESTORA_RESTAURANT_ID → API → restaurantName, description, branding.coverImage, branding.logo, social, businessHours, contact
+↓
+buildRootMetadata() → layout.tsx generateMetadata → <title>, <meta>, <link rel="canonical">
+buildPageMetadata() → per-page generateMetadata → page-level <title>, <meta>, <link>
+getRestaurantJsonLd() → RestaurantJsonLd → <script type="application/ld+json">
+sitemap.ts → /sitemap.xml with hreflang
+robots.ts → /robots.txt with sitemap ref
+```
+
+## 3b. Clone-based SEO architecture (v1.6.0 — completed)
+
+| Phase | What was delivered |
+| --- | --- |
+| Centralized SEO module | `src/lib/seo/seo.ts` — `canonicalUrl()`, `buildHreflangAlternates()`, `buildRootMetadata()`, `buildPageMetadata()`, `getSiteUrl()`, `getRestaurantForSeo()` |
+| Root metadata | `app/[locale]/layout.tsx` uses `buildRootMetadata()` — title template, description, OG, Twitter, robots, alternates with `x-default` |
+| Per-page metadata | About, Contact, Reservations, Track Order use `buildPageMetadata()` with locale-scoped canonical + hreflang |
+| Menu metadata | `menu/page.tsx` — server component with `generateMetadata` from `menu.meta` translations + `buildPageMetadata` |
+| Cart metadata | `cart/page.tsx` — server component with `generateMetadata` from `cart.meta` translations; noindexed |
+| Hreflang `x-default` | All pages include `x-default` pointing to default locale |
+| Canonical URLs | Every page has locale-scoped canonical via `NEXT_PUBLIC_SITE_URL` |
+| OpenGraph | Per-page OG with restaurant name, description, cover image, locale-specific URL |
+| Twitter | `summary_large_image` card with restaurant data |
+| JSON-LD enhanced | Added `image`, `email`, `areaServed`, `openingHoursSpecification`, `sameAs` (social links) from API data |
+| Dynamic sitemap | Products + categories from API included with hreflang alternates |
+| Robots.txt | Blocks cart, orders, track-order, dashboard, admin, api routes |
+| Env validation | `NEXT_PUBLIC_SITE_URL` documented; fallback to `VERCEL_URL` then `localhost` |
+| Translation keys | `menu.meta` and `cart.meta` added to en/ar/it with structural parity |
+| Hardcoded data audit | Zero restaurant-specific titles, descriptions, images, URLs in source code |
+
+### SEO module files
+
+| File | Role |
+| --- | --- |
+| `src/lib/seo/seo.ts` | Centralized helpers — canonical URLs, hreflang, metadata builders |
+| `src/lib/seo/serverData.ts` | Server-side API fetch for `fetchPublicRestaurant()` |
+| `src/lib/seo/structuredData.ts` | JSON-LD builder — imports `getSiteUrl` from `seo.ts` |
+| `src/Components/Seo/RestaurantJsonLd.tsx` | Server component emitting JSON-LD in `<head>` |
+| `app/sitemap.ts` | Dynamic sitemap with static routes + API products/categories |
+| `app/robots.ts` | Robots.txt with disallow rules + sitemap reference |
+| `app/[locale]/layout.tsx` | Root metadata via `buildRootMetadata()` |
 
 ## 3. Files changed
 
@@ -80,6 +138,9 @@ The template already provided (and still owns):
 
 **New (v1.4.0 — dynamic branding):**
 - `src/lib/seo/serverData.ts` — shared server-side API fetch helper
+
+**New (v1.6.0 — clone-based SEO):**
+- `src/lib/seo/seo.ts` — centralized SEO helpers (canonical, hreflang, metadata builders)
 
 **Modified (v1.1.0 — multi-branch):**
 - `src/Components/Branch/BranchSelection.tsx` — card restructure (`<button>` →
@@ -129,6 +190,27 @@ The template already provided (and still owns):
   write to sessionStorage via `getBranchStorageKey()`.
 - `src/Components/Branch/BranchGate.tsx` — hydration reads from sessionStorage
   via `getSessionStorage(getBranchStorageKey())`.
+
+**Modified (v1.6.0 — clone-based SEO):**
+- `src/lib/seo/seo.ts` — centralized module with `buildRootMetadata()`,
+  `buildPageMetadata()`, `buildHreflangAlternates()`, `canonicalUrl()`,
+  `getSiteUrl()`, `getRestaurantForSeo()`.
+- `src/lib/seo/serverData.ts` — cleaned up; only exports `fetchPublicRestaurant()`.
+- `src/lib/seo/structuredData.ts` — imports `getSiteUrl` from `seo.ts` (DRY);
+  enhanced JSON-LD with `image`, `email`, `areaServed`, `openingHoursSpecification`,
+  `sameAs`.
+- `app/[locale]/layout.tsx` — uses `buildRootMetadata()` instead of inline
+  metadata generation.
+- `app/[locale]/(website)/menu/page.tsx` — server component with
+  `generateMetadata` from `menu.meta` + `buildPageMetadata`.
+- `app/[locale]/(website)/cart/page.tsx` — server component with
+  `generateMetadata` from `cart.meta` + `buildPageMetadata`; noindexed.
+- `app/sitemap.ts` — async; fetches products + categories from API for
+  dynamic sitemap entries; hreflang alternates on all entries.
+- `app/robots.ts` — blocks `/dashboard`, `/admin`, `/api/` in addition
+  to cart/orders/track-order.
+- `messages/en.json`, `messages/ar.json`, `messages/it.json` — `menu.meta`
+  and `cart.meta` keys added (structural parity).
 
 ## 4. Behavior contracts
 
@@ -195,4 +277,5 @@ selection screen will appear when the server ships `GET /branches`.
    Without this, the selection screen cannot appear.
 2. Live E2E vs a real multi-branch tenant (requires #1).
 3. Optional: bottom-sheet switcher variant; per-branch SEO landing routes.
-4. Set `NEXT_PUBLIC_SITE_URL` at deploy time for canonical URLs.
+4. Set `NEXT_PUBLIC_SITE_URL` at deploy time for each restaurant clone
+   (e.g. `https://fadl.restora.world`, `https://disforno.restora.world`).

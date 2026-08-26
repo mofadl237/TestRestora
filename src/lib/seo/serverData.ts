@@ -3,7 +3,7 @@
  *
  * These fetch the Public API directly (server-to-server) so that
  * generateMetadata and JSON-LD can read restaurant settings without
- * client-side RTK Query. Every call is failure-tolerant — SEO
+ * client-side RTK Query. Every call is failure-tolerant -- SEO
  * enrichment must NEVER break page rendering.
  */
 
@@ -24,7 +24,9 @@ async function publicFetch<T>(
     const params = new URLSearchParams({ locale });
     if (RESTAURANT_ID) params.set("restaurantId", RESTAURANT_ID);
     const res = await fetch(`${PUBLIC_ROOT}${path}?${params.toString()}`, {
-      headers: RESTAURANT_ID ? { "x-restaurant-id": RESTAURANT_ID } : undefined,
+      headers: RESTAURANT_ID
+        ? { "x-restaurant-id": RESTAURANT_ID }
+        : undefined,
       next: { revalidate },
     });
     if (!res.ok) return null;

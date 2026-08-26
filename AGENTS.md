@@ -98,7 +98,13 @@ src/
                                  Reservations, Shared, Slider, TrackOrder)
   Interfaces/                    shared domain types (ICategory, IProduct, …)
   i18n/                          routing.ts, config.ts, request.ts (next-intl)
-  lib/                           pricing engine, i18n helpers, order display,
+  lib/
+    seo/
+      seo.ts                     ★ Centralized SEO helpers (canonical, hreflang,
+                                 metadata builders, getSiteUrl)
+      serverData.ts              ★ Server-side API fetch (fetchPublicRestaurant)
+      structuredData.ts          ★ JSON-LD builder (getRestaurantJsonLd)
+    pricing engine, i18n helpers, order display,
                                  whatsapp (unused module)
   Providers/                     ReduxProvider, theme-provider, ToastProvider
   store/
@@ -275,10 +281,61 @@ must not live in JSX.
 | Domain types | `src/Interfaces/*`, `lib/restaurant.ts` |
 | Validation | `src/Validations/*` |
 | Localization | `messages/*.json`, `src/i18n/*` |
+| SEO / structured data | `src/lib/seo/*`, `app/sitemap.ts`, `app/robots.ts` |
 
 ---
 
-## 16. Files that should NOT be modified casually
+## 16. SEO architecture (clone-based)
+
+All restaurant-specific SEO is generated from two env vars + the Public API:
+
+```
+NEXT_PUBLIC_RESTAURANT_ID  → tenant (API data)
+NEXT_PUBLIC_SITE_URL       → canonical host
+```
+
+### SEO module
+
+| File | Role |
+| --- | --- |
+| `src/lib/seo/seo.ts` | Centralized helpers: `canonicalUrl()`, `buildHreflangAlternates()`, `buildRootMetadata()`, `buildPageMetadata()`, `getSiteUrl()` |
+| `src/lib/seo/serverData.ts` | Server-side API fetch: `fetchPublicRestaurant(locale)` |
+| `src/lib/seo/structuredData.ts` | JSON-LD builder: `getRestaurantJsonLd(locale)` |
+| `src/Components/Seo/RestaurantJsonLd.tsx` | Server component emitting JSON-LD in `<head>` |
+| `app/sitemap.ts` | Dynamic sitemap with hreflang alternates |
+| `app/robots.ts` | Robots.txt with disallow rules |
+| `app/[locale]/layout.tsx` | Root metadata via `buildRootMetadata()` |
+
+### How to add metadata to a new page
+
+1. Add `myPage.meta` keys to **both** `messages/en.json` and `messages/ar.json`.
+2. In the page file, export `generateMetadata`:
+   ```ts
+   import { getRestaurantForSeo, buildPageMetadata } from "@/src/lib/seo/seo";
+   export async function generateMetadata({ params }) {
+     const { locale } = await params;
+     const [restaurant, t] = await Promise.all([
+       getRestaurantForSeo(locale),
+       getTranslations({ locale, namespace: "myPage.meta" }),
+     ]);
+     return buildPageMetadata(restaurant, locale, "/my-page", {
+       title: t("title"),
+       description: t("description"),
+     });
+   }
+   ```
+
+### SEO safety rules
+
+- NEVER hardcode restaurant-specific titles, descriptions, images, or URLs.
+- NEVER use `restora.world` as canonical — always use `NEXT_PUBLIC_SITE_URL`.
+- NEVER create separate canonical URLs for `?branch=` query parameters.
+- NEVER noindex public pages (except cart, orders, track-order).
+- NEVER create duplicate pages for branch selection.
+
+---
+
+## 17. Files that should NOT be modified casually
 
 - `src/store/api/publicApi.ts` — the only API client; changing it changes the
   data contract for the whole app.
@@ -294,7 +351,7 @@ Safe to change freely: anything under `src/Components/**`, `app/globals.css`,
 
 ---
 
-## 17. How to add things
+## 18. How to add things
 
 ### Add a page
 1. Create `app/[locale]/(website)/my-page/page.tsx`.
@@ -319,7 +376,7 @@ Safe to change freely: anything under `src/Components/**`, `app/globals.css`,
 
 ---
 
-## 18. Creating a new restaurant website
+## 19. Creating a new restaurant website
 
 1. Copy/clone this folder.
 2. `npm install`.
@@ -332,7 +389,7 @@ No modification of the Restora Dashboard is required to create a new Website.
 
 ---
 
-## 19. Specialized docs
+## 20. Specialized docs
 
 - `docs/ARCHITECTURE.md`
 - `docs/API_ENDPOINTS.md`

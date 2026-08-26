@@ -10,8 +10,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { getI18nRuntimeConfig } from "@/src/i18n/config";
-import { getSiteUrl } from "@/src/lib/seo/structuredData";
-import { fetchPublicRestaurant } from "@/src/lib/seo/serverData";
+import { getRestaurantForSeo, buildRootMetadata } from "@/src/lib/seo/seo";
 import RestaurantJsonLd from "@/src/Components/Seo/RestaurantJsonLd";
 import "../globals.css";
 import { cn } from "@/lib/utils";
@@ -36,54 +35,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = getSiteUrl();
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const restaurant = await fetchPublicRestaurant(locale);
-
-  const name = restaurant?.restaurantName?.trim() || "Restaurant";
-  const description = restaurant?.contact?.address
-    ? `${name} — ${restaurant.contact.address}`
-    : `Order from ${name} online.`;
-  const coverImage = restaurant?.branding?.coverImage || null;
-  const logo = restaurant?.branding?.logo || null;
-
-  const images = coverImage ? [{ url: coverImage, width: 1200, height: 630, alt: name }] : [];
-  const icons = logo ? { icon: logo } : undefined;
-
-  return {
-    metadataBase: new URL(SITE_URL),
-    title: {
-      default: name,
-      template: `%s | ${name}`,
-    },
-    description,
-    icons,
-    robots: { index: true, follow: true },
-    alternates: {
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `/${l}`]),
-      ),
-    },
-    openGraph: {
-      type: "website",
-      siteName: name,
-      title: name,
-      description,
-      ...(images.length ? { images } : {}),
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: name,
-      description,
-      ...(images.length ? { images: images.map((i) => i.url) } : {}),
-    },
-  };
+  const restaurant = await getRestaurantForSeo(locale);
+  return buildRootMetadata(restaurant);
 }
 
 export async function generateStaticParams() {
@@ -123,7 +82,6 @@ export default async function LocaleLayout({
       )}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        {/* Structured data is emitted server-side from the Public API. */}
         <RestaurantJsonLd locale={locale} />
         <NextIntlClientProvider messages={messages}>
           <Providers>

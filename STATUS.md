@@ -1,19 +1,76 @@
 # Restora Website Template — Status
 
-**Version 1.5.0 — Branch Selection Persistence: sessionStorage**
-Last updated: 2026-08-25
+**Version 1.6.0 — Complete Clone-Based SEO Architecture**
+Last updated: 2026-08-26
 
 ---
 
 ## Current state
 
 The template is a standalone restaurant public website consuming ONLY the
-Restora Public API (`/api/v1/public`). As of v1.5.0 it features:
+Restora Public API (`/api/v1/public`). As of v1.6.0 it features:
 multi-branch support with session-scoped branch persistence (sessionStorage),
 dynamic branding from the API (logo, cover image, primary color), a dynamic
 homepage product slider replacing hardcoded hero images, server-side
-OG/Twitter metadata from API data, and a compact premium BranchSelection
-redesign.
+OG/Twitter metadata from API data, a compact premium BranchSelection
+redesign, and a complete clone-based SEO architecture.
+
+## Clone-based SEO architecture (v1.6.0)
+
+The template generates ALL restaurant-specific SEO from two environment
+variables + the Public API:
+
+```
+NEXT_PUBLIC_RESTAURANT_ID  → tenant identity (API data)
+NEXT_PUBLIC_SITE_URL       → canonical host (metadata, sitemap, OG)
+```
+
+### What is automatic per clone
+
+| SEO element | Source |
+| --- | --- |
+| `<title>` / title template | `restaurant.restaurantName` from API |
+| `<meta name="description">` | Restaurant name + address from API |
+| `<link rel="canonical">` | `NEXT_PUBLIC_SITE_URL` + locale + path |
+| OpenGraph title/description/image | API `restaurantName`, address, `branding.coverImage` |
+| Twitter card (summary_large_image) | Same as OpenGraph |
+| `<link rel="icon">` | `branding.logo` from API |
+| `hreflang` alternates | All configured locales with `x-default` |
+| JSON-LD structured data | `@type: Restaurant` or `RestaurantChain` with real branches |
+| `sitemap.xml` | All locales x static routes + dynamic product/category entries |
+| `robots.txt` | Allows public pages, blocks cart/orders/admin/api |
+| Per-page metadata | Menu, Cart, About, Contact, Reservations, Track Order |
+
+### SEO module architecture
+
+```
+src/lib/seo/
+  seo.ts            ← Centralized helpers (canonicalUrl, buildRootMetadata,
+                       buildPageMetadata, buildHreflangAlternates, getSiteUrl)
+  serverData.ts     ← Server-side API fetch (fetchPublicRestaurant)
+  structuredData.ts ← JSON-LD builder (getRestaurantJsonLd)
+
+src/Components/Seo/
+  RestaurantJsonLd.tsx  ← Server component, emits JSON-LD in <head>
+
+app/
+  sitemap.ts        ← Dynamic sitemap with hreflang alternates
+  robots.ts         ← Robots.txt with sitemap reference
+  [locale]/layout.tsx  ← Root metadata via buildRootMetadata()
+```
+
+### Key design decisions
+
+1. **No hardcoded restaurant data** — zero restaurant-specific titles,
+   descriptions, images, URLs, or names in source code.
+2. **Single API client** — `src/store/api/publicApi.ts` for client-side;
+   `src/lib/seo/serverData.ts` for server-side metadata generation.
+3. **Failure-tolerant** — every SEO fetch returns null on error; pages
+   render with fallback defaults.
+4. **Branch query parameters** — `?branch=` does NOT create separate
+   canonical URLs; branch selection is operational context, not SEO content.
+5. **No duplicate pages** — cart, orders, and track-order are noindexed;
+   only intentional public pages are indexed.
 
 ## Branch persistence: sessionStorage (v1.5.0)
 
@@ -169,18 +226,83 @@ Visitor → BranchGate (MarketingChrome wrapper)
 - Offers are fetched per branch (global offers remain server-filtered;
   other branches' offers never leak into the current site).
 
-### SEO behavior
+## Clone-based SEO architecture (v1.6.0)
 
-- `RestaurantJsonLd` (server component) emits schema.org Restaurant JSON-LD
-  in the initial HTML from live API data; multi-branch tenants emit
-  `@type: RestaurantChain` with real branches as `department` entries
-  (address, geo, phone, maps URL). No fabricated branch pages.
-- Locale layout metadata gained `metadataBase`, title template, robots,
-  hreflang `alternates.languages`, and Open Graph defaults.
-- New `app/sitemap.ts` (all locales × static routes, hreflang alternates) and
-  `app/robots.ts` (cart/orders/track-order disallowed).
-- Set `NEXT_PUBLIC_SITE_URL` in production so canonicals/sitemap use the real
-  origin (falls back to `VERCEL_URL`, then localhost).
+### Environment variables
+
+| Variable | Purpose | Example |
+| --- | --- | --- |
+| `NEXT_PUBLIC_RESTORA_RESTAURANT_ID` | Tenant ID — drives all API data | `disforno_restaurant_id` |
+| `NEXT_PUBLIC_SITE_URL` | Public URL of this website clone | `https://disforno.restora.world` |
+
+### Clone workflow
+
+```
+Clone Template
+↓
+Set NEXT_PUBLIC_RESTAURANT_ID
+Set NEXT_PUBLIC_SITE_URL=https://restaurant.restora.world
+↓
+Deploy
+↓
+All SEO metadata auto-configured from API data
+```
+
+### Files changed (v1.6.0)
+
+**New:**
+- `src/lib/seo/seo.ts` — centralized SEO helpers: `getSiteUrl()`, `getRestaurantForSeo()`, `canonicalUrl()`, `buildRootMetadata()`, `buildPageMetadata()`
+
+**Modified:**
+- `app/[locale]/layout.tsx` — uses `buildRootMetadata()` from `seo.ts`
+- `app/[locale]/page.tsx` — explicit home page metadata via `buildPageMetadata()`
+- `app/[locale]/(website)/menu/page.tsx` — added `generateMetadata` with `menu.meta` keys
+- `app/[locale]/(website)/cart/page.tsx` — added `generateMetadata` with `cart.meta` keys + `noindex`
+- `app/[locale]/(website)/about/page.tsx` — uses `buildPageMetadata()` for canonical + OG
+- `app/[locale]/(website)/contact/page.tsx` — uses `buildPageMetadata()` for canonical + OG
+- `app/[locale]/(website)/reservations/page.tsx` — uses `buildPageMetadata()` for canonical + OG
+- `app/[locale]/(website)/track-order/page.tsx` — uses `buildPageMetadata()` for canonical + OG + `noindex`
+- `src/lib/seo/structuredData.ts` — enhanced JSON-LD: `image`, `openingHoursSpecification`, `sameAs`, `email`, `areaServed`, country code in address
+- `app/sitemap.ts` — `changeFrequency` + `priority` per route; imports from `seo.ts`
+- `app/robots.ts` — disallows `/api/`, `/dashboard/`, `/admin/`; imports from `seo.ts`
+- `.env` + `.env.local` — added `NEXT_PUBLIC_SITE_URL`
+- `messages/en.json` — added `home.meta`, `menu.meta`, `cart.meta`
+- `messages/ar.json` — added `home.meta`, `menu.meta`, `cart.meta`
+- `messages/it.json` — added `home.meta`, `menu.meta`, `cart.meta`
+
+### How metadata is generated per restaurant
+
+1. **Root layout** (`generateMetadata`): fetches restaurant via `getRestaurantForSeo(locale)` → `buildRootMetadata(restaurant)` produces:
+   - `metadataBase`: from `NEXT_PUBLIC_SITE_URL`
+   - `title.default`: restaurant name from API
+   - `title.template`: `%s | restaurantName`
+   - `description`: from restaurant name + address
+   - `openGraph.url`: from `NEXT_PUBLIC_SITE_URL`
+   - `openGraph.images`: from `branding.coverImage`
+   - `twitter.images`: from `branding.coverImage`
+   - `icons.icon`: from `branding.logo`
+   - `alternates.languages`: all locales with absolute URLs
+   - `alternates.canonical`: default locale root URL
+
+2. **Per-page** (`generateMetadata`): uses `buildPageMetadata(restaurant, locale, path, {title, description})` which produces:
+   - `title`: page title (wrapped by root template → "Menu | Disforno")
+   - `description`: page-specific from translations
+   - `alternates.canonical`: locale + path URL
+   - `openGraph.url` + `openGraph.title`: page-specific
+   - `twitter.title`: page-specific
+
+3. **JSON-LD** (`RestaurantJsonLd` server component): fetches restaurant + branches → structured data:
+   - Single branch: `@type: Restaurant`
+   - Multi-branch: `@type: RestaurantChain` with `department[]`
+   - Fields: `name`, `url`, `logo`, `image`, `telephone`, `email`, `address`, `openingHoursSpecification`, `sameAs`, `areaServed`
+
+4. **Sitemap** (`sitemap.ts`): iterates `ROUTES × locales` → each entry has:
+   - `url`: absolute from `NEXT_PUBLIC_SITE_URL`
+   - `changeFrequency`: per-route (daily/weekly/monthly)
+   - `priority`: per-route (1.0 → 0.6)
+   - `alternates.languages`: all locale URLs
+
+5. **Robots** (`robots.ts`): allows public pages, disallows private/admin/api routes; references sitemap from `NEXT_PUBLIC_SITE_URL`.
 
 ### Performance
 
@@ -331,17 +453,28 @@ restaurant-level data — identical to the pre-branch wire format.
 | **Restaurant-scoped key** | ✅ `restora.pub.branch.{restaurantId}` via `getBranchStorageKey()` |
 | **Cart remains in localStorage** | ✅ `CartSlice.ts` still imports `setLocalStorage` (cart persistence is independent, correct) |
 
-### SEO
+### SEO (v1.6.0 — Clone-Based Architecture)
 
 | Check | Result |
 | --- | --- |
-| JSON-LD in initial HTML | ✅ `@type: Restaurant` present; `logo` field included |
-| sitemap.xml | ✅ all locales × routes with hreflang alternates |
-| robots.txt | ✅ cart/orders/track-order disallowed |
-| `generateMetadata` (server-side) | ✅ title, description from API; `og:image`/`twitter:image` from `branding.coverImage` when present |
-| `og:image` / `twitter:image` | ✅ correctly omitted when API returns empty `coverImage` (current tenant); will populate when branding is configured |
-| `favicon` from API | ✅ from `branding.logo` when present; falls back to Next.js default |
-| Server-side fetch (`serverData.ts`) | ✅ `res.text()` before `JSON.parse` (defensive); failure-tolerant |
+| JSON-LD in initial HTML | ✅ `@type: Restaurant` / `RestaurantChain` with `image`, `logo`, `telephone`, `address`, `openingHoursSpecification`, `sameAs`, branch `department` nodes |
+| sitemap.xml | ✅ all locales × routes with hreflang alternates, `changeFrequency`, `priority` |
+| robots.txt | ✅ cart/orders/track-order disallowed; admin/dashboard/api disallowed |
+| `generateMetadata` (server-side) | ✅ centralized in `src/lib/seo/seo.ts` via `buildRootMetadata()` / `buildPageMetadata()` |
+| Root layout title template | ✅ `{name}` (default), `%s | {name}` (child pages) — all from API |
+| Per-page metadata | ✅ home, menu, cart, about, contact, reservations, track-order — all use `buildPageMetadata()` |
+| Canonical URLs | ✅ every page emits `alternates.canonical` from `NEXT_PUBLIC_SITE_URL` |
+| OpenGraph | ✅ `og:url`, `og:title`, `og:description`, `og:image` — per-page, API-sourced |
+| Twitter cards | ✅ `summary_large_image` with API cover image |
+| `og:image` / `twitter:image` | ✅ from `branding.coverImage`; gracefully omitted when empty |
+| `favicon` from API | ✅ from `branding.logo`; falls back to Next.js default |
+| `NEXT_PUBLIC_SITE_URL` env | ✅ required for production; documented in `.env` |
+| `NEXT_PUBLIC_RESTORA_RESTAURANT_ID` env | ✅ drives all API data for the restaurant |
+| Menu page metadata | ✅ "Menu" title via `menu.meta` translation key |
+| Cart page metadata | ✅ `noindex: true` (private page) |
+| Track Order metadata | ✅ `noindex: true` (private page) |
+| Translation keys en/ar/it | ✅ `home.meta`, `menu.meta`, `cart.meta` added with structural parity |
+| Clone safety | ✅ zero hardcoded restaurant names/URLs/images in source — all from API + env |
 
 ### i18n
 
@@ -470,5 +603,7 @@ A thorough code review (8 files, all BranchGate paths) confirmed **0 bugs**:
    screen, per-branch prices, availability gating, offer scoping, QR branch
    resolution, branch switching, cart safety.
 3. **Optional polish:** bottom-sheet switcher variant for very small viewports;
-   per-branch structured-data pages if/when real branch routes exist.
-4. **Deployment:** set `NEXT_PUBLIC_SITE_URL` for canonical/sitemap URLs.
+   per-branch structured-data pages if/when real branch routes exist;
+   product/category-level JSON-LD pages if indexable product routes are added.
+4. **Deployment:** set `NEXT_PUBLIC_SITE_URL` for each clone deployment
+   (e.g. `https://fadl.restora.world`, `https://disforno.restora.world`).

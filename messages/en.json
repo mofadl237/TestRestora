@@ -150,6 +150,10 @@
     }
   },
   "home": {
+    "meta": {
+      "title": "Home",
+      "description": "Welcome to our restaurant. Explore our menu, offers, and reserve your table today."
+    },
     "promoBanner": {
       "eyebrow": "Limited Time Offer",
       "copyCode": "Copy Code",
@@ -212,6 +216,10 @@
     ]
   },
   "cart": {
+    "meta": {
+      "title": "Cart",
+      "description": "Review your order and proceed to checkout."
+    },
     "page": {
       "title": "Cart",
       "subtitle": "Cart Items"
@@ -533,6 +541,10 @@
     }
   },
   "menu": {
+    "meta": {
+      "title": "Menu",
+      "description": "Browse our full menu. Discover delicious dishes, drinks, and special offers."
+    },
     "title": "Menu",
     "back": "Back",
     "fromPrice": "From",
