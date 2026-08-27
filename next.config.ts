@@ -2,10 +2,14 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
+
   transpilePackages: ["next-themes"],
+
   turbopack: {
     root: __dirname,
   },
+
   images: {
     remotePatterns: [
       {
@@ -14,13 +18,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Proxy the Restora Public API through the Next.js server. The API host
-  // sends no CORS headers, so direct browser fetches are blocked; routing the
-  // same-origin /api/v1/public path here lets the server forward requests
-  // (server-to-server, no CORS). publicApi.ts remains the only API client.
+
+  // Proxy the Restora Public API through the Next.js server.
+  // The API host sends no CORS headers, so direct browser fetches
+  // are blocked; routing the same-origin /api/v1/public path here
+  // lets the server forward requests (server-to-server).
   async rewrites() {
     const apiUrl = process.env.NEXT_PUBLIC_RESTORA_API_URL;
+
     if (!apiUrl) return [];
+
     return [
       {
         source: "/api/v1/public/:path*",
