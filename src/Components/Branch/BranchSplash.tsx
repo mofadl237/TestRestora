@@ -25,19 +25,36 @@ export default function BranchSplash() {
         initial={reduceMotion ? false : { opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-lg"
+        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-card text-primary shadow-lg ring-1 ring-border/50"
       >
+        {/* Liquid fill behind the logo — gives the impression the brand icon
+            is being “poured” with the primary color while branches load. */}
+        <motion.span
+          aria-hidden="true"
+          initial={reduceMotion ? { height: "100%" } : { height: "0%" }}
+          animate={{ height: ["0%", "100%", "0%"] }}
+          transition={
+            reduceMotion
+              ? undefined
+              : {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }
+          }
+          className="absolute bottom-0 left-0 right-0 bg-primary/25"
+        />
         {logo ? (
           <Image
             src={logo}
             alt=""
             fill
             sizes="64px"
-            className="object-cover"
+            className="relative z-10 object-cover"
             priority
           />
         ) : (
-          <FaPizzaSlice className="text-2xl" aria-hidden="true" />
+          <FaPizzaSlice className="relative z-10 text-2xl" aria-hidden="true" />
         )}
       </motion.div>
 

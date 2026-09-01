@@ -131,9 +131,40 @@ export const publicApi = createApi({
           ...tenantParams(),
         },
       }),
-      transformResponse: (response: IApiResponse<IApiBranch[]>) => {
+      transformResponse: (response: IApiResponse<unknown[]>) => {
         if (!response.success) return [];
-        return response.data ?? [];
+        const list = (response.data ?? []) as Array<Record<string, unknown>>;
+        return list.map((raw): IApiBranch => {
+          const businessHours = raw.businessHours;
+          const openingSummary =
+            typeof raw.openingHoursSummary === "string"
+              ? raw.openingHoursSummary
+              : typeof businessHours === "string"
+                ? businessHours
+                : null;
+          return {
+            id: String(raw.id ?? ""),
+            name: String(raw.name ?? ""),
+            slug: raw.slug ? String(raw.slug) : null,
+            image: raw.image ? String(raw.image) : null,
+            address: raw.address ? String(raw.address) : null,
+            city: raw.city ? String(raw.city) : null,
+            phone: raw.phone ? String(raw.phone) : null,
+            mapsUrl: raw.mapsUrl
+              ? String(raw.mapsUrl)
+              : raw.googleMapsUrl
+                ? String(raw.googleMapsUrl)
+                : null,
+            isOpenNow: Boolean(raw.isOpenNow ?? raw.isOpen),
+            deliveryAvailable: Boolean(raw.deliveryAvailable ?? true),
+            pickupAvailable: Boolean(raw.pickupAvailable ?? true),
+            openingHoursSummary: openingSummary,
+            latitude:
+              typeof raw.latitude === "number" ? raw.latitude : null,
+            longitude:
+              typeof raw.longitude === "number" ? raw.longitude : null,
+          };
+        });
       },
       providesTags: ["Branches"],
     }),
