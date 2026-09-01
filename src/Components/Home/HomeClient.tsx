@@ -15,6 +15,7 @@ import { HomeSectionRenderer } from "@/src/Components/Home/HomeSectionRenderer";
 import { StorySection } from "@/src/Components/Home/StorySection";
 import { FinalCta } from "@/src/Components/Home/FinalCta";
 import { FloatingMenuCta } from "@/src/Components/Shared/FloatingMenuCta";
+import { HomeSkeleton } from "./HomeSkeleton";
 import type { IHomeProduct } from "@/src/Interfaces";
 
 const OFFER_SECTION_KEY = "offers";
@@ -36,9 +37,16 @@ export function HomeClient() {
 
   // All home data is branch-scoped: products, prices, offers and sections
   // reflect the active location (restaurant-level fallback when unresolved).
-  const { data: home } = useGetHomeQuery({ locale, branchId });
-  const { data: categories = [] } = useGetCategoriesQuery({ locale, branchId });
-  const { data: offers = [] } = useGetOffersQuery({ locale, branchId });
+  const { data: home, isLoading: homeLoading } = useGetHomeQuery({ locale, branchId });
+  const { data: categories = [], isLoading: categoriesLoading } = useGetCategoriesQuery({ locale, branchId });
+  const { data: offers = [], isLoading: offersLoading } = useGetOffersQuery({ locale, branchId });
+
+  // Show a layout-matching skeleton on the first load so the user never sees
+  // empty sections before the real home data arrives.
+  const isInitialLoading = homeLoading || categoriesLoading || offersLoading;
+  if (isInitialLoading) {
+    return <HomeSkeleton />;
+  }
 
   // Product sections only — offers are NOT a product home section.
   // Order follows the Dashboard displayOrder; visibility per section isActive.
